@@ -1,4 +1,4 @@
-import { Home, Share2, Calendar, Layers, Video, Mail } from 'lucide-react'
+import { Home, Share2, Calendar, Layers, Video, Mail, ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface NavItem {
   id: string
@@ -10,6 +10,8 @@ interface NavItem {
 interface SidebarProps {
   activeItemId?: string
   onNavigate?: (href: string) => void
+  collapsed?: boolean
+  onToggleCollapse?: () => void
 }
 
 const navItems: NavItem[] = [
@@ -21,7 +23,7 @@ const navItems: NavItem[] = [
   { id: 'contact', label: 'Contact', href: '/contact', icon: <Mail className="w-5 h-5" /> },
 ]
 
-export function Sidebar({ activeItemId = 'home', onNavigate }: SidebarProps) {
+export function Sidebar({ activeItemId = 'home', onNavigate, collapsed = false, onToggleCollapse }: SidebarProps) {
   const handleClick = (href: string) => {
     if (onNavigate) {
       onNavigate(href)
@@ -29,14 +31,25 @@ export function Sidebar({ activeItemId = 'home', onNavigate }: SidebarProps) {
   }
 
   return (
-    <aside className="w-64 h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
-      <div className="p-6 border-b border-slate-200 dark:border-slate-800">
-        <h1 className="text-xl font-bold text-slate-900 dark:text-white">
-          Portfolio
-        </h1>
+    <aside className={`${collapsed ? 'w-20' : 'w-64'} h-screen bg-slate-900 border-r border-slate-800 flex flex-col transition-all duration-300`}>
+      {/* Header */}
+      <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+        {!collapsed && (
+          <h1 className="text-xl font-bold text-white">
+            Portfolio
+          </h1>
+        )}
+        <button
+          onClick={onToggleCollapse}
+          className={`p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ${collapsed ? 'mx-auto' : ''}`}
+          title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+        >
+          {collapsed ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
+        </button>
       </div>
 
-      <nav className="flex-1 p-4">
+      {/* Navigation */}
+      <nav className="flex-1 p-3">
         <ul className="space-y-1">
           {navItems.map((item) => {
             const isActive = item.id === activeItemId
@@ -44,16 +57,17 @@ export function Sidebar({ activeItemId = 'home', onNavigate }: SidebarProps) {
               <li key={item.id}>
                 <button
                   onClick={() => handleClick(item.href)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                  className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg text-left transition-colors ${
                     isActive
-                      ? 'bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white'
-                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white'
-                  }`}
+                      ? 'bg-slate-800 text-white'
+                      : 'text-slate-400 hover:bg-slate-800/50 hover:text-white'
+                  } ${collapsed ? 'justify-center' : ''}`}
+                  title={collapsed ? item.label : undefined}
                 >
-                  <span className={isActive ? 'text-slate-900 dark:text-white' : ''}>
+                  <span className={isActive ? 'text-white' : ''}>
                     {item.icon}
                   </span>
-                  <span className="font-medium">{item.label}</span>
+                  {!collapsed && <span className="font-medium">{item.label}</span>}
                 </button>
               </li>
             )
@@ -61,10 +75,13 @@ export function Sidebar({ activeItemId = 'home', onNavigate }: SidebarProps) {
         </ul>
       </nav>
 
-      <div className="p-4 border-t border-slate-200 dark:border-slate-800">
-        <p className="text-xs text-slate-500 dark:text-slate-500">
-          © 2024 Portfolio
-        </p>
+      {/* Footer */}
+      <div className="p-4 border-t border-slate-800">
+        {!collapsed && (
+          <p className="text-xs text-slate-500">
+            © 2026 Portfolio
+          </p>
+        )}
       </div>
     </aside>
   )

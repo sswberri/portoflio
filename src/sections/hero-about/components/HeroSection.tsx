@@ -8,71 +8,71 @@ interface HeroSectionProps {
 export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) {
   return (
     <section className="min-h-[85vh] flex items-center">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
-        <div className="flex flex-col justify-center order-2 lg:order-1 py-8 lg:py-16 lg:pr-12">
+        <div className="flex flex-col justify-center order-2 lg:order-1 py-8 lg:py-16">
           {/* Profile Title */}
           <h1 className="mb-6">
-            <span className="block text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.9] tracking-tight text-slate-900 dark:text-white">
+            <span className="block text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.9] tracking-[-0.06em] text-white">
               Profile
             </span>
           </h1>
 
           {/* Title */}
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium mb-8 max-w-xl">
+          <p className="text-xl md:text-2xl text-white font-medium mb-6 max-w-xl">
             {title}
           </p>
 
           {/* Intro */}
-          <p className="text-base md:text-lg text-slate-500 dark:text-slate-500 leading-relaxed max-w-xl mb-12">
+          <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl mb-10">
             {intro}
           </p>
 
-          {/* Stats Row */}
-          <div className="flex flex-wrap gap-x-12 gap-y-6">
+          {/* Stats Row - Single Row */}
+          <div className="flex gap-8 md:gap-12">
             <div>
-              <span className="block text-4xl md:text-5xl font-light text-slate-900 dark:text-white">
+              <span className="block text-3xl md:text-4xl font-light text-white">
                 10+
               </span>
-              <span className="text-sm text-slate-500 dark:text-slate-500 uppercase tracking-wider">
+              <span className="text-xs text-slate-400 uppercase tracking-wider">
                 Years Experience
               </span>
             </div>
             <div>
-              <span className="block text-4xl md:text-5xl font-light text-slate-900 dark:text-white">
+              <span className="block text-3xl md:text-4xl font-light text-white">
                 50+
               </span>
-              <span className="text-sm text-slate-500 dark:text-slate-500 uppercase tracking-wider">
+              <span className="text-xs text-slate-400 uppercase tracking-wider">
                 Projects Delivered
               </span>
             </div>
             <div>
-              <span className="block text-4xl md:text-5xl font-light text-slate-900 dark:text-white">
+              <span className="block text-3xl md:text-4xl font-light text-white">
                 25+
               </span>
-              <span className="text-sm text-slate-500 dark:text-slate-500 uppercase tracking-wider">
+              <span className="text-xs text-slate-400 uppercase tracking-wider">
                 Clients Served
               </span>
             </div>
           </div>
         </div>
 
-        {/* Right: Photo */}
+        {/* Right: Photo - Reduced Size */}
         <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
-          <div className="relative w-full max-w-md lg:max-w-none lg:h-[80vh]">
+          <div className="relative w-full max-w-sm lg:max-w-md">
             {photoUrl ? (
               <img
                 src={photoUrl}
                 alt={name}
-                className="w-full h-full object-cover lg:absolute lg:inset-0"
+                className="w-full h-auto object-cover "
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
                   target.src = `https://placehold.co/600x800/1e293b/ffffff?text=${encodeURIComponent(name.split(' ').map(n => n[0]).join(''))}`
                 }}
               />
             ) : (
-              <div className="w-full aspect-[3/4] lg:aspect-auto lg:h-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
-                <span className="text-6xl font-bold text-slate-400 dark:text-slate-600">
+              <div className="w-full aspect-[3/4] bg-slate-800 flex items-center justify-center ">
+                <span className="text-6xl font-bold text-slate-600">
                   {name.split(' ').map(n => n[0]).join('')}
                 </span>
               </div>

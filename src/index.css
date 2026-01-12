@@ -18,8 +18,11 @@
   * {
     @apply border-slate-200 dark:border-slate-700;
   }
+  html {
+    @apply bg-slate-950;
+  }
   body {
-    @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-sans antialiased;
+    @apply bg-slate-950 text-slate-900 dark:text-white font-sans antialiased min-h-screen;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
