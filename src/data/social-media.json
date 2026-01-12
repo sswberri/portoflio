@@ -1,0 +1,74 @@
+{
+  "projects": [
+    {
+      "id": "social-1",
+      "title": "#weArethefuture Campaign",
+      "company": "weAre the future",
+      "category": "Brand Campaign",
+      "description": "Brainstorm & collaborate creative content for social media channels. Propose & manage social media channels, messaging, calendar, monitor performance and engagement for the modern footwear brand.",
+      "thumbnailUrl": "/images/slide-18.jpg",
+      "role": "Social Media & Content Lead",
+      "platforms": ["Instagram", "Facebook"],
+      "highlights": [
+        "Creative content ideation and collaboration",
+        "Social media channel management",
+        "Content calendar planning",
+        "Performance monitoring and engagement tracking",
+        "Insta Stories and feed content creation"
+      ],
+      "hashtag": "#weArethefuture",
+      "images": ["/images/slide-18.jpg"]
+    },
+    {
+      "id": "social-2",
+      "title": "Online/Offline Marketing Communication",
+      "company": "weAre the future",
+      "category": "Omnichannel",
+      "description": "Building essential communication channels and contents for audience outreach including we-are.com website, lookbook, brochure, and integrated online/offline marketing materials.",
+      "thumbnailUrl": "/images/slide-17.jpg",
+      "role": "Marketing Communications",
+      "platforms": ["Website", "Print", "Social"],
+      "highlights": [
+        "we-are.com website development",
+        "Lookbook and brochure design",
+        "Brand storytelling content",
+        "Omnichannel marketing integration"
+      ],
+      "images": ["/images/slide-17.jpg"]
+    },
+    {
+      "id": "social-3",
+      "title": "Community & Influencers",
+      "company": "Multiple Brands",
+      "category": "Influencer Marketing",
+      "description": "Community building and influencer partnership programs across multiple brands including CorelDRAW Masters program and weAre the future ambassador network featuring leaders, influencers, thinkers, entrepreneurs, and game changers.",
+      "thumbnailUrl": "/images/slide-16.jpg",
+      "role": "Community & Influencer Lead",
+      "platforms": ["Blog", "Social Media", "Events"],
+      "highlights": [
+        "CorelDRAW Masters ambassador program",
+        "weAre the future influencer network",
+        "Community content creation",
+        "Influencer collaboration and management"
+      ],
+      "images": ["/images/slide-16.jpg"]
+    },
+    {
+      "id": "social-4",
+      "title": "Partnership & Co-marketing",
+      "company": "weAre the future / GTS+",
+      "category": "Partnership",
+      "description": "Strategic partnership and co-marketing initiatives including YouTube FanFest collaboration and retail partnership programs.",
+      "thumbnailUrl": "/images/slide-19.jpg",
+      "role": "Partnership Marketing",
+      "platforms": ["Events", "Retail", "Digital"],
+      "highlights": [
+        "YouTube x weAre the future FanFest collaboration",
+        "AOKANG x GTS+ strategic partnership",
+        "Retail pop-up and showroom presence",
+        "Co-branded product launches"
+      ],
+      "images": ["/images/slide-19.jpg"]
+    }
+  ]
+}

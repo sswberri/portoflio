@@ -1,0 +1,60 @@
+{
+  "headline": "Videos",
+  "subheadline": "Brand videos, product demos, keynotes, and corporate storytelling",
+  "videos": [
+    {
+      "id": "video-1",
+      "title": "Viverse Brand Video",
+      "company": "HTC VIVE",
+      "type": "Brand Video",
+      "description": "Brand video introducing VIVERSE, HTC's open and secure metaverse platform",
+      "thumbnailUrl": "https://img.youtube.com/vi/LNfGKRjNQKw/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=LNfGKRjNQKw"
+    },
+    {
+      "id": "video-2",
+      "title": "CEO Keynote - A Day in the Metaverse",
+      "company": "HTC VIVE",
+      "type": "Keynote Video",
+      "description": "CEO keynote showcasing a day in the metaverse with VR, AR, AI, 5G & NFTs",
+      "thumbnailUrl": "https://img.youtube.com/vi/4FlSqGq5XEg/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=4FlSqGq5XEg"
+    },
+    {
+      "id": "video-3",
+      "title": "Viverse Ecosystem",
+      "company": "HTC VIVE",
+      "type": "Product Video",
+      "description": "The VIVERSE Ecosystem: A shared, open resource and community for the metaverse",
+      "thumbnailUrl": "https://img.youtube.com/vi/8q6lU6Yn5kE/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=8q6lU6Yn5kE"
+    },
+    {
+      "id": "video-4",
+      "title": "Life at Nogle",
+      "company": "NOGLE",
+      "type": "Corporate Video",
+      "description": "Corporate culture video showcasing life and work environment at Nogle",
+      "thumbnailUrl": "https://img.youtube.com/vi/iCbI4sfuK5Q/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=iCbI4sfuK5Q"
+    },
+    {
+      "id": "video-5",
+      "title": "Revolutionizing Online Shopping",
+      "company": "STYLE.ME",
+      "type": "Product Video",
+      "description": "Product demo video showcasing Style.me's virtual try-on technology for online shopping",
+      "thumbnailUrl": "https://img.youtube.com/vi/PhD71f_9tPE/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=PhD71f_9tPE"
+    },
+    {
+      "id": "video-6",
+      "title": "weAre Brand Video",
+      "company": "weAre the future",
+      "type": "Viral Video",
+      "description": "Brand video for weAre the future, a modern footwear brand for city women",
+      "thumbnailUrl": "https://img.youtube.com/vi/LszTpDMD7lc/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=LszTpDMD7lc"
+    }
+  ]
+}

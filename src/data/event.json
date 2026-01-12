@@ -1,0 +1,105 @@
+{
+  "categories": [
+    { "id": "all", "name": "All Events" },
+    { "id": "trade-show", "name": "Trade Shows" },
+    { "id": "launch", "name": "Product Launch" },
+    { "id": "campaign", "name": "Campaigns" }
+  ],
+  "projects": [
+    {
+      "id": "event-1",
+      "title": "MWC Barcelona 2022",
+      "company": "HTC VIVE",
+      "category": "trade-show",
+      "description": "Key visual & deco artwork communication, review & approval, demo content support for HTC VIVE's presence at Mobile World Congress Barcelona 2022, featuring the Viverse metaverse platform.",
+      "thumbnailUrl": "/images/slide-09.jpg",
+      "role": "Event Marketing",
+      "highlights": [
+        "Key visual and decoration artwork design coordination",
+        "Review and approval process management",
+        "Demo content support and booth experience",
+        "Viverse metaverse platform showcase"
+      ],
+      "images": ["/images/slide-09.jpg"]
+    },
+    {
+      "id": "event-2",
+      "title": "COMPUTEX InnoVEX",
+      "company": "NOGLE / Style.me",
+      "category": "trade-show",
+      "description": "End-to-end event management including vendor sourcing, communication, booth design, and onsite demo for COMPUTEX InnoVEX startup exhibition.",
+      "thumbnailUrl": "/images/slide-10.jpg",
+      "role": "Event Lead",
+      "highlights": [
+        "Vendor sourcing and communication",
+        "End-to-end event management",
+        "Booth design and setup",
+        "Onsite demo coordination"
+      ],
+      "images": ["/images/slide-10.jpg"]
+    },
+    {
+      "id": "event-3",
+      "title": "Taiwan Launch & HK Media Tour",
+      "company": "OpenRice",
+      "category": "launch",
+      "description": "Taiwan company launch event and Hong Kong media tour for OpenRice, Asia's leading restaurant guide platform entering the Taiwan market.",
+      "thumbnailUrl": "/images/slide-11.jpg",
+      "role": "PR & Events",
+      "highlights": [
+        "Taiwan market launch press conference",
+        "Hong Kong media tour coordination",
+        "Press coverage across major outlets",
+        "Brand awareness campaign"
+      ],
+      "images": ["/images/slide-11.jpg", "/images/slide-12.jpg", "/images/slide-13.jpg"]
+    },
+    {
+      "id": "event-4",
+      "title": "Canton Trade Fair Runway",
+      "company": "weAre the future",
+      "category": "trade-show",
+      "description": "Fashion runway show at Canton Fair showcasing weAre the future's footwear collection to international buyers and media.",
+      "thumbnailUrl": "/images/slide-14.jpg",
+      "role": "Event Marketing",
+      "highlights": [
+        "Fashion runway production",
+        "International buyer engagement",
+        "Brand showcase at major trade fair"
+      ],
+      "images": ["/images/slide-14.jpg"]
+    },
+    {
+      "id": "event-5",
+      "title": "XiaoMi Youpin Crowdfunding",
+      "company": "MyBug / GTS+",
+      "category": "campaign",
+      "description": "Crowdfunding campaign on XiaoMi Youpin platform achieving exceptional results with integrated marketing across SEM, keywords, paid socials, and influencers.",
+      "thumbnailUrl": "/images/slide-15.jpg",
+      "role": "Campaign Lead",
+      "highlights": [
+        "Hit 120% sales target in 2 days",
+        "Achieved 4x sales in 2 weeks (429% of goal)",
+        "Integrated SEM, keywords, paid socials",
+        "Influencer partnership coordination"
+      ],
+      "images": ["/images/slide-15.jpg"]
+    },
+    {
+      "id": "event-6",
+      "title": "Joie Website Transformation",
+      "company": "Joie Baby",
+      "category": "campaign",
+      "description": "Digital transformation project: fully revamped joiebaby.com from content-only to D2C e-commerce site powered by Adobe Commerce, spanning 40 countries and 23 locales.",
+      "thumbnailUrl": "/images/slide-08.jpg",
+      "role": "Digital Project Manager",
+      "highlights": [
+        "Full website revamp to D2C model",
+        "Powered by Adobe Commerce",
+        "40 countries, 23 locales",
+        "Cross-functional collaboration with FE/BE Dev, Brand, Sales, LOC agencies"
+      ],
+      "images": ["/images/slide-08.jpg"]
+    }
+  ]
+}

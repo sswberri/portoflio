@@ -1,0 +1,29 @@
+{
+  "name": "Sharon Wei",
+  "title": "Marketing & Communications Professional",
+  "intro": "13+ years of marketing expertise across MNCs and startups. Specializing in global marketing (PMM), MarCom, GTM strategy, digital project management, e-commerce, and brand incubation.",
+  "bio": "Professional marketer with 8 years in multinational corporations and 5 years in startup settings. My career spans 70% tech industries (Software & Internet, AI/AR/VR/IoT, E-Commerce, Consumer Tech & Electronics) and 30% retail/manufacturing.\n\nI've had the privilege of working with industry leaders including Google, HTC VIVE, Corel, Xiaomi, Nuna, Joie, OpenRice, Nogle, Style.me, and weAre the future—delivering impactful marketing campaigns, product launches, and brand strategies across global markets.\n\nFluent in English and Mandarin with international experience across Taiwan, USA, and China. Educated at San José State University and UC Davis.",
+  "photoUrl": "/images/profile.jpg",
+  "skills": [
+    {
+      "id": "skill-1",
+      "name": "Global Marketing & PMM",
+      "description": "Product marketing management, go-to-market strategy, launch marketing deliverables, and cross-functional collaboration across global markets"
+    },
+    {
+      "id": "skill-2",
+      "name": "MarCom & Brand Strategy",
+      "description": "Marketing communications, brand incubation, key visual development, press relations, and integrated campaign management"
+    },
+    {
+      "id": "skill-3",
+      "name": "Digital & E-Commerce",
+      "description": "Digital project management, website planning, D2C transformation, SEM/CRM campaigns, and performance marketing"
+    },
+    {
+      "id": "skill-4",
+      "name": "Events & Community",
+      "description": "End-to-end event management, trade shows (MWC, COMPUTEX), influencer partnerships, and community building"
+    }
+  ]
+}
