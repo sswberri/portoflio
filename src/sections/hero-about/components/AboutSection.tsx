@@ -20,11 +20,11 @@ export function AboutSection({ bio, skills }: AboutSectionProps) {
       </h2>
 
       {/* Companies Logo Wall */}
-      <div className="mb-4 overflow-hidden">
+      <div className="mb-4 overflow-hidden group cursor-pointer">
         <img
           src="/images/logo.svg"
           alt="Companies worked with"
-          className="w-full max-w-4xl -my-16"
+          className="w-full max-w-4xl -my-16 transition-transform duration-500 ease-out group-hover:scale-105"
         />
       </div>
 

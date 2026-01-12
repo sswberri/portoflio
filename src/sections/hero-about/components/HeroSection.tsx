@@ -59,12 +59,12 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
 
         {/* Right: Photo - Reduced Size */}
         <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
-          <div className="relative w-full max-w-sm lg:max-w-md">
+          <div className="relative w-full max-w-sm lg:max-w-md overflow-hidden group">
             {photoUrl ? (
               <img
                 src={photoUrl}
                 alt={name}
-                className="w-full h-auto object-cover "
+                className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement
                   target.src = `https://placehold.co/600x800/1e293b/ffffff?text=${encodeURIComponent(name.split(' ').map(n => n[0]).join(''))}`

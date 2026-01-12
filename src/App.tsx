@@ -70,6 +70,7 @@ function VideosPage() {
       <VideosSection
         headline={videosData.headline}
         subheadline={videosData.subheadline}
+        categories={videosData.categories}
         videos={videosData.videos}
       />
     </div>

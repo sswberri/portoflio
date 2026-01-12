@@ -6,7 +6,7 @@ interface VideoCardProps {
   index: number
   title: string
   company: string
-  type: string
+  category: string
   thumbnailUrl: string
   videoUrl: string
 }
@@ -21,12 +21,34 @@ export function VideoCard({
   index,
   title,
   company,
-  type,
+  category,
   thumbnailUrl,
   videoUrl,
 }: VideoCardProps) {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [imgSrc, setImgSrc] = useState(thumbnailUrl)
+  const [fallbackAttempted, setFallbackAttempted] = useState(false)
   const youtubeId = getYouTubeId(videoUrl)
+
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget
+    // YouTube returns a 120x90 gray placeholder when maxresdefault doesn't exist
+    if (img.naturalWidth === 120 && img.naturalHeight === 90 && !fallbackAttempted && youtubeId) {
+      setImgSrc(`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`)
+      setFallbackAttempted(true)
+    }
+  }
+
+  const handleImageError = () => {
+    if (!fallbackAttempted && youtubeId) {
+      // Try hqdefault as fallback
+      setImgSrc(`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`)
+      setFallbackAttempted(true)
+    } else {
+      // Final fallback to placeholder
+      setImgSrc(`https://placehold.co/640x360/1e293b/ffffff?text=${encodeURIComponent(title.split(' ').map(w => w[0]).join(''))}`)
+    }
+  }
 
   return (
     <div className="group">
@@ -48,13 +70,11 @@ export function VideoCard({
             className="w-full h-full relative"
           >
             <img
-              src={thumbnailUrl}
+              src={imgSrc}
               alt={title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.src = `https://placehold.co/640x360/1e293b/ffffff?text=${encodeURIComponent(title.split(' ').map(w => w[0]).join(''))}`
-              }}
+              onLoad={handleImageLoad}
+              onError={handleImageError}
             />
             {/* Play Button Overlay */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
@@ -62,9 +82,9 @@ export function VideoCard({
                 <Play className="w-6 h-6 text-slate-900 ml-1" fill="currentColor" />
               </div>
             </div>
-            {/* Type Badge */}
+            {/* Category Badge */}
             <span className="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-black/70 text-white rounded">
-              {type}
+              {category}
             </span>
           </button>
         )}
