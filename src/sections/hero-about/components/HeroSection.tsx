@@ -11,10 +11,10 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
         <div className="flex flex-col justify-center order-2 lg:order-1 py-8 lg:py-16">
-          {/* Profile Title */}
+          {/* About Title */}
           <h1 className="mb-6">
             <span className="block text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.9] tracking-[-0.06em] text-white">
-              Profile
+              About
             </span>
           </h1>
 
@@ -32,7 +32,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
           <div className="flex gap-8 md:gap-12">
             <div>
               <span className="block text-3xl md:text-4xl font-light text-white">
-                10+
+                15+
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider">
                 Years Experience
