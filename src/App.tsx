@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AppShell } from './shell/components/AppShell'
+import { PasswordGate } from './components/PasswordGate'
 
 // Section components
 import { HeroSection } from './sections/hero-about/components/HeroSection'
@@ -106,16 +107,18 @@ function App() {
 
   return (
     <div className="dark">
-      <AppShell activeItemId={activeItemId} onNavigate={handleNavigate}>
-        <Routes>
-          <Route path="/" element={<AboutPageWrapper />} />
-          <Route path="/brand-content" element={<BrandContentPageWrapper />} />
-          <Route path="/launches" element={<LaunchesPageWrapper />} />
-          <Route path="/corporate" element={<CorporatePageWrapper />} />
-          <Route path="/videos" element={<VideosPageWrapper />} />
-          <Route path="/contact" element={<ContactPageWrapper />} />
-        </Routes>
-      </AppShell>
+      <PasswordGate>
+        <AppShell activeItemId={activeItemId} onNavigate={handleNavigate}>
+          <Routes>
+            <Route path="/" element={<AboutPageWrapper />} />
+            <Route path="/brand-content" element={<BrandContentPageWrapper />} />
+            <Route path="/launches" element={<LaunchesPageWrapper />} />
+            <Route path="/corporate" element={<CorporatePageWrapper />} />
+            <Route path="/videos" element={<VideosPageWrapper />} />
+            <Route path="/contact" element={<ContactPageWrapper />} />
+          </Routes>
+        </AppShell>
+      </PasswordGate>
     </div>
   )
 }
