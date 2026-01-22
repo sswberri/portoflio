@@ -4,21 +4,18 @@ import { AppShell } from './shell/components/AppShell'
 // Section components
 import { HeroSection } from './sections/hero-about/components/HeroSection'
 import { AboutSection } from './sections/hero-about/components/AboutSection'
-import { SocialMediaSection } from './sections/social-media-campaigns/components/SocialMediaSection'
-import { EventSection } from './sections/event/components/EventSection'
-import { IntegratedCampaignSection } from './sections/integrated-marketing-campaign/components/IntegratedCampaignSection'
+import { BrandContentPage } from './sections/brand-content/components/BrandContentPage'
+import { LaunchesPage } from './sections/launches/components/LaunchesPage'
+import { CorporatePage } from './sections/corporate/components/CorporatePage'
 import { VideosSection } from './sections/videos/components/VideosSection'
 import { ContactPage } from './sections/contact/components/ContactPage'
 
 // Data
 import heroAboutData from './data/hero-about.json'
-import socialMediaData from './data/social-media.json'
-import eventData from './data/event.json'
-import integratedCampaignData from './data/integrated-campaign.json'
 import videosData from './data/videos.json'
 import contactData from './data/contact.json'
 
-function HomePage() {
+function AboutPageWrapper() {
   return (
     <div className="px-6 md:px-12 lg:px-16 max-w-6xl">
       <HeroSection
@@ -35,36 +32,31 @@ function HomePage() {
   )
 }
 
-function SocialMediaPage() {
+function BrandContentPageWrapper() {
   return (
     <div className="px-6 md:px-12 lg:px-16 max-w-6xl">
-      <SocialMediaSection projects={socialMediaData.projects} />
+      <BrandContentPage />
     </div>
   )
 }
 
-function EventPage() {
+function LaunchesPageWrapper() {
   return (
     <div className="px-6 md:px-12 lg:px-16 max-w-6xl">
-      <EventSection
-        categories={eventData.categories}
-        projects={eventData.projects}
-      />
+      <LaunchesPage />
     </div>
   )
 }
 
-function IntegratedPage() {
+function CorporatePageWrapper() {
   return (
     <div className="px-6 md:px-12 lg:px-16 max-w-6xl">
-      <IntegratedCampaignSection
-        projects={integratedCampaignData.projects}
-      />
+      <CorporatePage />
     </div>
   )
 }
 
-function VideosPage() {
+function VideosPageWrapper() {
   return (
     <div className="px-6 md:px-12 lg:px-16 max-w-6xl">
       <VideosSection
@@ -94,10 +86,10 @@ function ContactPageWrapper() {
 
 // Map routes to activeItemId
 const routeToActiveId: Record<string, string> = {
-  '/': 'home',
-  '/social-media': 'social-media',
-  '/event': 'event',
-  '/integrated': 'integrated',
+  '/': 'about',
+  '/brand-content': 'brand-content',
+  '/launches': 'launches',
+  '/corporate': 'corporate',
   '/videos': 'videos',
   '/contact': 'contact',
 }
@@ -106,7 +98,7 @@ function App() {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const activeItemId = routeToActiveId[location.pathname] || 'home'
+  const activeItemId = routeToActiveId[location.pathname] || 'about'
 
   const handleNavigate = (href: string) => {
     navigate(href)
@@ -116,11 +108,11 @@ function App() {
     <div className="dark">
       <AppShell activeItemId={activeItemId} onNavigate={handleNavigate}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/social-media" element={<SocialMediaPage />} />
-          <Route path="/event" element={<EventPage />} />
-          <Route path="/integrated" element={<IntegratedPage />} />
-          <Route path="/videos" element={<VideosPage />} />
+          <Route path="/" element={<AboutPageWrapper />} />
+          <Route path="/brand-content" element={<BrandContentPageWrapper />} />
+          <Route path="/launches" element={<LaunchesPageWrapper />} />
+          <Route path="/corporate" element={<CorporatePageWrapper />} />
+          <Route path="/videos" element={<VideosPageWrapper />} />
           <Route path="/contact" element={<ContactPageWrapper />} />
         </Routes>
       </AppShell>

@@ -1,0 +1,12 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA 路由支援 - 所有路徑都導向 index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -18,7 +18,6 @@ function getYouTubeId(url: string): string | null {
 }
 
 export function VideoCard({
-  index,
   title,
   company,
   category,
