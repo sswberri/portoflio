@@ -139,7 +139,7 @@ export function PasswordGate({ children }: PasswordGateProps) {
 
         {/* Footer */}
         <p className="text-center text-zinc-600 text-xs mt-6">
-          Portfolio by Miles Chen
+          Portfolio by S. Wei
         </p>
       </div>
 
