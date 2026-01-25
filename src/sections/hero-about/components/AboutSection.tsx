@@ -43,8 +43,8 @@ const expertiseAreas = [
 export function AboutSection({ }: AboutSectionProps) {
   return (
     <section className="pt-0 lg:pt-10 pb-20 lg:pb-32">
-      {/* Section Title */}
-      <h2 className="text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.9] tracking-[-0.06em] text-white mb-12">
+      {/* Section Title - h3 style */}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-12">
         Areas of Expertise
       </h2>
 
@@ -58,12 +58,12 @@ export function AboutSection({ }: AboutSectionProps) {
             <h3 className="text-xl font-semibold text-white mb-3">
               {area.title}
             </h3>
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="text-white text-sm leading-relaxed mb-4">
               {area.description}
             </p>
             <Link
               to={area.link}
-              className="inline-flex items-center text-sm text-white hover:text-slate-300 transition-colors group"
+              className="inline-flex items-center px-4 py-2 text-sm text-white border border-white/50 rounded hover:bg-white hover:text-slate-900 transition-all duration-200"
             >
               <span className="mr-2">→</span>
               {area.linkText}
@@ -74,8 +74,8 @@ export function AboutSection({ }: AboutSectionProps) {
 
       {/* Worked With - Logo Section */}
       <div>
-        <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-6">
-          Worked with
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-8">
+          Worked With
         </h3>
         <div className="overflow-hidden group cursor-pointer">
           <img

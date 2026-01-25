@@ -11,9 +11,9 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
         <div className="flex flex-col justify-center order-2 lg:order-1 py-8 lg:py-16">
-          {/* Name Title */}
-          <h1 className="mb-6">
-            <span className="block text-[clamp(3rem,10vw,7rem)] font-bold leading-[0.9] tracking-[-0.06em] text-white">
+          {/* Name Title - h3 style */}
+          <h1 className="mb-4">
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
               {name}
             </span>
           </h1>
@@ -32,10 +32,10 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
             ))}
           </div>
 
-          {/* Stats Row */}
-          <div className="flex flex-wrap gap-6 md:gap-10">
+          {/* Stats Row - 4 in one line */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <div>
-              <span className="block text-3xl md:text-4xl font-light text-white">
+              <span className="block text-2xl md:text-3xl font-light text-white">
                 15+
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider">
@@ -43,7 +43,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
               </span>
             </div>
             <div>
-              <span className="block text-3xl md:text-4xl font-light text-white">
+              <span className="block text-2xl md:text-3xl font-light text-white">
                 4
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider">
@@ -51,7 +51,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
               </span>
             </div>
             <div>
-              <span className="block text-3xl md:text-4xl font-light text-white">
+              <span className="block text-2xl md:text-3xl font-light text-white">
                 4
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider">
@@ -59,7 +59,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
               </span>
             </div>
             <div>
-              <span className="block text-3xl md:text-4xl font-light text-white">
+              <span className="block text-2xl md:text-3xl font-light text-white">
                 7
               </span>
               <span className="text-xs text-slate-400 uppercase tracking-wider">
