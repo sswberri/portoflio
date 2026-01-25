@@ -39,7 +39,7 @@ export const imageMap = {
       '/images/launch_IMC_tradeshow_styleme.svg',
       '/images/launch_IMC_booth_styleme2.svg',
     ],
-    'performance-demand': [
+    'digital-commerce': [
       '/images/launch_PD_placeholder.svg',
     ],
   },

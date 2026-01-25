@@ -5,7 +5,7 @@ import { imageMap } from '@/data/images'
 const tabs = [
   { id: 'go-to-market', label: 'Go-To-Market' },
   { id: 'integrated-campaigns', label: 'Integrated Marketing' },
-  { id: 'performance-demand', label: 'Performance & Demand' },
+  { id: 'digital-commerce', label: 'Digital Commerce' },
 ] as const
 
 type TabId = typeof tabs[number]['id']
@@ -18,7 +18,7 @@ export function LaunchesPage() {
   return (
     <div className="py-12">
       {/* Section Title */}
-      <h1 className="text-4xl font-bold text-white mb-8 tracking-tight">Launches & Campaigns</h1>
+      <h1 className="text-4xl font-bold text-white mb-8 tracking-tight">Growth Campaigns</h1>
 
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-800 pb-4">

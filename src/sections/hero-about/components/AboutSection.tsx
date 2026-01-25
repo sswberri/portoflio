@@ -21,8 +21,8 @@ const expertiseAreas = [
     number: '02',
     title: 'Integrated Marketing Campaigns',
     description: 'Plan and deliver multi-channel go-to-market and integrated campaigns, combining launches, co-marketing, events, and partner programs to support growth and commercial priorities.',
-    link: '/launches',
-    linkText: 'View Launches & Campaigns'
+    link: '/campaigns',
+    linkText: 'View Growth Campaigns'
   },
   {
     number: '03',
@@ -35,7 +35,7 @@ const expertiseAreas = [
     number: '04',
     title: 'Digital Marketing and E-Commerce',
     description: 'Design and optimize digital platforms, websites, and e-commerce experiences that enable scalable execution, regional localization, and measurable engagement.',
-    link: '/launches',
+    link: '/campaigns',
     linkText: 'View Digital Works'
   }
 ]
