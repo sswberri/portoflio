@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { ProjectShowcase } from '@/components/ProjectShowcase'
 import { imageMap } from '@/data/images'
+import { getProjectsByCategory } from '@/data/projects'
 
 const tabs = [
   { id: 'go-to-market', label: 'Go-To-Market' },
@@ -14,6 +16,7 @@ export function LaunchesPage() {
   const [activeTab, setActiveTab] = useState<TabId>('go-to-market')
 
   const images = imageMap['launches'][activeTab] || []
+  const projects = getProjectsByCategory(activeTab)
 
   return (
     <div className="py-12">
@@ -37,8 +40,17 @@ export function LaunchesPage() {
         ))}
       </div>
 
-      {/* Image Carousel */}
-      <ImageCarousel images={images} alt={activeTab} />
+      {/* Project Showcase (if projects exist) */}
+      {projects.length > 0 && (
+        <div className="mb-16">
+          <ProjectShowcase projects={projects} />
+        </div>
+      )}
+
+      {/* Image Carousel (for additional images) */}
+      {images.length > 0 && (
+        <ImageCarousel images={images} alt={activeTab} />
+      )}
     </div>
   )
 }
