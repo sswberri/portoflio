@@ -6,7 +6,6 @@ interface VideoCardProps {
   index: number
   title: string
   company: string
-  category: string
   thumbnailUrl: string
   videoUrl: string
 }
@@ -20,7 +19,6 @@ function getYouTubeId(url: string): string | null {
 export function VideoCard({
   title,
   company,
-  category,
   thumbnailUrl,
   videoUrl,
 }: VideoCardProps) {
