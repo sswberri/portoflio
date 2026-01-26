@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ImageCarousel } from '@/components/ImageCarousel'
 import { ProjectShowcase } from '@/components/ProjectShowcase'
 import { getProjectSectionsByCategory } from '@/data/projects'
 
@@ -66,6 +67,22 @@ export function LaunchesPage() {
           />
         </div>
       </div>
+
+      {activeTab === 'go-to-market' && (
+        <div className="mb-16">
+          <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
+            #weAre the Future Campaign
+          </h2>
+          <ImageCarousel
+            images={[
+              '/images/launch_IMC_weare01.svg',
+              '/images/launch_IMC_weare02.svg',
+              '/images/launch_IMC_weare03.svg',
+            ]}
+            alt="weAre the Future campaign"
+          />
+        </div>
+      )}
 
       {sections.map((section) => (
         <div key={section.id} className="mb-16">

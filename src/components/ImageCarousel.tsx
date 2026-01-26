@@ -34,6 +34,18 @@ export function ImageCarousel({ images, alt = 'Portfolio image' }: ImageCarousel
     }, 200)
   }
 
+  useEffect(() => {
+    if (images.length <= 1) return
+
+    const interval = setInterval(() => {
+      if (isTransitioning) return
+      const nextIndex = (currentIndex + 1) % images.length
+      handleDotClick(nextIndex)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [images, currentIndex, isTransitioning])
+
   if (images.length === 0) {
     return (
       <div className="flex items-center justify-center h-96 bg-slate-800/50 rounded-xl border border-slate-700">

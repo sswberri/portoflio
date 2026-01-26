@@ -36,12 +36,31 @@ export function BrandContentPage() {
 
   const linkedInPosts = getAllPosts()
 
+  const shapingHealthcareKeywords = [
+    'CO啟動盛典',
+    '攜手醫界',
+    '台灣疤痕',
+    '罕見眼疾治療迎突破',
+    '賀！台灣大昌華嘉客服',
+    '台灣永續行動獎',
+  ]
+
+  const shapingHealthcareFeatured = shapingHealthcareKeywords
+    .map((keyword) =>
+      linkedInPosts.find((post) =>
+        post.category === 'HEC' && normalize(post.title).includes(normalize(keyword))
+      )
+    )
+    .filter((post): post is (typeof linkedInPosts)[number] => Boolean(post))
+    .sort(byDateDesc)
+
   const shapingHealthcareAll = linkedInPosts
     .filter((post) => post.category === 'HEC')
     .sort(byDateDesc)
 
-  const shapingHealthcarePosts = shapingHealthcareAll.slice(0, 6)
-  const shapingHealthcareMore = shapingHealthcareAll.slice(6)
+  const shapingHealthcareMore = shapingHealthcareAll.filter(
+    (post) => !shapingHealthcareFeatured.some((featured) => featured.id === post.id)
+  )
 
   const scmKeywords = [
     'OP1 引領醫療配送',
@@ -96,7 +115,10 @@ export function BrandContentPage() {
         <div className="space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 items-start">
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white">#ShapingHealthcare LinkedIn Campaign</h2>
+              <h2 className="text-2xl font-semibold text-white">
+                <span className="block">#ShapingHealthcare</span>
+                <span className="block">LinkedIn Campaign</span>
+              </h2>
               <p className="text-slate-300 leading-relaxed">
                 Placeholder description for upcoming content strategy overview.
               </p>
@@ -111,7 +133,7 @@ export function BrandContentPage() {
             </div>
 
             <div>
-              <LinkedInPostList posts={shapingHealthcarePosts} />
+              <LinkedInPostList posts={shapingHealthcareFeatured} />
               {!showMoreShaping && shapingHealthcareMore.length > 0 && (
                 <div className="mt-6 flex justify-center lg:justify-start">
                   <button
@@ -126,6 +148,15 @@ export function BrandContentPage() {
               {showMoreShaping && shapingHealthcareMore.length > 0 && (
                 <div className="mt-8">
                   <LinkedInPostList posts={shapingHealthcareMore} />
+                  <div className="mt-6 flex justify-center lg:justify-start">
+                    <button
+                      type="button"
+                      onClick={() => setShowMoreShaping(false)}
+                      className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
+                    >
+                      View less posts
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
@@ -133,7 +164,10 @@ export function BrandContentPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 items-start">
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white">#SCMRising Branding LinkedIn Campaign</h2>
+              <h2 className="text-2xl font-semibold text-white">
+                <span className="block">#SCMRising</span>
+                <span className="block">Branding LinkedIn Campaign</span>
+              </h2>
               <p className="text-slate-300 leading-relaxed">
                 Placeholder description for SCM brand storytelling and campaign highlights.
               </p>
@@ -163,6 +197,15 @@ export function BrandContentPage() {
               {showMoreScm && scmMore.length > 0 && (
                 <div className="mt-8">
                   <LinkedInPostList posts={scmMore} />
+                  <div className="mt-6 flex justify-center lg:justify-start">
+                    <button
+                      type="button"
+                      onClick={() => setShowMoreScm(false)}
+                      className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
+                    >
+                      View less posts
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
