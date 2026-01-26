@@ -305,6 +305,16 @@ export const linkedinPosts: LinkedInPost[] = [
 ]
 
 // Helper functions
-export const getHECPosts = () => linkedinPosts.filter((post) => post.category === 'HEC')
-export const getSCMPosts = () => linkedinPosts.filter((post) => post.category === 'SCM')
-export const getAllPosts = () => linkedinPosts
+const excludedDates = new Set([
+  '2025/5/8',
+  '2025/5/15',
+  '2025/4/17',
+  '2025/3/12',
+  '2025/12/16',
+])
+
+const filterExcludedDates = (post: LinkedInPost) => !excludedDates.has(post.date)
+
+export const getHECPosts = () => linkedinPosts.filter((post) => post.category === 'HEC').filter(filterExcludedDates)
+export const getSCMPosts = () => linkedinPosts.filter((post) => post.category === 'SCM').filter(filterExcludedDates)
+export const getAllPosts = () => linkedinPosts.filter(filterExcludedDates)

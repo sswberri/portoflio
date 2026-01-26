@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { ImageCarousel } from '@/components/ImageCarousel'
 import { ProjectShowcase } from '@/components/ProjectShowcase'
-import { imageMap } from '@/data/images'
-import { getProjectsByCategory } from '@/data/projects'
+import { getProjectSectionsByCategory } from '@/data/projects'
 
 const tabs = [
   { id: 'go-to-market', label: 'Go-To-Market' },
@@ -15,8 +13,7 @@ type TabId = typeof tabs[number]['id']
 export function LaunchesPage() {
   const [activeTab, setActiveTab] = useState<TabId>('go-to-market')
 
-  const images = imageMap['launches'][activeTab] || []
-  const projects = getProjectsByCategory(activeTab)
+  const sections = getProjectSectionsByCategory(activeTab)
 
   return (
     <div className="py-12">
@@ -40,17 +37,46 @@ export function LaunchesPage() {
         ))}
       </div>
 
-      {/* Project Showcase (if projects exist) */}
-      {projects.length > 0 && (
-        <div className="mb-16">
-          <ProjectShowcase projects={projects} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
+        <div className="space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">
+            Google Store International Expansion
+          </h2>
+          <p className="text-slate-300 leading-relaxed">
+            <a
+              href="https://store.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white underline underline-offset-4 hover:text-blue-300"
+            >
+              Google store
+            </a>{' '}
+            International expansion for "Made by Google" products and services,
+            including site content strategy, project management, special promo
+            launches, and retail rollout across 31 countries and 24 locales.
+          </p>
         </div>
-      )}
+        <div className="w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+          <img
+            src="/images/launch_GTM_google.svg"
+            alt="Google Store international expansion illustration"
+            width={1600}
+            height={1200}
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </div>
 
-      {/* Image Carousel (for additional images) */}
-      {images.length > 0 && (
-        <ImageCarousel images={images} alt={activeTab} />
-      )}
+      {sections.map((section) => (
+        <div key={section.id} className="mb-16">
+          {section.title && (
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
+              {section.title}
+            </h2>
+          )}
+          <ProjectShowcase projects={section.projects} />
+        </div>
+      ))}
     </div>
   )
 }

@@ -11,30 +11,26 @@ interface AboutSectionProps {
 
 const expertiseAreas = [
   {
-    number: '01',
     title: 'Brand Strategy and Messaging',
-    description: 'Define brand direction, messaging frameworks, and thought leadership that clarify positioning and guide consistent storytelling across regions, industries, and channels.',
+    description: 'Define brand direction, core messaging frameworks, and thought leadership to clarify positioning and guide consistent storytelling across regions, industries, and channels.',
     link: '/brand-content',
     linkText: 'View Brand & Content'
   },
   {
-    number: '02',
     title: 'Integrated Marketing Campaigns',
     description: 'Plan and deliver multi-channel go-to-market and integrated campaigns, combining launches, co-marketing, events, and partner programs to support growth and commercial priorities.',
     link: '/campaigns',
     linkText: 'View Growth Campaigns'
   },
   {
-    number: '03',
     title: 'Strategic Communications',
     description: 'Lead media relations, executive communications, sustainability storytelling, and reputation programs that build trust, credibility, and long-term brand value in complex markets.',
     link: '/corporate',
     linkText: 'View Communications'
   },
   {
-    number: '04',
     title: 'Digital Marketing and E-Commerce',
-    description: 'Design and optimize digital platforms, websites, and e-commerce experiences that enable scalable execution, regional localization, and measurable engagement.',
+    description: 'Design and optimize digital platforms, websites, and e-commerce experiences that support scalable execution, regional localization, and measurable engagement.',
     link: '/campaigns',
     linkText: 'View Digital Works'
   }
@@ -51,11 +47,8 @@ export function AboutSection({ }: AboutSectionProps) {
       {/* 4-Column Expertise Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
         {expertiseAreas.map((area) => (
-          <div key={area.number} className="group">
-            <span className="text-4xl md:text-5xl font-light text-slate-700 block mb-4">
-              {area.number}
-            </span>
-            <h3 className="text-xl font-semibold text-white mb-3">
+          <div key={area.title} className="group">
+            <h3 className="text-2xl font-semibold text-white mb-4">
               {area.title}
             </h3>
             <p className="text-white text-sm leading-relaxed mb-4">

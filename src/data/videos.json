@@ -1,7 +1,14 @@
 {
   "headline": "Videos",
   "subheadline": "Brand videos, product demos, keynotes, and corporate storytelling",
-  "categories": ["All", "Corporate & Branding", "Product & Services", "Testimonials", "Virals"],
+  "categories": [
+    "All",
+    "Corporate & Branding",
+    "Product & Services",
+    "Virals",
+    "Thought Leadership",
+    "Purpose-led"
+  ],
   "videos": [
     {
       "id": "video-1",
@@ -77,18 +84,18 @@
     },
     {
       "id": "video-9",
-      "title": "Shaping Healthcare With Our Clients - Kyowa Kirin",
+      "title": "Client Success Sharing - Kyowa Kirin",
       "company": "DKSH Taiwan",
-      "category": "Product & Services",
+      "category": "Thought Leadership",
       "description": "Client partnership video featuring Kyowa Kirin healthcare collaboration",
       "thumbnailUrl": "https://img.youtube.com/vi/ItoxBPh8l8A/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/watch?v=ItoxBPh8l8A"
     },
     {
       "id": "video-10",
-      "title": "Supply Chain Management's Cross-Market Expertise",
+      "title": "Cross-market SCM Talent Sharing from Johnathan Yeung",
       "company": "DKSH Taiwan",
-      "category": "Product & Services",
+      "category": "Thought Leadership",
       "description": "Showcasing DKSH Taiwan's supply chain management expertise across markets",
       "thumbnailUrl": "https://img.youtube.com/vi/i2KQTZ20qCg/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/watch?v=i2KQTZ20qCg"
@@ -106,7 +113,7 @@
       "id": "video-12",
       "title": "Rare Disease Patient Testimonial",
       "company": "DKSH Taiwan",
-      "category": "Testimonials",
+      "category": "Purpose-led",
       "description": "Patient testimonial video sharing rare disease treatment experience",
       "thumbnailUrl": "https://img.youtube.com/vi/4vhzssfeMVA/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/watch?v=4vhzssfeMVA"
@@ -115,7 +122,7 @@
       "id": "video-13",
       "title": "Patient Purpose Day 2024: A Light Ahead - A True Story",
       "company": "DKSH Taiwan",
-      "category": "Testimonials",
+      "category": "Purpose-led",
       "description": "Inspirational patient story from DKSH Taiwan's Patient Purpose Day 2024",
       "thumbnailUrl": "https://img.youtube.com/vi/Vfhq_g3hp7c/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/watch?v=Vfhq_g3hp7c"
@@ -124,7 +131,7 @@
       "id": "video-14",
       "title": "Supply Chain Management's Transformation",
       "company": "DKSH Taiwan",
-      "category": "Testimonials",
+      "category": "Purpose-led",
       "description": "Testimonial on supply chain management transformation journey",
       "thumbnailUrl": "https://img.youtube.com/vi/4u2QnJ3TXSM/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/watch?v=4u2QnJ3TXSM"
@@ -133,7 +140,7 @@
       "id": "video-15",
       "title": "Patient Purpose",
       "company": "DKSH Taiwan",
-      "category": "Testimonials",
+      "category": "Purpose-led",
       "description": "Patient purpose testimonial showcasing healthcare impact",
       "thumbnailUrl": "https://img.youtube.com/vi/7m1K7cBuydM/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/watch?v=7m1K7cBuydM"
