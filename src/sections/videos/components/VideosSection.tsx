@@ -75,7 +75,6 @@ export function VideosSection({
             index={index}
             title={video.title}
             company={video.company}
-            category={video.category}
             thumbnailUrl={video.thumbnailUrl}
             videoUrl={video.videoUrl}
           />
