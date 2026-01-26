@@ -141,7 +141,7 @@ export function BrandContentPage() {
                     onClick={() => setShowMoreShaping(true)}
                     className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
                   >
-                    View more posts
+                    View More
                   </button>
                 </div>
               )}
@@ -154,7 +154,7 @@ export function BrandContentPage() {
                       onClick={() => setShowMoreShaping(false)}
                       className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
                     >
-                      View less posts
+                      View Less
                     </button>
                   </div>
                 </div>
@@ -190,7 +190,7 @@ export function BrandContentPage() {
                     onClick={() => setShowMoreScm(true)}
                     className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
                   >
-                    View more posts
+                    View More
                   </button>
                 </div>
               )}
@@ -203,7 +203,7 @@ export function BrandContentPage() {
                       onClick={() => setShowMoreScm(false)}
                       className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
                     >
-                      View less posts
+                      View Less
                     </button>
                   </div>
                 </div>

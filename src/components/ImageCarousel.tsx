@@ -62,7 +62,7 @@ export function ImageCarousel({ images, alt = 'Portfolio image' }: ImageCarousel
           <img
             src={images[displayIndex]}
             alt={`${alt} ${displayIndex + 1}`}
-            className={`w-full h-full object-contain transition-opacity duration-200 ease-in-out ${
+            className={`w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
               isTransitioning ? 'opacity-0' : 'opacity-100'
             }`}
           />

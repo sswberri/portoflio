@@ -313,8 +313,13 @@ const excludedDates = new Set([
   '2025/12/16',
 ])
 
-const filterExcludedDates = (post: LinkedInPost) => !excludedDates.has(post.date)
+const excludedUrls = new Set([
+  'https://www.linkedin.com/feed/update/urn:li:ugcPost:7313364490899533824',
+])
 
-export const getHECPosts = () => linkedinPosts.filter((post) => post.category === 'HEC').filter(filterExcludedDates)
-export const getSCMPosts = () => linkedinPosts.filter((post) => post.category === 'SCM').filter(filterExcludedDates)
-export const getAllPosts = () => linkedinPosts.filter(filterExcludedDates)
+const filterExcludedPosts = (post: LinkedInPost) =>
+  !excludedDates.has(post.date) && !excludedUrls.has(post.url)
+
+export const getHECPosts = () => linkedinPosts.filter((post) => post.category === 'HEC').filter(filterExcludedPosts)
+export const getSCMPosts = () => linkedinPosts.filter((post) => post.category === 'SCM').filter(filterExcludedPosts)
+export const getAllPosts = () => linkedinPosts.filter(filterExcludedPosts)
