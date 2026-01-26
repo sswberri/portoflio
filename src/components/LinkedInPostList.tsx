@@ -22,16 +22,6 @@ export function LinkedInPostList({ posts }: LinkedInPostListProps) {
               alt={post.title}
               className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
             />
-            {/* Category Badge Overlay */}
-            <span
-              className={`absolute top-3 left-3 px-2 py-1 text-xs font-medium rounded-full ${
-                post.category === 'HEC'
-                  ? 'bg-emerald-500/90 text-white'
-                  : 'bg-blue-500/90 text-white'
-              }`}
-            >
-              {post.category === 'HEC' ? '#ShapingHealthcare' : '#SCMRising'}
-            </span>
             {/* LinkedIn Icon Overlay */}
             <div className="absolute bottom-3 right-3 w-8 h-8 bg-[#0A66C2] rounded-lg flex items-center justify-center opacity-90">
               <svg
@@ -48,12 +38,9 @@ export function LinkedInPostList({ posts }: LinkedInPostListProps) {
           {/* Content */}
           <div className="p-4">
             {/* Title */}
-            <h3 className="text-white font-medium leading-snug group-hover:text-blue-400 transition-colors line-clamp-2 mb-2">
+            <h3 className="text-white font-medium leading-snug group-hover:text-blue-400 transition-colors line-clamp-2">
               {post.title}
             </h3>
-
-            {/* Date */}
-            <p className="text-slate-500 text-sm">{post.date}</p>
           </div>
         </a>
       ))}

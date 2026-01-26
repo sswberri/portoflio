@@ -81,10 +81,6 @@ export function VideoCard({
                 <Play className="w-6 h-6 text-slate-900 ml-1" fill="currentColor" />
               </div>
             </div>
-            {/* Category Badge */}
-            <span className="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-black/70 text-white rounded">
-              {category}
-            </span>
           </button>
         )}
       </div>
