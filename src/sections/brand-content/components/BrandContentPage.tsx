@@ -23,8 +23,12 @@ const parseDate = (value: string) => {
 const byDateDesc = (a: { date: string }, b: { date: string }) =>
   parseDate(b.date) - parseDate(a.date)
 
+const normalize = (value: string) => value.replace(/\s/g, '')
+
 export function BrandContentPage() {
   const [activeTab, setActiveTab] = useState<TabId>('thought-leadership')
+  const [showMoreShaping, setShowMoreShaping] = useState(false)
+  const [showMoreScm, setShowMoreScm] = useState(false)
 
   const images = activeTab !== 'video-storytelling' && activeTab !== 'content-marketing'
     ? imageMap['brand-content'][activeTab as keyof typeof imageMap['brand-content']] || []
@@ -32,23 +36,23 @@ export function BrandContentPage() {
 
   const linkedInPosts = getAllPosts()
 
-  const shapingHealthcarePosts = linkedInPosts
+  const shapingHealthcareAll = linkedInPosts
     .filter((post) => post.category === 'HEC')
     .sort(byDateDesc)
-    .slice(0, 6)
+
+  const shapingHealthcarePosts = shapingHealthcareAll.slice(0, 6)
+  const shapingHealthcareMore = shapingHealthcareAll.slice(6)
 
   const scmKeywords = [
     'OP1 引領醫療配送',
     '領航智慧供應鏈',
     '瑞士商務',
     'SCM團隊守護健康',
-    '團隊守護健康',
     '智慧物流啟動 創造物流新標竿',
+    '綠能驅動',
   ]
 
-  const normalize = (value: string) => value.replace(/\s/g, '')
-
-  const scmPosts = scmKeywords
+  const scmKeywordPosts = scmKeywords
     .map((keyword) =>
       linkedInPosts.find((post) =>
         post.category === 'SCM' && normalize(post.title).includes(normalize(keyword))
@@ -56,6 +60,14 @@ export function BrandContentPage() {
     )
     .filter((post): post is (typeof linkedInPosts)[number] => Boolean(post))
     .sort(byDateDesc)
+
+  const scmAll = linkedInPosts
+    .filter((post) => post.category === 'SCM')
+    .sort(byDateDesc)
+
+  const scmMore = scmAll.filter(
+    (post) => !scmKeywordPosts.some((featured) => featured.id === post.id)
+  )
 
   return (
     <div className="py-12">
@@ -100,6 +112,22 @@ export function BrandContentPage() {
 
             <div>
               <LinkedInPostList posts={shapingHealthcarePosts} />
+              {!showMoreShaping && shapingHealthcareMore.length > 0 && (
+                <div className="mt-6 flex justify-center lg:justify-start">
+                  <button
+                    type="button"
+                    onClick={() => setShowMoreShaping(true)}
+                    className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
+                  >
+                    View more posts
+                  </button>
+                </div>
+              )}
+              {showMoreShaping && shapingHealthcareMore.length > 0 && (
+                <div className="mt-8">
+                  <LinkedInPostList posts={shapingHealthcareMore} />
+                </div>
+              )}
             </div>
           </div>
 
@@ -120,7 +148,23 @@ export function BrandContentPage() {
             </div>
 
             <div>
-              <LinkedInPostList posts={scmPosts} />
+              <LinkedInPostList posts={scmKeywordPosts} />
+              {!showMoreScm && scmMore.length > 0 && (
+                <div className="mt-6 flex justify-center lg:justify-start">
+                  <button
+                    type="button"
+                    onClick={() => setShowMoreScm(true)}
+                    className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
+                  >
+                    View more posts
+                  </button>
+                </div>
+              )}
+              {showMoreScm && scmMore.length > 0 && (
+                <div className="mt-8">
+                  <LinkedInPostList posts={scmMore} />
+                </div>
+              )}
             </div>
           </div>
         </div>
