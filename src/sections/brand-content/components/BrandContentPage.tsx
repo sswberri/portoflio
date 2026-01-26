@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { BackToTopButton } from '@/components/BackToTopButton'
 import { LinkedInPostList } from '@/components/LinkedInPostList'
 import { VideoCard } from '@/sections/videos/components/VideoCard'
 import { imageMap } from '@/data/images'
@@ -267,6 +268,8 @@ export function BrandContentPage() {
       ) : (
         <ImageCarousel images={images} alt={activeTab} />
       )}
+
+      <BackToTopButton />
     </div>
   )
 }

@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react'
+import { Search } from 'lucide-react'
 
 interface ImageCarouselProps {
   images: readonly string[]
   alt?: string
+  aspectClassName?: string
 }
 
-export function ImageCarousel({ images, alt = 'Portfolio image' }: ImageCarouselProps) {
+export function ImageCarousel({
+  images,
+  alt = 'Portfolio image',
+  aspectClassName = 'aspect-[16/10]',
+}: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [displayIndex, setDisplayIndex] = useState(0)
@@ -54,18 +60,32 @@ export function ImageCarousel({ images, alt = 'Portfolio image' }: ImageCarousel
     )
   }
 
+  const currentImage = images[displayIndex]
+  const isSvg = currentImage?.toLowerCase().endsWith('.svg')
+
   return (
     <div className="flex flex-col items-center">
       {/* Image Container */}
       <div className="w-full max-w-4xl">
-        <div className="relative aspect-[16/10] bg-slate-800/30 rounded-xl overflow-hidden">
+        <div className={`relative ${aspectClassName} bg-slate-800/30 rounded-xl overflow-hidden`}>
           <img
-            src={images[displayIndex]}
+            src={currentImage}
             alt={`${alt} ${displayIndex + 1}`}
             className={`w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
               isTransitioning ? 'opacity-0' : 'opacity-100'
             }`}
           />
+          {isSvg && (
+            <a
+              href={currentImage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+              aria-label="View full size image"
+            >
+              <Search className="w-5 h-5" />
+            </a>
+          )}
         </div>
       </div>
 

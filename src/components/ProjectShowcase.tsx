@@ -1,3 +1,5 @@
+import { Search } from 'lucide-react'
+
 export interface Project {
   id: string
   title: string
@@ -67,7 +69,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
 
           {/* Right: Image */}
           <div className="order-1 lg:order-2 flex items-center justify-end">
-            <div className="w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+            <div className="relative w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src={project.imageUrl}
                 alt={project.title}
@@ -75,6 +77,17 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                 height={1200}
                 className="w-full h-full object-contain"
               />
+              {project.imageUrl.toLowerCase().endsWith('.svg') && (
+                <a
+                  href={project.imageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                  aria-label="View full size image"
+                >
+                  <Search className="w-5 h-5" />
+                </a>
+              )}
             </div>
           </div>
         </div>

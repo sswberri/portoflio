@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { BackToTopButton } from '@/components/BackToTopButton'
 import { ProjectShowcase } from '@/components/ProjectShowcase'
 import { getProjectSectionsByCategory } from '@/data/projects'
+import { Search } from 'lucide-react'
 
 const tabs = [
   { id: 'go-to-market', label: 'Go-to-market' },
@@ -58,7 +60,7 @@ export function LaunchesPage() {
           </p>
         </div>
         <div className="flex justify-end">
-          <div className="w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+          <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
             <img
               src="/images/launch_GTM_google.svg"
               alt="Google Store international expansion illustration"
@@ -66,6 +68,15 @@ export function LaunchesPage() {
               height={1200}
               className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
             />
+            <a
+              href="/images/launch_GTM_google.svg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+              aria-label="View full size image"
+            >
+              <Search className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>
@@ -89,6 +100,7 @@ export function LaunchesPage() {
                   '/images/launch_IMC_weare03.svg',
                 ]}
                 alt="weArethefuture brand launch"
+                aspectClassName="aspect-[4/3]"
               />
             </div>
           </div>
@@ -105,6 +117,8 @@ export function LaunchesPage() {
           <ProjectShowcase projects={section.projects} />
         </div>
       ))}
+
+      <BackToTopButton />
     </div>
   )
 }

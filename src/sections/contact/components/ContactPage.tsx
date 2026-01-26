@@ -1,3 +1,4 @@
+import { BackToTopButton } from '@/components/BackToTopButton'
 import { ContactInfo } from './ContactInfo'
 import { ContactForm } from './ContactForm'
 
@@ -55,6 +56,8 @@ export function ContactPage({
           <ContactForm onSubmit={onFormSubmit} />
         </div>
       </div>
+
+      <BackToTopButton />
     </section>
   )
 }

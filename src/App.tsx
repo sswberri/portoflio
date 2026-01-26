@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AppShell } from './shell/components/AppShell'
+import { BackToTopButton } from './components/BackToTopButton'
 import { PasswordGate } from './components/PasswordGate'
 
 // Section components
@@ -27,6 +28,7 @@ function AboutPageWrapper() {
         bio={heroAboutData.bio}
         skills={heroAboutData.skills}
       />
+      <BackToTopButton />
     </div>
   )
 }
