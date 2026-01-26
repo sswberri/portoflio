@@ -164,6 +164,14 @@ export const linkedinPosts: LinkedInPost[] = [
     date: '2025/3/12',
     thumbnail: '/images/linkedin/hec-019.jpg',
   },
+  {
+    id: 'hec-020',
+    category: 'HEC',
+    title: '大昌華嘉勇奪台灣永續行動銅獎',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7372101709344468992',
+    date: '2025/9/12',
+    thumbnail: '/images/linkedin/hec-020.png',
+  },
 
   // SCM - Supply Chain Management (#SCMRising)
   {

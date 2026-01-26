@@ -4,7 +4,7 @@ import { ProjectShowcase } from '@/components/ProjectShowcase'
 import { getProjectSectionsByCategory } from '@/data/projects'
 
 const tabs = [
-  { id: 'go-to-market', label: 'Go-To-Market' },
+  { id: 'go-to-market', label: 'Go-to-market' },
   { id: 'integrated-campaigns', label: 'Integrated Marketing' },
   { id: 'digital-commerce', label: 'Digital Commerce' },
 ] as const
@@ -57,37 +57,48 @@ export function LaunchesPage() {
             launches, and retail rollout across 31 countries and 24 locales.
           </p>
         </div>
-        <div className="w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
-          <img
-            src="/images/launch_GTM_google.svg"
-            alt="Google Store international expansion illustration"
-            width={1600}
-            height={1200}
-            className="w-full h-full object-contain"
-          />
+        <div className="flex justify-end">
+          <div className="w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+            <img
+              src="/images/launch_GTM_google.svg"
+              alt="Google Store international expansion illustration"
+              width={1600}
+              height={1200}
+              className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
+            />
+          </div>
         </div>
       </div>
 
       {activeTab === 'go-to-market' && (
         <div className="mb-16">
-          <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
-            #weAre the Future Campaign
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            #weArethefuture Brand Launch
           </h2>
-          <ImageCarousel
-            images={[
-              '/images/launch_IMC_weare01.svg',
-              '/images/launch_IMC_weare02.svg',
-              '/images/launch_IMC_weare03.svg',
-            ]}
-            alt="weAre the Future campaign"
-          />
+          <p className="text-slate-300 leading-relaxed mb-8">
+            Google store International expansion for "Made by Google" products and services,
+            including site content strategy, project management, special promo launches,
+            and retail rollout across 31 countries and 24 locales.
+          </p>
+          <div className="flex justify-end">
+            <div className="w-full max-w-4xl">
+              <ImageCarousel
+                images={[
+                  '/images/launch_IMC_weare01.svg',
+                  '/images/launch_IMC_weare02.svg',
+                  '/images/launch_IMC_weare03.svg',
+                ]}
+                alt="weArethefuture brand launch"
+              />
+            </div>
+          </div>
         </div>
       )}
 
       {sections.map((section) => (
         <div key={section.id} className="mb-16">
           {section.title && (
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
+            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
               {section.title}
             </h2>
           )}

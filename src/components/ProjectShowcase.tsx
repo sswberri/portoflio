@@ -66,7 +66,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
 
           {/* Right: Image */}
-          <div className="order-1 lg:order-2 flex items-center justify-center">
+          <div className="order-1 lg:order-2 flex items-center justify-end">
             <div className="w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src={project.imageUrl}

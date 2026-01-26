@@ -6,6 +6,8 @@ export interface ProjectSection {
   projects: Project[]
 }
 
+const placeholderParagraph = 'Google store International expansion for "Made by Google" products and services, including site content strategy, project management, special promo launches, and retail rollout across 31 countries and 24 locales.'
+
 const defaultSupplementary = 'Placeholder for supplementary info.'
 
 // Projects organized by category/tab
@@ -15,20 +17,12 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
       id: 'gtm-core',
       projects: [
         {
-          id: 'gtm-google',
-          title: 'Google Go-To-Market Campaign',
-          description: 'Placeholder summary for Google go-to-market initiative.',
-          highlights: ['Placeholder for key contributions and outcomes.'],
-          imageUrl: '/images/launch_GTM_google.svg',
-          supplementary: defaultSupplementary,
-        },
-        {
           id: 'gtm-styleme',
-          title: 'Style.me Go-To-Market Campaign',
-          description: 'Placeholder summary for Style.me go-to-market initiative.',
+          title: 'Style.me Go-to-market Campaign',
+          description: placeholderParagraph,
           highlights: ['Placeholder for key contributions and outcomes.'],
           imageUrl: '/images/launch_GTM_styleme.svg',
-          supplementary: defaultSupplementary,
+          supplementary: placeholderParagraph,
         },
       ],
     },
