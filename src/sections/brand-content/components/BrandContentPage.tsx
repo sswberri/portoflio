@@ -248,18 +248,52 @@ export function BrandContentPage() {
       ) : activeTab === 'thought-leadership' ? (
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 items-start">
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-white">Thought Leadership</h2>
+            <h2 className="text-2xl font-semibold text-white">DKSH Thought Leadership</h2>
             <p className="text-slate-300 leading-relaxed">
-              Placeholder summary for thought leadership content and key insights.
+              Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
             </p>
-            <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-4">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-2">
-                Placeholder
-              </p>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Add audience goals, themes, and content performance highlights here.
-              </p>
-            </div>
+            <ul className="space-y-3 text-slate-300 list-square list-inside">
+              <li>
+                <a
+                  href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Global Brands, Local Impact: DKSH Deepens Engagement with Consumers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  DKSH Taiwan Supply Chain Management’s Transformation to a Growth Enabler
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Trailblazing Transitions of DKSH Taiwan Finance
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.dksh.com/tw-en/home/insights/enriching-everyday-moments-with-smarter-healthier-snacking"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-white"
+                >
+                  Enriching Everyday Moments with Smarter, Healthier Snacking
+                </a>
+              </li>
+            </ul>
           </div>
           <div>
             <ImageCarousel images={images} alt={activeTab} />
