@@ -95,8 +95,8 @@ export function LaunchesPage() {
             <div className="w-full max-w-4xl">
               <ImageCarousel
                 images={[
-                  '/images/launch_IMC_weare01.svg',
-                  '/images/launch_IMC_weare02.svg',
+                  '/images/growth_GTM_weAre01.svg',
+                  '/images/growth_GTM_weAre02.svg',
                   '/images/launch_IMC_weare03.svg',
                 ]}
                 alt="weArethefuture brand launch"
