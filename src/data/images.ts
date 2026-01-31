@@ -54,10 +54,7 @@ export const imageMap = {
       '/images/corp_sustainability_award02.svg',
     ],
     'reputation-issues': [
-      '/images/corp_reputation_golden.svg',
-      '/images/corp_reputation_HR01.svg',
-      '/images/corp_reputation_HR02.svg',
-      '/images/corp_reputation_HR03.svg',
+      '/images/corp_reputation_award.svg',
     ],
   },
 } as const

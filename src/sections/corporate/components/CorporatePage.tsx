@@ -6,7 +6,7 @@ import { imageMap } from '@/data/images'
 const tabs = [
   { id: 'media-pr', label: 'Media & PR' },
   { id: 'sustainability-csr', label: 'Sustainability & CSR' },
-  { id: 'reputation-issues', label: 'Reputation & Issues' },
+  { id: 'reputation-issues', label: 'Awards' },
 ] as const
 
 type TabId = typeof tabs[number]['id']
