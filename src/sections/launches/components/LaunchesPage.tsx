@@ -46,18 +46,37 @@ export function LaunchesPage() {
             Google Store International Expansion
           </h2>
           <p className="text-slate-300 leading-relaxed">
+            Managed{' '}
             <a
               href="https://store.google.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white underline underline-offset-4 hover:text-blue-300"
             >
-              Google store
+              Google Store
             </a>{' '}
-            International expansion for "Made by Google" products and services,
-            including site content strategy, project management, special promo
-            launches, and retail rollout across 31 countries and 24 locales.
+            site international expansion by orchestrating tiered site rollouts, PDPs,
+            modular updates and applications, and special campaign pages across 31
+            countries and 24 locales, including co-marketing launches such as Nest
+            Mini × Disney Frozen 2 and 11.11 shopping campaigns.
           </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              'digital marketing',
+              'program management',
+              'stakeholder communications',
+              'content management',
+              'international collaborations',
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full px-4 py-1 text-sm font-medium text-black"
+                style={{ backgroundColor: '#a5dce3' }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="flex justify-end">
           <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
@@ -103,6 +122,7 @@ export function LaunchesPage() {
                 ]}
                 alt="weArethefuture brand launch"
                 aspectClassName="aspect-[4/3]"
+                containerClassName="rounded-none"
               />
             </div>
           </div>

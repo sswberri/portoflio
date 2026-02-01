@@ -5,12 +5,14 @@ interface ImageCarouselProps {
   images: readonly string[]
   alt?: string
   aspectClassName?: string
+  containerClassName?: string
 }
 
 export function ImageCarousel({
   images,
   alt = 'Portfolio image',
   aspectClassName = 'aspect-[16/10]',
+  containerClassName = 'rounded-xl',
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -67,7 +69,7 @@ export function ImageCarousel({
     <div className="flex flex-col items-center">
       {/* Image Container */}
       <div className="w-full max-w-4xl">
-        <div className={`relative ${aspectClassName} bg-slate-800/30 rounded-xl overflow-hidden`}>
+        <div className={`relative ${aspectClassName} bg-slate-800/30 ${containerClassName} overflow-hidden`}>
           <img
             src={currentImage}
             alt={`${alt} ${displayIndex + 1}`}
