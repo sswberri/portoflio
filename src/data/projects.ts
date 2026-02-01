@@ -6,8 +6,6 @@ export interface ProjectSection {
   projects: Project[]
 }
 
-const placeholderParagraph = 'Google store International expansion for "Made by Google" products and services, including site content strategy, project management, special promo launches, and retail rollout across 31 countries and 24 locales.'
-
 const defaultSupplementary = 'Placeholder for supplementary info.'
 
 // Projects organized by category/tab
@@ -24,7 +22,6 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
           tags: ['product marketing', '0→1 startup marketing', 'GTM strategy', 'market research'],
           imageUrl: '/images/launch_GTM_styleme.svg',
           imageUrls: ['/images/launch_GTM_styleme.svg', '/images/launch_IMC_booth_styleme2.svg'],
-          supplementary: '',
         },
         {
           id: 'gtm-corel',
@@ -33,14 +30,13 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
           highlights: [],
           tags: ['international product marketing', 'pricing & lifecycle management', 'sales enablement', 'regional GTM strategy'],
           imageUrl: '/images/launch_IMC_corel.svg',
-          supplementary: '',
         },
       ],
     },
   ],
   'integrated-campaigns': [
     {
-      id: 'weare-comarketing',
+      id: 'weare-omnichannel',
       title: 'weArethefuture Omnichannel Brand Activation',
       projects: [
         {
@@ -55,29 +51,32 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
             '/images/launch_IMC_weare_GZshow.svg',
             '/images/launch_IMC_weare_SHshow.svg',
           ],
-          supplementary: '',
         },
       ],
     },
     {
-      id: 'shaping-healthcare',
-      title: '#ShapingHealthcare',
+      id: 'patient-purpose-day',
+      title: 'Patient Purpose Day',
       projects: [
         {
-          id: 'shaping-healthcare-customer-day',
-          title: 'Healthcare Customer Day',
-          description: 'Placeholder summary for healthcare customer day project.',
-          highlights: ['Placeholder for key contributions and outcomes.'],
-          imageUrl: '/images/launch_PD_placeholder.svg',
-          supplementary: defaultSupplementary,
-        },
-        {
-          id: 'shaping-healthcare-patient-purpose-day',
+          id: 'patient-purpose-day-project',
           title: 'Patient Purpose Day',
-          description: 'Placeholder summary for patient purpose day project.',
-          highlights: ['Placeholder for key contributions and outcomes.'],
+          description: 'Produced Patient Purpose Day experiences celebrating patients and caregivers, blending keynote stories, community activations, and digital content to deepen empathy, strengthen brand trust, and inspire internal teams globally in 2025.',
+          highlights: [],
           imageUrl: '/images/launch_PD_placeholder.svg',
-          supplementary: defaultSupplementary,
+        },
+      ],
+    },
+    {
+      id: 'healthcare-customer-day',
+      title: 'Healthcare Customer Day',
+      projects: [
+        {
+          id: 'healthcare-customer-day-project',
+          title: 'Healthcare Customer Day',
+          description: 'Planned and executed Healthcare Customer Day to spotlight patient care innovations, align partners, and energize teams through tailored programming, localized storytelling, and on-site engagement across priority markets in 2025 launch.',
+          highlights: [],
+          imageUrl: '/images/launch_PD_placeholder.svg',
         },
       ],
     },
