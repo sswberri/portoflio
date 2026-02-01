@@ -37,7 +37,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
   'integrated-campaigns': [
     {
       id: 'weare-omnichannel',
-      title: 'weArethefuture Omnichannel Brand Activation',
+      title: '',
       projects: [
         {
           id: 'imc-weare-omnichannel',
@@ -56,7 +56,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
     },
     {
       id: 'patient-purpose-day',
-      title: 'Patient Purpose Day',
+      title: '',
       projects: [
         {
           id: 'patient-purpose-day-project',
@@ -69,7 +69,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
     },
     {
       id: 'healthcare-customer-day',
-      title: 'Healthcare Customer Day',
+      title: '',
       projects: [
         {
           id: 'healthcare-customer-day-project',
