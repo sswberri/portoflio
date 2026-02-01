@@ -6,7 +6,7 @@ import { getProjectSectionsByCategory } from '@/data/projects'
 import { Search } from 'lucide-react'
 
 const tabs = [
-  { id: 'go-to-market', label: 'Go-to-market' },
+  { id: 'go-to-market', label: 'Go-to-Market' },
   { id: 'integrated-campaigns', label: 'Integrated Marketing' },
   { id: 'digital-commerce', label: 'Digital Commerce' },
 ] as const
@@ -111,10 +111,10 @@ export function LaunchesPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             {[
-              'Brand Marketing',
-              'Go-to-Market',
-              '0→1 Startup Marketing',
-              'Digital & E-Commerce',
+              'brand marketing',
+              'go-to-market',
+              '0→1 startup marketing',
+              'digital & e-commerce',
             ].map((item) => (
               <span
                 key={item}

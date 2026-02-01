@@ -24,6 +24,9 @@
   body {
     @apply bg-slate-950 text-slate-900 dark:text-white font-sans antialiased min-h-screen;
   }
+  p {
+    @apply text-base md:text-lg;
+  }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     @apply font-semibold tracking-tight;

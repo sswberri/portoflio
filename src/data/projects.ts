@@ -18,9 +18,9 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
       projects: [
         {
           id: 'gtm-styleme',
-          title: 'Style.me Go-to-market Campaign',
-          description: placeholderParagraph,
-          highlights: ['Placeholder for key contributions and outcomes.'],
+          title: 'Style.me Market Entry and Sales Enablement',
+          description: 'Built the go-to-market foundation for Style.me, a fashion-tech SaaS virtual fitting platform, defining core messaging and sales enablement assets, and conducting market research across 150+ retailers to validate demand and prioritize global pilot customers.',
+          highlights: ['product marketing', '0→1 startup marketing', 'GTM strategy', 'market research'],
           imageUrl: '/images/launch_GTM_styleme.svg',
           supplementary: placeholderParagraph,
         },
