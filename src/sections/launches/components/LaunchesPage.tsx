@@ -82,15 +82,17 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            #weArethefuture Brand Launch
-          </h2>
-          <p className="text-slate-300 leading-relaxed mb-8">
-            Google store International expansion for "Made by Google" products and services,
-            including site content strategy, project management, special promo launches,
-            and retail rollout across 31 countries and 24 locales.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              #weArethefuture Brand Launch
+            </h2>
+            <p className="text-slate-300 leading-relaxed">
+              Google store International expansion for "Made by Google" products and services,
+              including site content strategy, project management, special promo launches,
+              and retail rollout across 31 countries and 24 locales.
+            </p>
+          </div>
           <div className="flex justify-end">
             <div className="w-full max-w-4xl">
               <ImageCarousel

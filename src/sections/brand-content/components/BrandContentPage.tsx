@@ -252,7 +252,7 @@ export function BrandContentPage() {
             <p className="text-slate-300 leading-relaxed">
               Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
             </p>
-            <ul className="space-y-3 text-slate-300 list-square list-inside">
+            <ul className="space-y-3 text-slate-300 list-square list-outside pl-5">
               <li>
                 <a
                   href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
