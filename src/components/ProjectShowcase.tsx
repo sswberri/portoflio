@@ -1,4 +1,5 @@
 import { Search } from 'lucide-react'
+import { ImageCarousel } from '@/components/ImageCarousel'
 
 export interface Project {
   id: string
@@ -6,7 +7,9 @@ export interface Project {
   description: string
   highlights: string[]
   imageUrl: string
+  imageUrls?: string[]
   supplementary?: string
+  tags?: string[]
 }
 
 interface ProjectShowcaseProps {
@@ -39,20 +42,34 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
               {project.description}
             </p>
 
-            {project.highlights.length > 0 && (
-              <ul className="space-y-3">
-                {project.highlights.map((highlight, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-white"
+            {project.tags && project.tags.length > 0 ? (
+              <div className="flex flex-wrap gap-3">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full px-4 py-1 text-sm font-medium text-black"
+                    style={{ backgroundColor: '#a5dce3' }}
                   >
-                    <span className="text-white mt-1.5">•</span>
-                    <span className="text-sm md:text-base leading-relaxed">
-                      {highlight}
-                    </span>
-                  </li>
+                    {tag}
+                  </span>
                 ))}
-              </ul>
+              </div>
+            ) : (
+              project.highlights.length > 0 && (
+                <ul className="space-y-3">
+                  {project.highlights.map((highlight, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-white"
+                    >
+                      <span className="text-white mt-1.5">•</span>
+                      <span className="text-sm md:text-base leading-relaxed">
+                        {highlight}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )
             )}
 
             {project.supplementary && (
@@ -69,26 +86,37 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
 
           {/* Right: Image */}
           <div className="order-1 lg:order-2 flex items-center justify-end">
-            <div className="relative w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                width={1600}
-                height={1200}
-                className="w-full h-full object-contain"
-              />
-              {project.imageUrl.toLowerCase().endsWith('.svg') && (
-                <a
-                  href={project.imageUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-                  aria-label="View full size image"
-                >
-                  <Search className="w-5 h-5" />
-                </a>
-              )}
-            </div>
+            {project.imageUrls && project.imageUrls.length > 1 ? (
+              <div className="w-full">
+                <ImageCarousel
+                  images={project.imageUrls}
+                  alt={project.title}
+                  aspectClassName="aspect-[4/3]"
+                  containerClassName="rounded-none"
+                />
+              </div>
+            ) : (
+              <div className="relative w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  width={1600}
+                  height={1200}
+                  className="w-full h-full object-contain"
+                />
+                {project.imageUrl.toLowerCase().endsWith('.svg') && (
+                  <a
+                    href={project.imageUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                    aria-label="View full size image"
+                  >
+                    <Search className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
       ))}
