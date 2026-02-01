@@ -40,65 +40,67 @@ export function LaunchesPage() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
-        <div className="space-y-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
-            Google Store International Expansion
-          </h2>
-          <p className="text-slate-300 leading-relaxed">
-            Managed{' '}
-            <a
-              href="https://store.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white underline underline-offset-4 hover:text-blue-300"
-            >
-              Google Store
-            </a>{' '}
-            site international expansion by orchestrating tiered site rollouts, PDPs,
-            modular updates and applications, and special campaign pages across 31
-            countries and 24 locales, including co-marketing launches such as Nest
-            Mini × Disney Frozen 2 and 11.11 shopping campaigns.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {[
-              'digital marketing',
-              'program management',
-              'stakeholder communications',
-              'content management',
-              'cross-functional collaborations',
-            ].map((item) => (
-              <span
-                key={item}
-                className="rounded-full px-4 py-1 text-sm font-medium text-black"
-                style={{ backgroundColor: '#a5dce3' }}
+      {activeTab === 'go-to-market' && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              Google Store International Expansion
+            </h2>
+            <p className="text-slate-300 leading-relaxed">
+              Managed{' '}
+              <a
+                href="https://store.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white underline underline-offset-4 hover:text-blue-300"
               >
-                {item}
-              </span>
-            ))}
+                Google Store
+              </a>{' '}
+              site international expansion by orchestrating tiered site rollouts, PDPs,
+              modular updates and applications, and special campaign pages across 31
+              countries and 24 locales, including co-marketing launches such as Nest
+              Mini × Disney Frozen 2 and 11.11 shopping campaigns.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                'digital marketing',
+                'program management',
+                'stakeholder communications',
+                'content management',
+                'cross-functional collaborations',
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full px-4 py-1 text-sm font-medium text-black"
+                  style={{ backgroundColor: '#a5dce3' }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+              <img
+                src="/images/launch_GTM_google.svg"
+                alt="Google Store international expansion illustration"
+                width={1600}
+                height={1200}
+                className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
+              />
+              <a
+                href="/images/launch_GTM_google.svg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                aria-label="View full size image"
+              >
+                <Search className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
-        <div className="flex justify-end">
-          <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
-            <img
-              src="/images/launch_GTM_google.svg"
-              alt="Google Store international expansion illustration"
-              width={1600}
-              height={1200}
-              className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
-            />
-            <a
-              href="/images/launch_GTM_google.svg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-              aria-label="View full size image"
-            >
-              <Search className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </div>
+      )}
 
       {activeTab === 'go-to-market' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">

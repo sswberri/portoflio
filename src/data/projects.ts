@@ -41,31 +41,21 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
   'integrated-campaigns': [
     {
       id: 'weare-comarketing',
-      title: '#weArethefuture comarketing',
+      title: 'weArethefuture Omnichannel Brand Activation',
       projects: [
         {
-          id: 'imc-weare-shshow',
-          title: '#weArethefuture SH Show',
-          description: 'Placeholder summary for #weArethefuture co-marketing project.',
-          highlights: ['Placeholder for key contributions and outcomes.'],
-          imageUrl: '/images/launch_IMC_weare_SHshow.svg',
-          supplementary: defaultSupplementary,
-        },
-        {
-          id: 'imc-weare-gzshow',
-          title: '#weArethefuture GZ Show',
-          description: 'Placeholder summary for #weArethefuture co-marketing project.',
-          highlights: ['Placeholder for key contributions and outcomes.'],
-          imageUrl: '/images/launch_IMC_weare_GZshow.svg',
-          supplementary: defaultSupplementary,
-        },
-        {
-          id: 'imc-weare-ytff',
-          title: '#weArethefuture YTFF',
-          description: 'Placeholder summary for #weArethefuture co-marketing project.',
-          highlights: ['Placeholder for key contributions and outcomes.'],
+          id: 'imc-weare-omnichannel',
+          title: 'weArethefuture Omnichannel Brand Activation',
+          description: 'Activated weArethefuture through integrated field marketing programs spanning influencer events, runway shows, tradeshows, retail activations with designer partners, and co-marketing initiatives to expand market reach, build local brand awareness, and align with fashion designers and platforms.',
+          highlights: [],
+          tags: ['co-branding', 'field marketing', 'strategic alignment', 'influencer marketing'],
           imageUrl: '/images/launch_IMC_weare_YTFF.svg',
-          supplementary: defaultSupplementary,
+          imageUrls: [
+            '/images/launch_IMC_weare_YTFF.svg',
+            '/images/launch_IMC_weare_GZshow.svg',
+            '/images/launch_IMC_weare_SHshow.svg',
+          ],
+          supplementary: '',
         },
       ],
     },
