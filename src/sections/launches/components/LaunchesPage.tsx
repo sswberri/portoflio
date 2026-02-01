@@ -66,7 +66,7 @@ export function LaunchesPage() {
               'program management',
               'stakeholder communications',
               'content management',
-              'international collaborations',
+              'cross-functional collaborations',
             ].map((item) => (
               <span
                 key={item}
@@ -107,26 +107,40 @@ export function LaunchesPage() {
               #weArethefuture Brand Launch
             </h2>
             <p className="text-slate-300 leading-relaxed">
-              Google store International expansion for "Made by Google" products and services,
-              including site content strategy, project management, special promo launches,
-              and retail rollout across 31 countries and 24 locales.
-            </p>
-          </div>
-          <div className="flex justify-end">
-            <div className="w-full max-w-4xl">
-              <ImageCarousel
-                images={[
-                  '/images/growth_GTM_weAre01.svg',
-                  '/images/growth_GTM_weAre02.svg',
-                  '/images/launch_IMC_weare03.svg',
-                ]}
-                alt="weArethefuture brand launch"
-                aspectClassName="aspect-[4/3]"
-                containerClassName="rounded-none"
-              />
-            </div>
+            Defined and led end-to-end launch marketing strategies for weArethefuture, a footwear brand for 21st century modern females, owning brand positioning and integrated campaigns while partnering with brand, creative, design, and content teams to drive awareness and influencer engagement across China and global markets.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              'Brand Marketing',
+              'Go-to-Market',
+              '0→1 Startup Marketing',
+              'Digital & E-Commerce',
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full px-4 py-1 text-sm font-medium text-black"
+                style={{ backgroundColor: '#a5dce3' }}
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
+        <div className="flex justify-end">
+          <div className="w-full max-w-4xl">
+            <ImageCarousel
+              images={[
+                '/images/growth_GTM_weAre01.svg',
+                '/images/growth_GTM_weAre02.svg',
+                '/images/launch_IMC_weare03.svg',
+              ]}
+              alt="weArethefuture brand launch"
+              aspectClassName="aspect-[4/3]"
+              containerClassName="rounded-none"
+            />
+          </div>
+        </div>
+      </div>
       )}
 
       {sections.map((section) => (
