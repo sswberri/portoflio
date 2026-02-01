@@ -24,6 +24,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
           tags: ['product marketing', '0→1 startup marketing', 'GTM strategy', 'market research'],
           imageUrl: '/images/launch_GTM_styleme.svg',
           imageUrls: ['/images/launch_GTM_styleme.svg', '/images/launch_IMC_booth_styleme2.svg'],
+          supplementary: '',
         },
         {
           id: 'gtm-corel',
@@ -32,6 +33,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
           highlights: [],
           tags: ['international product marketing', 'pricing & lifecycle management', 'sales enablement', 'regional GTM strategy'],
           imageUrl: '/images/launch_IMC_corel.svg',
+          supplementary: '',
         },
       ],
     },
