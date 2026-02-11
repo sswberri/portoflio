@@ -115,8 +115,8 @@ export function BrandContentPage() {
       {activeTab === 'content-marketing' ? (
         <div className="space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white">
+            <div className="space-y-4 max-w-[750px]">
+              <h2 className="text-2xl font-semibold text-white max-w-[720px] break-words">
                 <span className="block">#ShapingHealthcare</span>
                 <span className="block">LinkedIn Campaign</span>
               </h2>
@@ -164,8 +164,8 @@ export function BrandContentPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white">
+            <div className="space-y-4 max-w-[750px]">
+              <h2 className="text-2xl font-semibold text-white max-w-[720px] break-words">
                 <span className="block">#SCMRising</span>
                 <span className="block">Branding LinkedIn Campaign</span>
               </h2>
@@ -247,8 +247,8 @@ export function BrandContentPage() {
         </div>
       ) : activeTab === 'thought-leadership' ? (
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 lg:gap-[200px] items-start">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-white">DKSH Thought Leadership</h2>
+          <div className="space-y-4 max-w-[750px]">
+            <h2 className="text-2xl font-semibold text-white max-w-[720px] break-words">DKSH Thought Leadership</h2>
             <p className="text-slate-300 leading-relaxed">
               Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
             </p>
