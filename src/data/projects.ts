@@ -55,19 +55,6 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
       ],
     },
     {
-      id: 'patient-purpose-day',
-      title: '',
-      projects: [
-        {
-          id: 'patient-purpose-day-project',
-          title: 'Patient Purpose Day',
-          description: 'Produced Patient Purpose Day experiences celebrating patients and caregivers, blending keynote stories, community activations, and digital content to deepen empathy, strengthen brand trust, and inspire internal teams globally in 2025.',
-          highlights: [],
-          imageUrl: '/images/launch_PD_placeholder.svg',
-        },
-      ],
-    },
-    {
       id: 'healthcare-customer-day',
       title: 'DKSH Healthcare Taiwan Customer Day - Field Engagement Event',
       projects: [
