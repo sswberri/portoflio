@@ -10,7 +10,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
     <section className="min-h-[85vh] flex items-center">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
-        <div className="flex flex-col justify-center order-2 lg:order-1 py-1 lg:py-4">
+        <div className="flex flex-col justify-center order-2 lg:order-1 py-2 lg:py-6">
           {/* Name Title - h3 style */}
           <h1 className="mb-4">
             <span className="block text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
