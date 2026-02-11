@@ -41,11 +41,15 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] mb-16 items-start">
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-white break-words">
-              Google Store International Expansion
-            </h2>
+        <div className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white break-words mb-6 lg:hidden">
+            Google Store International Expansion
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
+            <div className="space-y-4 order-3 lg:order-none">
+              <h2 className="text-2xl md:text-3xl font-bold text-white break-words hidden lg:block">
+                Google Store International Expansion
+              </h2>
             <p className="text-slate-300 leading-relaxed">
               Managed{' '}
               <a
@@ -79,8 +83,8 @@ export function LaunchesPage() {
               ))}
             </div>
           </div>
-          <div className="flex justify-start lg:scale-[1.2] lg:origin-left">
-            <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+          <div className="flex justify-start order-2 lg:order-none">
+            <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src="/images/launch_GTM_google.svg"
                 alt="Google Store international expansion illustration"
@@ -103,11 +107,15 @@ export function LaunchesPage() {
       )}
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] mb-16 items-start">
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-white break-words">
-              #weArethefuture Brand Launch
-            </h2>
+        <div className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-white break-words mb-6 lg:hidden">
+            #weArethefuture Brand Launch
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
+            <div className="space-y-4 order-3 lg:order-none">
+              <h2 className="text-2xl md:text-3xl font-bold text-white break-words hidden lg:block">
+                #weArethefuture Brand Launch
+              </h2>
             <p className="text-slate-300 leading-relaxed">
             Defined and led end-to-end launch marketing strategies for weArethefuture, a footwear brand for 21st century modern females, owning brand positioning and integrated campaigns while partnering with brand, creative, design, and content teams to drive awareness and influencer engagement across China and global markets.
           </p>
@@ -128,8 +136,8 @@ export function LaunchesPage() {
             ))}
           </div>
         </div>
-        <div className="flex justify-start lg:scale-[1.2] lg:origin-left">
-          <div className="w-full max-w-4xl">
+        <div className="flex justify-start order-2 lg:order-none">
+          <div className="w-full">
             <ImageCarousel
               images={[
                 '/images/growth_GTM_weAre01.svg',
@@ -137,8 +145,9 @@ export function LaunchesPage() {
                 '/images/launch_IMC_weare03.svg',
               ]}
               alt="weArethefuture brand launch"
-              aspectClassName="aspect-[4/3]"
+              aspectClassName="aspect-[1075/806]"
               containerClassName="rounded-none"
+              wrapperClassName="w-full lg:w-[1075px]"
             />
           </div>
         </div>

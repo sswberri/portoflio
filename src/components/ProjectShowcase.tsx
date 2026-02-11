@@ -30,15 +30,16 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   return (
     <div className="flex flex-col gap-12">
       {projects.map((project) => (
-        <div
-          key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]"
-        >
-          {/* Left: Text Content */}
-          <div className="flex flex-col justify-center order-2 lg:order-1 max-w-[900px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight max-w-[900px] break-words">
-              {project.title}
-            </h2>
+        <div key={project.id}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight break-words lg:hidden">
+            {project.title}
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]">
+            {/* Left: Text Content */}
+            <div className="flex flex-col justify-center order-3 lg:order-1 max-w-[900px]">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight max-w-[900px] break-words hidden lg:block">
+                {project.title}
+              </h2>
 
             <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-6">
               {project.description}
@@ -116,19 +117,20 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
 
           {/* Right: Image */}
-          <div className="order-1 lg:order-2 flex items-start justify-start pt-6 lg:scale-[1.2] lg:origin-left">
+          <div className="order-2 lg:order-2 flex items-start justify-start pt-6">
             {project.imageUrls && project.imageUrls.length > 1 ? (
-              <div className="w-full max-w-4xl">
+              <div className="w-full">
                 <ImageCarousel
                   images={project.imageUrls}
                   alt={project.title}
-                  aspectClassName="aspect-[4/3]"
+                  aspectClassName="aspect-[1075/806]"
                   containerClassName="rounded-none"
-                  alignClassName="items-end"
+                  alignClassName="items-center lg:items-end"
+                  wrapperClassName="w-full lg:w-[1075px]"
                 />
               </div>
             ) : (
-              <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+              <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
                 <img
                   src={project.imageUrl}
                   alt={project.title}

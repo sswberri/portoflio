@@ -7,6 +7,7 @@ interface ImageCarouselProps {
   aspectClassName?: string
   containerClassName?: string
   alignClassName?: string
+  wrapperClassName?: string
 }
 
 export function ImageCarousel({
@@ -15,6 +16,7 @@ export function ImageCarousel({
   aspectClassName = 'aspect-[16/10]',
   containerClassName = 'rounded-xl',
   alignClassName = 'items-center',
+  wrapperClassName = 'w-full max-w-4xl',
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -70,7 +72,7 @@ export function ImageCarousel({
   return (
     <div className={`flex flex-col ${alignClassName}`}>
       {/* Image Container */}
-      <div className="w-full max-w-4xl">
+      <div className={wrapperClassName}>
         <div className={`relative ${aspectClassName} bg-slate-800/30 ${containerClassName} overflow-hidden`}>
           <img
             src={currentImage}
