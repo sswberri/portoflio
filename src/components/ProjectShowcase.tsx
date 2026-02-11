@@ -103,6 +103,20 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
               </p>
             )}
 
+            {project.tags && project.tags.length > 0 && (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full px-4 py-1 text-sm font-medium text-black"
+                    style={{ backgroundColor: '#a5dce3' }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
             {project.supplementary && (
               <div className="mt-6 rounded-lg border border-slate-800 bg-slate-900/40 p-4">
                 <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-2">
@@ -116,7 +130,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
 
           {/* Right: Image */}
-          <div className="order-1 lg:order-2 flex items-center justify-end">
+          <div className="order-1 lg:order-2 flex items-start justify-end pt-6">
             {project.imageUrls && project.imageUrls.length > 1 ? (
               <div className="w-full">
                 <ImageCarousel

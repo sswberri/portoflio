@@ -41,7 +41,7 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-start">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Google Store International Expansion
@@ -52,7 +52,7 @@ export function LaunchesPage() {
                 href="https://store.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white underline underline-offset-4 hover:text-blue-300"
+                className="underline underline-offset-4"
               >
                 Google Store
               </a>{' '}
@@ -103,7 +103,7 @@ export function LaunchesPage() {
       )}
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-start">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               #weArethefuture Brand Launch
