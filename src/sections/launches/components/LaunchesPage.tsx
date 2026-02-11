@@ -79,7 +79,7 @@ export function LaunchesPage() {
               ))}
             </div>
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-end lg:translate-x-[200px]">
             <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src="/images/launch_GTM_google.svg"

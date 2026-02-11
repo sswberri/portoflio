@@ -70,7 +70,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
         </div>
 
         {/* Right: Photo - Reduced Size */}
-        <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
+        <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end lg:translate-x-[200px]">
           <div className="relative w-full max-w-sm lg:max-w-md overflow-hidden group">
             {photoUrl ? (
               <img

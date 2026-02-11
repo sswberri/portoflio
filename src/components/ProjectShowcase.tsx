@@ -132,7 +132,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           {/* Right: Image */}
           <div className="order-1 lg:order-2 flex items-start justify-end pt-6">
             {project.imageUrls && project.imageUrls.length > 1 ? (
-              <div className="w-full">
+              <div className="w-full lg:translate-x-[200px]">
                 <ImageCarousel
                   images={project.imageUrls}
                   alt={project.title}
@@ -141,7 +141,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                 />
               </div>
             ) : (
-              <div className="relative w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+              <div className="relative w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden lg:translate-x-[200px]">
                 <img
                   src={project.imageUrl}
                   alt={project.title}
