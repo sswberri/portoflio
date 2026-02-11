@@ -35,7 +35,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px]"
         >
           {/* Left: Text Content */}
-          <div className="flex flex-col justify-center order-2 lg:order-1">
+          <div className="flex flex-col justify-center order-2 lg:order-1 max-w-[600px]">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight lg:whitespace-nowrap">
               {project.title}
             </h2>
