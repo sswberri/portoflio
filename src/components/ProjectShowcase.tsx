@@ -86,7 +86,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
 
             {project.exposureLinks && project.exposureLinks.length > 0 && (
               <p className="mt-6 text-slate-300 text-sm md:text-base">
-                Exposure: 
+                Exposure:{' '}
                 {project.exposureLinks.map((link, index) => (
                   <span key={link.url}>
                     <a
@@ -97,7 +97,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                     >
                       {link.label}
                     </a>
-                    {index < project.exposureLinks.length - 1 ? ', ' : ''}
+                    {index < (project.exposureLinks?.length ?? 0) - 1 ? ', ' : ''}
                   </span>
                 ))}
               </p>
