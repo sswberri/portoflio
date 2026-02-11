@@ -41,9 +41,9 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px] mb-16 items-start">
-          <div className="space-y-4 max-w-[900px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-white max-w-[900px] break-words">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] mb-16 items-start">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white break-words">
               Google Store International Expansion
             </h2>
             <p className="text-slate-300 leading-relaxed">
@@ -103,9 +103,9 @@ export function LaunchesPage() {
       )}
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px] mb-16 items-start">
-          <div className="space-y-4 max-w-[900px]">
-            <h2 className="text-2xl md:text-3xl font-bold text-white max-w-[900px] break-words">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] mb-16 items-start">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white break-words">
               #weArethefuture Brand Launch
             </h2>
             <p className="text-slate-300 leading-relaxed">

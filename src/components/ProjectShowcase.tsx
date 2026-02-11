@@ -32,7 +32,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px]"
+          className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]"
         >
           {/* Left: Text Content */}
           <div className="flex flex-col justify-center order-2 lg:order-1 max-w-[900px]">
