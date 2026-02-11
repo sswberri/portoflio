@@ -43,7 +43,7 @@ export function LaunchesPage() {
       {activeTab === 'go-to-market' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px] mb-16 items-start">
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-white lg:whitespace-nowrap">
               Google Store International Expansion
             </h2>
             <p className="text-slate-300 leading-relaxed">
@@ -79,7 +79,7 @@ export function LaunchesPage() {
               ))}
             </div>
           </div>
-          <div className="flex justify-start">
+          <div className="flex justify-end lg:translate-x-[200px]">
             <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src="/images/launch_GTM_google.svg"
@@ -105,7 +105,7 @@ export function LaunchesPage() {
       {activeTab === 'go-to-market' && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px] mb-16 items-start">
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
+            <h2 className="text-2xl md:text-3xl font-bold text-white lg:whitespace-nowrap">
               #weArethefuture Brand Launch
             </h2>
             <p className="text-slate-300 leading-relaxed">
@@ -128,7 +128,7 @@ export function LaunchesPage() {
             ))}
           </div>
         </div>
-        <div className="flex justify-start">
+        <div className="flex justify-end lg:translate-x-[200px]">
           <div className="w-full max-w-4xl">
             <ImageCarousel
               images={[

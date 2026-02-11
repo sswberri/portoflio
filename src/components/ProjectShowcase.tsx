@@ -36,7 +36,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
         >
           {/* Left: Text Content */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight lg:whitespace-nowrap">
               {project.title}
             </h2>
 
@@ -116,7 +116,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
 
           {/* Right: Image */}
-          <div className="order-1 lg:order-2 flex items-start justify-start pt-6">
+          <div className="order-1 lg:order-2 flex items-start justify-end pt-6 lg:translate-x-[200px]">
             {project.imageUrls && project.imageUrls.length > 1 ? (
               <div className="w-full max-w-4xl">
                 <ImageCarousel
@@ -124,7 +124,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                   alt={project.title}
                   aspectClassName="aspect-[4/3]"
                   containerClassName="rounded-none"
-                  alignClassName="items-start"
+                  alignClassName="items-end"
                 />
               </div>
             ) : (
