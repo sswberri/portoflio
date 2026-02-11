@@ -70,7 +70,7 @@ export function AboutSection({ }: AboutSectionProps) {
         <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-8">
           Worked With
         </h3>
-        <div className="overflow-hidden group cursor-pointer -mt-[30px]">
+        <div className="overflow-hidden group cursor-pointer -mt-[45px]">
           <img
             src="/images/logo.svg"
             alt="Companies worked with"

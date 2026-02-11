@@ -252,6 +252,7 @@ export function BrandContentPage() {
             <p className="text-slate-300 leading-relaxed">
               Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
             </p>
+            <p className="text-slate-300">View work:</p>
             <ul className="space-y-3 text-slate-300 list-square list-outside pl-5">
               <li>
                 <a
