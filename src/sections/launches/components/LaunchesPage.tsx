@@ -41,7 +41,7 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[100px] mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px] mb-16 items-start">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Google Store International Expansion
@@ -103,7 +103,7 @@ export function LaunchesPage() {
       )}
 
       {activeTab === 'go-to-market' && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[100px] mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px] mb-16 items-start">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               #weArethefuture Brand Launch
@@ -128,7 +128,7 @@ export function LaunchesPage() {
             ))}
           </div>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-start">
           <div className="w-full max-w-4xl">
             <ImageCarousel
               images={[

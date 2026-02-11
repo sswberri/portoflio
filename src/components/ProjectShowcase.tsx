@@ -32,7 +32,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[100px]"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[200px]"
         >
           {/* Left: Text Content */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
@@ -44,34 +44,20 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
               {project.description}
             </p>
 
-            {project.tags && project.tags.length > 0 ? (
-              <div className="flex flex-wrap gap-3">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full px-4 py-1 text-sm font-medium text-black"
-                    style={{ backgroundColor: '#a5dce3' }}
+            {project.highlights.length > 0 && (
+              <ul className="space-y-3">
+                {project.highlights.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-white"
                   >
-                    {tag}
-                  </span>
+                    <span className="text-white mt-1.5">•</span>
+                    <span className="text-sm md:text-base leading-relaxed">
+                      {highlight}
+                    </span>
+                  </li>
                 ))}
-              </div>
-            ) : (
-              project.highlights.length > 0 && (
-                <ul className="space-y-3">
-                  {project.highlights.map((highlight, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-3 text-white"
-                    >
-                      <span className="text-white mt-1.5">•</span>
-                      <span className="text-sm md:text-base leading-relaxed">
-                        {highlight}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              )
+              </ul>
             )}
 
             {project.bullets && project.bullets.length > 0 && (
