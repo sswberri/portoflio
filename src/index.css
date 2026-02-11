@@ -28,7 +28,7 @@
     @apply text-base md:text-lg;
   }
   a {
-    color: #908dc9;
+    color: #f8a853;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);

@@ -25,10 +25,10 @@ export function ContactPage({
     <section className="py-12 lg:py-20">
       {/* Section Title - Editorial Style */}
       <div className="mb-16 lg:mb-24">
-        <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[0.95] tracking-tight text-slate-900 dark:text-white mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-slate-900 dark:text-white mb-6">
           {headline}
         </h1>
-        <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl">
+        <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-2xl">
           {subheadline}
         </p>
       </div>

@@ -10,6 +10,8 @@ export interface Project {
   imageUrls?: string[]
   supplementary?: string
   tags?: string[]
+  bullets?: string[]
+  exposureLinks?: Array<{ label: string; url: string }>
 }
 
 interface ProjectShowcaseProps {
@@ -70,6 +72,35 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                   ))}
                 </ul>
               )
+            )}
+
+            {project.bullets && project.bullets.length > 0 && (
+              <ul className="mt-6 space-y-3 list-square list-outside pl-5 text-slate-300">
+                {project.bullets.map((bullet, index) => (
+                  <li key={index} className="text-sm md:text-base leading-relaxed">
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {project.exposureLinks && project.exposureLinks.length > 0 && (
+              <p className="mt-6 text-slate-300 text-sm md:text-base">
+                Exposure: 
+                {project.exposureLinks.map((link, index) => (
+                  <span key={link.url}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4"
+                    >
+                      {link.label}
+                    </a>
+                    {index < project.exposureLinks.length - 1 ? ', ' : ''}
+                  </span>
+                ))}
+              </p>
             )}
 
             {project.supplementary && (

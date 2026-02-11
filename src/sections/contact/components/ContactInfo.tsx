@@ -20,9 +20,9 @@ export function ContactInfo({
         href={`mailto:${email}`}
         className="group block"
       >
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
-            <Mail className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded-lg" style={{ backgroundColor: '#f8a853' }}>
+            <Mail className="w-5 h-5 text-black" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors break-all">
@@ -36,11 +36,13 @@ export function ContactInfo({
       {/* LinkedIn */}
       <a
         href={linkedInUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="group block"
       >
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
-            <Linkedin className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded-lg" style={{ backgroundColor: '#f8a853' }}>
+            <Linkedin className="w-5 h-5 text-black" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
@@ -54,11 +56,13 @@ export function ContactInfo({
       {/* Resume */}
       <a
         href={resumeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="group block"
       >
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
-            <FileDown className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded-lg" style={{ backgroundColor: '#f8a853' }}>
+            <FileDown className="w-5 h-5 text-black" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">

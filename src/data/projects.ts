@@ -69,12 +69,26 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
     },
     {
       id: 'healthcare-customer-day',
-      title: '',
+      title: 'DKSH Healthcare Taiwan Customer Day - Field Engagement Event',
       projects: [
         {
           id: 'healthcare-customer-day-project',
-          title: 'Healthcare Customer Day',
-          description: 'Planned and executed Healthcare Customer Day to spotlight patient care innovations, align partners, and energize teams through tailored programming, localized storytelling, and on-site engagement across priority markets in 2025 launch.',
+          title: 'DKSH Healthcare Taiwan Customer Day - Field Engagement Event',
+          description: 'Architected an integrated field marketing activation event combining cross-functional BU collaboration, customer visits, structured Voice of Customer capture, and same-day organizational alignment to strengthen commercial focus and service growth.',
+          bullets: [
+            'Mobilized 17 cross-functional teams across 45 customer visits in one afternoon, engaging pharmacists, physicians, and healthcare experts firsthand',
+            'Designed an on-site VoC survey mechanism to surface pain points, improvement priorities, and customer service wishlists',
+            'Built a real-time Padlet insight workflow to consolidate feedback instantly across teams and touchpoints',
+            'Closed the loop through a same-day hybrid town hall, translating customer intelligence into sales enablement, service enhancement, and partnership momentum',
+            'Recognized with the 2025 DKSH Taiwan Fantree Award (Enriching People’s Lives/Collaboration), the company’s highest internal honor, with a CHF 1,000 prize',
+          ],
+          tags: ['field marketing', 'customer engagement', 'customer insights', 'sales enablement', 'commercial alignment'],
+          exposureLinks: [
+            { label: 'Padlet', url: 'https://padlet.com/dkshtw/2024-utffbgpm661e9tf' },
+            { label: 'LinkedIn', url: 'https://www.linkedin.com/posts/dksh_dkshtaiwan-hxmkhpiwvjiumzbihd-dkshhealthcare-activity-7212395120678113280-vwMK?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAWjNzgB3DLfF0YTdAmlFlcAyzmnFnt1hOI' },
+            { label: 'Facebook', url: 'https://www.facebook.com/reel/656823623327065' },
+            { label: 'YouTube video', url: 'https://youtu.be/v2iGrlg8h1E?si=cn3HUD7MduFk38KX' },
+          ],
           highlights: [],
           imageUrl: '/images/launch_PD_placeholder.svg',
         },

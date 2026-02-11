@@ -92,7 +92,7 @@ export function BrandContentPage() {
   return (
     <div className="py-12">
       {/* Section Title */}
-      <h1 className="text-4xl font-bold text-white mb-8 tracking-tight">Brand & Content</h1>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">Brand & Content</h1>
 
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-800 pb-4">
