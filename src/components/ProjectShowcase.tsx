@@ -32,7 +32,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]"
+          className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]"
         >
           {/* Left: Text Content */}
           <div className="flex flex-col justify-center order-2 lg:order-1 max-w-[900px]">
@@ -118,7 +118,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           {/* Right: Image */}
           <div className="order-1 lg:order-2 flex items-start justify-end pt-6 lg:translate-x-[200px]">
             {project.imageUrls && project.imageUrls.length > 1 ? (
-              <div className="w-full max-w-4xl">
+              <div className="w-full">
                 <ImageCarousel
                   images={project.imageUrls}
                   alt={project.title}
@@ -128,7 +128,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                 />
               </div>
             ) : (
-              <div className="relative w-full max-w-4xl aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+              <div className="relative w-full aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
                 <img
                   src={project.imageUrl}
                   alt={project.title}
