@@ -32,7 +32,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[100px]"
         >
           {/* Left: Text Content */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
@@ -75,7 +75,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             )}
 
             {project.bullets && project.bullets.length > 0 && (
-              <ul className="mt-6 space-y-3 list-square list-outside pl-5 text-slate-300">
+              <ul className="mt-6 space-y-3 list-disc list-outside pl-5 text-slate-300 marker:text-white">
                 {project.bullets.map((bullet, index) => (
                   <li key={index} className="text-sm md:text-base leading-relaxed">
                     {bullet}
@@ -130,7 +130,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
 
           {/* Right: Image */}
-          <div className="order-1 lg:order-2 flex items-start justify-end pt-6">
+          <div className="order-1 lg:order-2 flex items-start justify-start pt-6">
             {project.imageUrls && project.imageUrls.length > 1 ? (
               <div className="w-full lg:translate-x-[200px]">
                 <ImageCarousel

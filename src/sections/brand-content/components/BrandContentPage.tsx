@@ -114,7 +114,7 @@ export function BrandContentPage() {
       {/* Content */}
       {activeTab === 'content-marketing' ? (
         <div className="space-y-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 lg:gap-[100px] items-start">
             <div className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
                 <span className="block">#ShapingHealthcare</span>
@@ -163,7 +163,7 @@ export function BrandContentPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 lg:gap-[100px] items-start">
             <div className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">
                 <span className="block">#SCMRising</span>
@@ -246,14 +246,14 @@ export function BrandContentPage() {
             })}
         </div>
       ) : activeTab === 'thought-leadership' ? (
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] gap-8 lg:gap-[100px] items-start">
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold text-white">DKSH Thought Leadership</h2>
             <p className="text-slate-300 leading-relaxed">
               Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
             </p>
             <p className="text-slate-300">View work:</p>
-            <ul className="space-y-3 text-slate-300 list-disc list-outside pl-5 marker:text-[#f8a853]">
+            <ul className="space-y-3 text-slate-300 list-disc list-outside pl-5 marker:text-white">
               <li>
                 <a
                   href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"

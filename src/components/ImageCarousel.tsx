@@ -68,7 +68,7 @@ export function ImageCarousel({
   return (
     <div className="flex flex-col items-center">
       {/* Image Container */}
-      <div className="w-full max-w-4xl lg:translate-x-[200px]">
+      <div className="w-full max-w-4xl">
         <div className={`relative ${aspectClassName} bg-slate-800/30 ${containerClassName} overflow-hidden`}>
           <img
             src={currentImage}
