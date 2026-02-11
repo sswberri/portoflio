@@ -18,7 +18,7 @@ const navItems: NavItem[] = [
   { id: 'about', label: 'About', href: '/', icon: <User className="w-5 h-5" /> },
   { id: 'brand-content', label: 'Brand & Content', href: '/brand-content', icon: <Megaphone className="w-5 h-5" /> },
   { id: 'campaigns', label: 'Growth Campaigns', href: '/campaigns', icon: <Rocket className="w-5 h-5" /> },
-  { id: 'corporate', label: 'Corporate Comms', href: '/corporate', icon: <Building2 className="w-5 h-5" /> },
+  { id: 'corporate', label: 'Corporate Communications', href: '/corporate', icon: <Building2 className="w-5 h-5" /> },
   { id: 'contact', label: 'Contact', href: '/contact', icon: <Mail className="w-5 h-5" /> },
 ]
 

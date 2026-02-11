@@ -49,7 +49,14 @@ export function AboutSection({ }: AboutSectionProps) {
         {expertiseAreas.map((area) => (
           <div key={area.title} className="group">
             <h3 className="text-2xl font-semibold text-white mb-4">
-              {area.title}
+              {area.title === 'Digital Marketing and E-Commerce' ? (
+                <>
+                  <span className="block">Digital Marketing and</span>
+                  <span className="block">E-Commerce</span>
+                </>
+              ) : (
+                area.title
+              )}
             </h3>
             <p className="text-white text-sm leading-relaxed mb-4">
               {area.description}
