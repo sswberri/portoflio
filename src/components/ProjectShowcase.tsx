@@ -116,7 +116,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
 
           {/* Right: Image */}
-          <div className="order-1 lg:order-2 flex items-start justify-end pt-6 lg:translate-x-[200px]">
+          <div className="order-1 lg:order-2 flex items-start justify-start pt-6 lg:scale-[1.2] lg:origin-left">
             {project.imageUrls && project.imageUrls.length > 1 ? (
               <div className="w-full max-w-4xl">
                 <ImageCarousel
