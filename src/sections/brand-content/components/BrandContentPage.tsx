@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { ImageCarousel } from '@/components/ImageCarousel'
 import { BackToTopButton } from '@/components/BackToTopButton'
 import { LinkedInPostList } from '@/components/LinkedInPostList'
@@ -43,7 +44,7 @@ export function BrandContentPage() {
     '台灣疤痕',
     '罕見眼疾治療迎突破',
     '賀！台灣大昌華嘉客服',
-    '台灣永續行動獎',
+    '台灣永續行動銅獎',
   ]
 
   const shapingHealthcareFeatured = shapingHealthcareKeywords
@@ -117,126 +118,81 @@ export function BrandContentPage() {
 
       {/* Content */}
       {activeTab === 'content-marketing' ? (
-        <div className="space-y-12 lg:space-y-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white break-words">
-                <span className="block">#ShapingHealthcare</span>
-                <span className="block">LinkedIn Campaign</span>
-              </h2>
-              <p className="text-slate-300 leading-relaxed">
-                Placeholder description for upcoming content strategy overview.
-              </p>
-              <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-4">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-2">
-                  Placeholder
-                </p>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Add campaign objectives, audience insights, and key takeaways here.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <LinkedInPostList posts={shapingHealthcareFeatured} />
-              {!showMoreShaping && shapingHealthcareMore.length > 0 && (
-                <div className="mt-6 flex justify-center lg:justify-start">
-                  <button
-                    type="button"
-                    onClick={() => setShowMoreShaping(true)}
-                    className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
-                  >
-                    View More
-                  </button>
-                </div>
-              )}
-              {showMoreShaping && shapingHealthcareMore.length > 0 && (
-                <div className="mt-8">
-                  <LinkedInPostList posts={shapingHealthcareMore} />
-                  <div className="mt-6 flex justify-center lg:justify-start">
-                    <button
-                      type="button"
-                      onClick={() => setShowMoreShaping(false)}
-                      className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
-                    >
-                      View Less
-                    </button>
+        <div className="space-y-16 lg:space-y-24">
+          {/* #ShapingHealthcare */}
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
+              #ShapingHealthcare LinkedIn Campaign
+            </h2>
+            <LinkedInPostList posts={shapingHealthcareFeatured} />
+            {shapingHealthcareMore.length > 0 && (
+              <>
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    showMoreShaping ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="mt-6">
+                      <LinkedInPostList posts={shapingHealthcareMore} />
+                    </div>
                   </div>
                 </div>
-              )}
-            </div>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => setShowMoreShaping(!showMoreShaping)}
+                    className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
+                  >
+                    {showMoreShaping ? (
+                      <>View less <ChevronUp className="w-4 h-4" /></>
+                    ) : (
+                      <>View more <ChevronDown className="w-4 h-4" /></>
+                    )}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-white break-words">
-                <span className="block">#SCMRising</span>
-                <span className="block">Branding LinkedIn Campaign</span>
-              </h2>
-              <p className="text-slate-300 leading-relaxed">
-                Placeholder description for SCM brand storytelling and campaign highlights.
-              </p>
-              <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-4">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-2">
-                  Placeholder
-                </p>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  Add campaign objectives, audience insights, and key takeaways here.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <LinkedInPostList posts={scmKeywordPosts} />
-              {!showMoreScm && scmMore.length > 0 && (
-                <div className="mt-6 flex justify-center lg:justify-start">
-                  <button
-                    type="button"
-                    onClick={() => setShowMoreScm(true)}
-                    className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
-                  >
-                    View More
-                  </button>
-                </div>
-              )}
-              {showMoreScm && scmMore.length > 0 && (
-                <div className="mt-8">
-                  <LinkedInPostList posts={scmMore} />
-                  <div className="mt-6 flex justify-center lg:justify-start">
-                    <button
-                      type="button"
-                      onClick={() => setShowMoreScm(false)}
-                      className="inline-flex items-center justify-center px-5 py-2 border border-slate-500 text-slate-200 rounded-md hover:border-white hover:text-white transition-colors"
-                    >
-                      View Less
-                    </button>
+          {/* #SCMRising */}
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
+              #SCMRising Branding LinkedIn Campaign
+            </h2>
+            <LinkedInPostList posts={scmKeywordPosts} />
+            {scmMore.length > 0 && (
+              <>
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    showMoreScm ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="mt-6">
+                      <LinkedInPostList posts={scmMore} />
+                    </div>
                   </div>
                 </div>
-              )}
-            </div>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => setShowMoreScm(!showMoreScm)}
+                    className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
+                  >
+                    {showMoreScm ? (
+                      <>View less <ChevronUp className="w-4 h-4" /></>
+                    ) : (
+                      <>View more <ChevronDown className="w-4 h-4" /></>
+                    )}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       ) : activeTab === 'brand-photography' ? (
-        <div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6 lg:hidden">
-            Brand Photography
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="order-3 lg:order-none">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6 hidden lg:block">
-                Brand Photography
-              </h2>
-            </div>
-            <div className="order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
-              <ImageCarousel
-                images={images}
-                alt={activeTab}
-                aspectClassName="aspect-[1075/806]"
-                wrapperClassName="w-full lg:w-[1075px]"
-              />
-            </div>
-          </div>
-        </div>
+        <ImageCarousel images={images} alt={activeTab} />
       ) : activeTab === 'video-storytelling' ? (
         <div className="space-y-12">
           {videosData.categories
@@ -272,15 +228,15 @@ export function BrandContentPage() {
         </div>
       ) : activeTab === 'thought-leadership' ? (
         <div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6 lg:hidden">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight lg:hidden">
             DKSH Thought Leadership
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4 order-3 lg:order-none">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white hidden lg:block">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="flex flex-col order-2 lg:order-1 space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight hidden lg:block">
                 DKSH Thought Leadership
               </h2>
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed">
                 Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
               </p>
               <p className="text-slate-300">View work:</p>
@@ -302,7 +258,7 @@ export function BrandContentPage() {
                     rel="noopener noreferrer"
                     className="underline underline-offset-4 hover:text-white"
                   >
-                    DKSH Taiwan Supply Chain Management’s Transformation to a Growth Enabler
+                    DKSH Taiwan Supply Chain Management's Transformation to a Growth Enabler
                   </a>
                 </li>
                 <li>
@@ -327,23 +283,23 @@ export function BrandContentPage() {
                 </li>
               </ul>
             </div>
-            <div className="order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+            <div className="order-1 lg:order-2">
               <ImageCarousel
                 images={images}
                 alt={activeTab}
-                aspectClassName="aspect-[1075/806]"
-                wrapperClassName="w-full lg:w-[1075px]"
+                aspectClassName="aspect-[4/3]"
+                wrapperClassName="w-full"
               />
             </div>
           </div>
         </div>
       ) : (
-        <div className="lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+        <div>
           <ImageCarousel
             images={images}
             alt={activeTab}
-            aspectClassName="aspect-[1075/806]"
-            wrapperClassName="w-full lg:w-[1075px]"
+            aspectClassName="aspect-[4/3]"
+            wrapperClassName="w-full"
           />
         </div>
       )}
