@@ -36,7 +36,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]">
             {/* Left: Text Content */}
-            <div className="flex flex-col justify-center order-3 lg:order-1 max-w-[900px]">
+            <div className="flex flex-col justify-center order-1 max-w-[900px]">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight max-w-[900px] break-words hidden lg:block">
                 {project.title}
               </h2>
@@ -112,7 +112,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             </div>
 
             {/* Right: Image */}
-            <div className="order-2 lg:order-2 flex items-start justify-start pt-6 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+            <div className="order-2 flex items-start justify-start pt-6 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
               {project.imageUrls && project.imageUrls.length > 1 ? (
                 <div className="w-full">
                   <ImageCarousel

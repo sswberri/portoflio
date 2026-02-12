@@ -50,7 +50,7 @@ export function LaunchesPage() {
             Google Store International Expansion
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4 order-3 lg:order-none">
+            <div className="space-y-4 order-1">
               <h2 className="text-2xl md:text-3xl font-bold text-white break-words hidden lg:block">
                 Google Store International Expansion
               </h2>
@@ -88,7 +88,7 @@ export function LaunchesPage() {
             </div>
           </div>
           </div>
-          <div className="flex justify-start order-2 lg:order-none lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+          <div className="flex justify-start order-2 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
             <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src="/images/launch_GTM_google.svg"
@@ -117,7 +117,7 @@ export function LaunchesPage() {
             #weArethefuture Brand Launch
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
-            <div className="space-y-4 order-3 lg:order-none">
+            <div className="space-y-4 order-1">
               <h2 className="text-2xl md:text-3xl font-bold text-white break-words hidden lg:block">
                 #weArethefuture Brand Launch
               </h2>
@@ -142,7 +142,7 @@ export function LaunchesPage() {
           </div>
         </div>
         </div>
-        <div className="flex justify-start order-2 lg:order-none lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+        <div className="flex justify-start order-2 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
           <div className="w-full">
             <ImageCarousel
               images={[
