@@ -60,10 +60,22 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
       projects: [
         {
           id: 'patient-purpose-day-project',
-          title: 'Patient Purpose Day',
-          description: 'Activated an internal engagement program that spotlighted patient-first impact stories, aligning teams around purpose-driven healthcare outcomes.',
+          title: 'Patient Purpose Day - DKSH Annual Sustainability Campaign in 11 Healthcare Markets',
+          description: 'Strategized and delivered DKSH Healthcare Taiwan’s annual Patient Purpose Day across 3 consecutive years, establishing a MarCom-led sustainability platform advancing the mission of “Healthcare for All” through focused patient themes, cross-functional governance, and measurable community impact.',
+          bullets: [
+            'Developed 3 annual integrated campaigns centered on cardiovascular health, eldercare, and women’s health and wellbeing',
+            'Led month-long awareness programs combining employee activations, volunteering, CSR initiatives, physician workshops, and digital storytelling including video testimonials, success stories, podcasts and online engagement',
+            'Directed a cross-functional taskforce spanning MarCom, Sustainability, Compliance, Client Management, Own Brands, and HR to ensure disciplined execution and alignment',
+            'Generated 400K+ in cumulative donations and established 4 new NGO partnerships to expand support for underserved patient communities',
+          ],
           highlights: [],
-          tags: ['employee engagement', 'internal communications', 'purpose marketing'],
+          tags: [
+            'healthcare marketing strategy',
+            'integrated campaign leadership',
+            'purpose communications',
+            'sustainability governance',
+            'NGO partnerships',
+          ],
           imageUrl: '/images/growth_IMC_PPD.svg',
         },
       ],

@@ -14,7 +14,9 @@ export const imageMap = {
       '/images/brand_CM_placeholder.svg',
     ],
     'brand-photography': [
-      '/images/brand_BP_placeholder.svg',
+      '/images/branding_photo01.svg',
+      '/images/branding_photo02.svg',
+      '/images/branding_photo03.svg',
     ],
   },
 
@@ -54,7 +56,7 @@ export const imageMap = {
       '/images/corp_sustainability_award02.svg',
     ],
     'reputation-issues': [
-      '/images/corp_reputation_award.svg',
+      '/images/corpcomm_award.svg',
     ],
   },
 } as const

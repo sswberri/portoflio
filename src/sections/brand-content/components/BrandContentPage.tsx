@@ -216,6 +216,27 @@ export function BrandContentPage() {
             </div>
           </div>
         </div>
+      ) : activeTab === 'brand-photography' ? (
+        <div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6 lg:hidden">
+            Brand Photography
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
+            <div className="order-3 lg:order-none">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6 hidden lg:block">
+                Brand Photography
+              </h2>
+            </div>
+            <div className="order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+              <ImageCarousel
+                images={images}
+                alt={activeTab}
+                aspectClassName="aspect-[1075/806]"
+                wrapperClassName="w-full lg:w-[1075px]"
+              />
+            </div>
+          </div>
+        </div>
       ) : activeTab === 'video-storytelling' ? (
         <div className="space-y-12">
           {videosData.categories
@@ -251,12 +272,12 @@ export function BrandContentPage() {
         </div>
       ) : activeTab === 'thought-leadership' ? (
         <div>
-          <h2 className="text-2xl font-semibold text-white break-words mb-6 lg:hidden">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6 lg:hidden">
             DKSH Thought Leadership
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
             <div className="space-y-4 order-3 lg:order-none">
-              <h2 className="text-2xl font-semibold text-white break-words hidden lg:block">DKSH Thought Leadership</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white hidden lg:block">DKSH Thought Leadership</h2>
             <p className="text-slate-300 leading-relaxed">
               Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
             </p>
