@@ -6,7 +6,6 @@ interface ImageCarouselProps {
   alt?: string
   aspectClassName?: string
   containerClassName?: string
-  alignClassName?: string
   wrapperClassName?: string
 }
 
@@ -15,7 +14,6 @@ export function ImageCarousel({
   alt = 'Portfolio image',
   aspectClassName = 'aspect-[16/10]',
   containerClassName = 'rounded-xl',
-  alignClassName = 'items-center',
   wrapperClassName = 'w-full max-w-4xl',
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -70,10 +68,10 @@ export function ImageCarousel({
   const isSvg = currentImage?.toLowerCase().endsWith('.svg')
 
   return (
-    <div className={`flex flex-col ${alignClassName}`}>
+    <div className="w-full">
       {/* Image Container */}
       <div className={wrapperClassName}>
-        <div className={`relative ${aspectClassName} bg-slate-800/30 ${containerClassName} overflow-hidden`}>
+        <div className={`relative ${aspectClassName} ${containerClassName} overflow-hidden`}>
           <img
             src={currentImage}
             alt={`${alt} ${displayIndex + 1}`}

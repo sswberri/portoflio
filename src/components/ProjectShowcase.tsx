@@ -28,15 +28,15 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   }
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-16 lg:gap-24">
       {projects.map((project) => (
         <div key={project.id}>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight break-words lg:hidden">
             {project.title}
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Text Content */}
-            <div className="flex flex-col justify-center order-1 max-w-[900px]">
+            <div className="flex flex-col order-2 lg:order-1 max-w-[900px]">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight max-w-[900px] break-words hidden lg:block">
                 {project.title}
               </h2>
@@ -112,25 +112,20 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             </div>
 
             {/* Right: Image */}
-            <div className="order-2 flex items-start justify-start pt-6 lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+            <div className="order-1 lg:order-2">
               {project.imageUrls && project.imageUrls.length > 1 ? (
-                <div className="w-full">
-                  <ImageCarousel
-                    images={project.imageUrls}
-                    alt={project.title}
-                    aspectClassName="aspect-[1075/806]"
-                    containerClassName="rounded-none"
-                    alignClassName="items-center lg:items-end"
-                    wrapperClassName="w-full lg:w-[1075px] lg:h-[806px]"
-                  />
-                </div>
+                <ImageCarousel
+                  images={project.imageUrls}
+                  alt={project.title}
+                  aspectClassName="aspect-[4/3]"
+                  containerClassName="rounded-none"
+                  wrapperClassName="w-full"
+                />
               ) : (
-                <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[1075/806] bg-slate-800/30 rounded-none overflow-hidden">
+                <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    width={1600}
-                    height={1200}
                     className="w-full h-full object-contain"
                   />
                   {project.imageUrl.toLowerCase().endsWith('.svg') && (
