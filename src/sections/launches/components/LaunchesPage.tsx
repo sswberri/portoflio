@@ -158,11 +158,6 @@ export function LaunchesPage() {
 
       {sections.map((section) => (
         <div key={section.id} className="mb-16 lg:mb-24">
-          {section.title && (
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-              {section.title}
-            </h2>
-          )}
           <ProjectShowcase projects={section.projects} />
         </div>
       ))}

@@ -36,25 +36,6 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
   ],
   'integrated-campaigns': [
     {
-      id: 'weare-omnichannel',
-      title: 'weArethefuture Omnichannel Brand Activation',
-      projects: [
-        {
-          id: 'imc-weare-omnichannel',
-          title: 'weArethefuture Omnichannel Brand Activation',
-          description: 'Activated weArethefuture through integrated field marketing programs spanning influencer events, runway shows, tradeshows, retail activations with designer partners, and co-marketing initiatives to expand market reach, build local brand awareness, and align with fashion designers and platforms.',
-          highlights: [],
-          tags: ['co-branding', 'field marketing', 'strategic alignment', 'influencer marketing'],
-          imageUrl: '/images/launch_IMC_weare_YTFF.svg',
-          imageUrls: [
-            '/images/launch_IMC_weare_YTFF.svg',
-            '/images/launch_IMC_weare_GZshow.svg',
-            '/images/launch_IMC_weare_SHshow.svg',
-          ],
-        },
-      ],
-    },
-    {
       id: 'patient-purpose-day',
       title: 'Patient Purpose Day',
       projects: [
@@ -118,6 +99,25 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
           ],
           highlights: [],
           imageUrl: '/images/growth_IMC_customerday.svg',
+        },
+      ],
+    },
+    {
+      id: 'weare-omnichannel',
+      title: 'weArethefuture Omnichannel Brand Activation',
+      projects: [
+        {
+          id: 'imc-weare-omnichannel',
+          title: 'weArethefuture Omnichannel Brand Activation',
+          description: 'Activated weArethefuture through integrated field marketing programs spanning influencer events, runway shows, tradeshows, retail activations with designer partners, and co-marketing initiatives to expand market reach, build local brand awareness, and align with fashion designers and platforms.',
+          highlights: [],
+          tags: ['co-branding', 'field marketing', 'strategic alignment', 'influencer marketing'],
+          imageUrl: '/images/launch_IMC_weare_YTFF.svg',
+          imageUrls: [
+            '/images/launch_IMC_weare_YTFF.svg',
+            '/images/launch_IMC_weare_GZshow.svg',
+            '/images/launch_IMC_weare_SHshow.svg',
+          ],
         },
       ],
     },
