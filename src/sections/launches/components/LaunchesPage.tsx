@@ -87,6 +87,7 @@ export function LaunchesPage() {
               ))}
             </div>
           </div>
+          </div>
           <div className="flex justify-start order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
             <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
@@ -139,6 +140,7 @@ export function LaunchesPage() {
               </span>
             ))}
           </div>
+        </div>
         </div>
         <div className="flex justify-start order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
           <div className="w-full">

@@ -277,61 +277,64 @@ export function BrandContentPage() {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
             <div className="space-y-4 order-3 lg:order-none">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white hidden lg:block">DKSH Thought Leadership</h2>
-            <p className="text-slate-300 leading-relaxed">
-              Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
-            </p>
-            <p className="text-slate-300">View work:</p>
-            <ul className="space-y-3 text-slate-300 list-disc list-outside pl-5 marker:text-white">
-              <li>
-                <a
-                  href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Global Brands, Local Impact: DKSH Deepens Engagement with Consumers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  DKSH Taiwan Supply Chain Management’s Transformation to a Growth Enabler
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Trailblazing Transitions of DKSH Taiwan Finance
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.dksh.com/tw-en/home/insights/enriching-everyday-moments-with-smarter-healthier-snacking"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-white"
-                >
-                  Enriching Everyday Moments with Smarter, Healthier Snacking
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
-            <ImageCarousel
-              images={images}
-              alt={activeTab}
-              aspectClassName="aspect-[1075/806]"
-              wrapperClassName="w-full lg:w-[1075px]"
-            />
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white hidden lg:block">
+                DKSH Thought Leadership
+              </h2>
+              <p className="text-slate-300 leading-relaxed">
+                Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
+              </p>
+              <p className="text-slate-300">View work:</p>
+              <ul className="space-y-3 text-slate-300 list-disc list-outside pl-5 marker:text-white">
+                <li>
+                  <a
+                    href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Global Brands, Local Impact: DKSH Deepens Engagement with Consumers
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    DKSH Taiwan Supply Chain Management’s Transformation to a Growth Enabler
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Trailblazing Transitions of DKSH Taiwan Finance
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.dksh.com/tw-en/home/insights/enriching-everyday-moments-with-smarter-healthier-snacking"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-white"
+                  >
+                    Enriching Everyday Moments with Smarter, Healthier Snacking
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+              <ImageCarousel
+                images={images}
+                alt={activeTab}
+                aspectClassName="aspect-[1075/806]"
+                wrapperClassName="w-full lg:w-[1075px]"
+              />
+            </div>
           </div>
         </div>
       ) : (

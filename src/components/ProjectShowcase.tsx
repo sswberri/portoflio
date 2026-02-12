@@ -41,114 +41,112 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                 {project.title}
               </h2>
 
-            <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-6">
-              {project.description}
-            </p>
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-6">
+                {project.description}
+              </p>
 
-            {project.highlights.length > 0 && (
-              <ul className="space-y-3">
-                {project.highlights.map((highlight, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-white"
-                  >
-                    <span className="text-white mt-1.5">•</span>
-                    <span className="text-sm md:text-base leading-relaxed">
-                      {highlight}
+              {project.highlights.length > 0 && (
+                <ul className="space-y-3">
+                  {project.highlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start gap-3 text-white">
+                      <span className="text-white mt-1.5">•</span>
+                      <span className="text-sm md:text-base leading-relaxed">
+                        {highlight}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {project.bullets && project.bullets.length > 0 && (
+                <ul className="mt-6 space-y-3 list-disc list-outside pl-5 text-slate-300 marker:text-white">
+                  {project.bullets.map((bullet, index) => (
+                    <li key={index} className="text-sm md:text-base leading-relaxed">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {project.exposureLinks && project.exposureLinks.length > 0 && (
+                <ul className="mt-6 space-y-2 list-disc list-outside pl-5 text-slate-300 marker:text-white">
+                  {project.exposureLinks.map((link) => (
+                    <li key={link.url} className="text-sm md:text-base">
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-4"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {project.tags && project.tags.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full px-4 py-1 text-sm font-medium text-black"
+                      style={{ backgroundColor: '#a5dce3' }}
+                    >
+                      {tag}
                     </span>
-                  </li>
-                ))}
-              </ul>
-            )}
+                  ))}
+                </div>
+              )}
 
-            {project.bullets && project.bullets.length > 0 && (
-              <ul className="mt-6 space-y-3 list-disc list-outside pl-5 text-slate-300 marker:text-white">
-                {project.bullets.map((bullet, index) => (
-                  <li key={index} className="text-sm md:text-base leading-relaxed">
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            )}
+              {project.supplementary && (
+                <div className="mt-6 rounded-lg border border-slate-800 bg-slate-900/40 p-4">
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-2">
+                    Supplementary info
+                  </p>
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    {project.supplementary}
+                  </p>
+                </div>
+              )}
+            </div>
 
-            {project.exposureLinks && project.exposureLinks.length > 0 && (
-              <ul className="mt-6 space-y-2 list-disc list-outside pl-5 text-slate-300 marker:text-white">
-                {project.exposureLinks.map((link) => (
-                  <li key={link.url} className="text-sm md:text-base">
+            {/* Right: Image */}
+            <div className="order-2 lg:order-2 flex items-start justify-start pt-6 lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+              {project.imageUrls && project.imageUrls.length > 1 ? (
+                <div className="w-full">
+                  <ImageCarousel
+                    images={project.imageUrls}
+                    alt={project.title}
+                    aspectClassName="aspect-[1075/806]"
+                    containerClassName="rounded-none"
+                    alignClassName="items-center lg:items-end"
+                    wrapperClassName="w-full lg:w-[1075px]"
+                  />
+                </div>
+              ) : (
+                <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    width={1600}
+                    height={1200}
+                    className="w-full h-full object-contain"
+                  />
+                  {project.imageUrl.toLowerCase().endsWith('.svg') && (
                     <a
-                      href={link.url}
+                      href={project.imageUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline underline-offset-4"
+                      className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
+                      aria-label="View full size image"
                     >
-                      {link.label}
+                      <Search className="w-5 h-5" />
                     </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {project.tags && project.tags.length > 0 && (
-              <div className="mt-6 flex flex-wrap gap-3">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full px-4 py-1 text-sm font-medium text-black"
-                    style={{ backgroundColor: '#a5dce3' }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            {project.supplementary && (
-              <div className="mt-6 rounded-lg border border-slate-800 bg-slate-900/40 p-4">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-2">
-                  Supplementary info
-                </p>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {project.supplementary}
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Right: Image */}
-          <div className="order-2 lg:order-2 flex items-start justify-start pt-6 lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
-            {project.imageUrls && project.imageUrls.length > 1 ? (
-              <div className="w-full">
-                <ImageCarousel
-                  images={project.imageUrls}
-                  alt={project.title}
-                  aspectClassName="aspect-[1075/806]"
-                  containerClassName="rounded-none"
-                  alignClassName="items-center lg:items-end"
-                  wrapperClassName="w-full lg:w-[1075px]"
-                />
-              </div>
-            ) : (
-              <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  width={1600}
-                  height={1200}
-                  className="w-full h-full object-contain"
-                />
-                {project.imageUrl.toLowerCase().endsWith('.svg') && (
-                  <a
-                    href={project.imageUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-                    aria-label="View full size image"
-                  >
-                    <Search className="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-            )}
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       ))}
