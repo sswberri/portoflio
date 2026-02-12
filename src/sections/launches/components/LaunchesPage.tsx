@@ -88,8 +88,8 @@ export function LaunchesPage() {
             </div>
           </div>
           </div>
-          <div className="flex justify-start order-2 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
-            <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+          <div className="flex justify-start order-2 lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+            <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[1075/806] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src="/images/launch_GTM_google.svg"
                 alt="Google Store international expansion illustration"
@@ -142,7 +142,7 @@ export function LaunchesPage() {
           </div>
         </div>
         </div>
-        <div className="flex justify-start order-2 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+        <div className="flex justify-start order-2 lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
           <div className="w-full">
             <ImageCarousel
               images={[
@@ -153,7 +153,7 @@ export function LaunchesPage() {
               alt="weArethefuture brand launch"
               aspectClassName="aspect-[1075/806]"
               containerClassName="rounded-none"
-              wrapperClassName="w-full lg:w-[1075px]"
+              wrapperClassName="w-full lg:w-[1075px] lg:h-[806px]"
             />
           </div>
         </div>

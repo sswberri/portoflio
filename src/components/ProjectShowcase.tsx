@@ -112,7 +112,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             </div>
 
             {/* Right: Image */}
-            <div className="order-2 flex items-start justify-start pt-6 lg:scale-[0.6] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+            <div className="order-2 flex items-start justify-start pt-6 lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
               {project.imageUrls && project.imageUrls.length > 1 ? (
                 <div className="w-full">
                   <ImageCarousel
@@ -121,11 +121,11 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                     aspectClassName="aspect-[1075/806]"
                     containerClassName="rounded-none"
                     alignClassName="items-center lg:items-end"
-                    wrapperClassName="w-full lg:w-[1075px]"
+                    wrapperClassName="w-full lg:w-[1075px] lg:h-[806px]"
                   />
                 </div>
               ) : (
-                <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
+                <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[1075/806] bg-slate-800/30 rounded-none overflow-hidden">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
