@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Search, ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { ImageLightbox } from '@/components/ImageLightbox'
 
 export interface Project {
   id: string
@@ -29,6 +30,7 @@ function hasExtraContent(project: Project): boolean {
 
 export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set())
+  const [lightboxImages, setLightboxImages] = useState<string[] | null>(null)
 
   if (projects.length === 0) {
     return (
@@ -143,23 +145,15 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                     wrapperClassName="w-full"
                   />
                 ) : (
-                  <div className="relative w-full aspect-[4/3] overflow-hidden">
+                  <div
+                    className="relative w-full aspect-[4/3] overflow-hidden cursor-pointer"
+                    onClick={() => setLightboxImages([project.imageUrl])}
+                  >
                     <img
                       src={project.imageUrl}
                       alt={project.title}
                       className="w-full h-full object-contain"
                     />
-                    {project.imageUrl.toLowerCase().endsWith('.svg') && (
-                      <a
-                        href={project.imageUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-                        aria-label="View full size image"
-                      >
-                        <Search className="w-5 h-5" />
-                      </a>
-                    )}
                   </div>
                 )}
               </div>
@@ -222,6 +216,14 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
           </div>
         )
       })}
+
+      {lightboxImages && (
+        <ImageLightbox
+          images={lightboxImages}
+          alt="Project image"
+          onClose={() => setLightboxImages(null)}
+        />
+      )}
     </div>
   )
 }

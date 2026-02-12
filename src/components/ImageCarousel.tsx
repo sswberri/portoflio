@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { ImageLightbox } from '@/components/ImageLightbox'
 
 interface ImageCarouselProps {
   images: readonly string[]
@@ -18,6 +19,7 @@ export function ImageCarousel({
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [displayIndex, setDisplayIndex] = useState(0)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   // Reset index when images change (tab switch)
   useEffect(() => {
@@ -70,10 +72,9 @@ export function ImageCarousel({
       <div className={wrapperClassName}>
         {/* Image Container */}
         <div className={`relative ${aspectClassName} ${containerClassName} overflow-hidden`}>
-          <a
-            href={currentImage}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => setLightboxIndex(displayIndex)}
             className="block w-full h-full cursor-pointer"
           >
             <img
@@ -83,7 +84,7 @@ export function ImageCarousel({
                 isTransitioning ? 'opacity-0' : 'opacity-100'
               }`}
             />
-          </a>
+          </button>
         </div>
 
         {/* Dots Navigation — inside wrapper for centering */}
@@ -104,6 +105,15 @@ export function ImageCarousel({
           </div>
         )}
       </div>
+
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          images={images}
+          initialIndex={lightboxIndex}
+          alt={alt}
+          onClose={() => setLightboxIndex(null)}
+        />
+      )}
     </div>
   )
 }

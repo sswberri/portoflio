@@ -76,12 +76,14 @@ function App() {
     <div className="dark">
       <PasswordGate>
         <AppShell activeItemId={activeItemId} onNavigate={handleNavigate}>
-          <Routes>
-            <Route path="/" element={<AboutPageWrapper />} />
-            <Route path="/brand-content" element={<BrandContentPageWrapper />} />
-            <Route path="/campaigns" element={<LaunchesPageWrapper />} />
-            <Route path="/corporate" element={<CorporatePageWrapper />} />
-          </Routes>
+          <div key={location.pathname} className="page-enter">
+            <Routes location={location}>
+              <Route path="/" element={<AboutPageWrapper />} />
+              <Route path="/brand-content" element={<BrandContentPageWrapper />} />
+              <Route path="/campaigns" element={<LaunchesPageWrapper />} />
+              <Route path="/corporate" element={<CorporatePageWrapper />} />
+            </Routes>
+          </div>
         </AppShell>
       </PasswordGate>
     </div>
