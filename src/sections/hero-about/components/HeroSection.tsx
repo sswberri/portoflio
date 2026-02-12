@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 interface HeroSectionProps {
   name: string
   title: string
@@ -6,25 +8,33 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) {
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    requestAnimationFrame(() => setLoaded(true))
+  }, [])
+
+  const cls = loaded ? 'loaded' : ''
+
   return (
-    <section className="min-h-[85vh] flex items-start pt-12 lg:pt-20">
+    <section className="flex items-start pt-12 lg:pt-20 pb-12 lg:pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
         <div className="flex flex-col justify-center order-2 lg:order-1 py-0 lg:py-0">
           {/* Name Title - h3 style */}
-          <h1 className="mb-4">
+          <h1 className={`mb-4 hero-reveal hero-delay-0 ${cls}`}>
             <span className="block text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white">
               {name}
             </span>
           </h1>
 
           {/* Title */}
-          <p className="text-xl md:text-2xl text-white font-medium mb-6 max-w-xl">
+          <p className={`text-xl md:text-2xl text-white font-medium mb-6 whitespace-nowrap hero-reveal hero-delay-1 ${cls}`}>
             {title}
           </p>
 
           {/* Intro - Multi-paragraph */}
-          <div className="space-y-4 max-w-xl mb-10">
+          <div className={`space-y-4 max-w-xl mb-10 hero-reveal hero-delay-2 ${cls}`}>
             {intro.split('\n\n').map((paragraph, index) => (
               <p key={index} className="text-base md:text-lg text-slate-300 leading-relaxed">
                 {paragraph}
@@ -33,7 +43,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
           </div>
 
           {/* Stats Row - 4 in one line */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 hero-reveal hero-delay-3 ${cls}`}>
             <div>
               <span className="block text-2xl md:text-3xl font-light text-white">
                 15+
@@ -70,7 +80,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
         </div>
 
         {/* Right: Photo - Reduced Size */}
-        <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end lg:translate-x-[200px]">
+        <div className={`order-1 lg:order-2 flex items-center justify-center lg:justify-end lg:translate-x-[60px] hero-reveal-right hero-delay-2 ${cls}`}>
           <div className="relative w-full max-w-sm lg:max-w-md overflow-hidden group">
             {photoUrl ? (
               <img

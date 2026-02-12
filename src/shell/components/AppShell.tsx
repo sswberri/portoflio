@@ -27,7 +27,7 @@ export function AppShell({ children, activeItemId = 'home', onNavigate }: AppShe
       <MobileNav activeItemId={activeItemId} onNavigate={onNavigate} />
 
       {/* Main Content Area */}
-      <main className={`${sidebarCollapsed ? 'md:pl-20' : 'md:pl-64'} transition-all duration-300`}>
+      <main className={`${sidebarCollapsed ? 'md:pl-20' : 'md:pl-64'} transition-all duration-300 overflow-x-hidden`}>
         {/* Mobile header spacing */}
         <div className="h-14 md:h-0" />
 
