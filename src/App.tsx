@@ -9,11 +9,8 @@ import { AboutSection } from './sections/hero-about/components/AboutSection'
 import { BrandContentPage } from './sections/brand-content/components/BrandContentPage'
 import { LaunchesPage } from './sections/launches/components/LaunchesPage'
 import { CorporatePage } from './sections/corporate/components/CorporatePage'
-import { ContactPage } from './sections/contact/components/ContactPage'
-
 // Data
 import heroAboutData from './data/hero-about.json'
-import contactData from './data/contact.json'
 
 function AboutPageWrapper() {
   return (
@@ -57,28 +54,12 @@ function CorporatePageWrapper() {
   )
 }
 
-function ContactPageWrapper() {
-  return (
-    <div className="px-6 md:px-12 lg:px-16 max-w-6xl">
-      <ContactPage
-        headline={contactData.headline}
-        subheadline={contactData.subheadline}
-        email={contactData.email}
-        linkedInUrl={contactData.linkedInUrl}
-        linkedInHandle={contactData.linkedInHandle}
-        resumeUrl={contactData.resumeUrl}
-      />
-    </div>
-  )
-}
-
 // Map routes to activeItemId
 const routeToActiveId: Record<string, string> = {
   '/': 'about',
   '/brand-content': 'brand-content',
   '/campaigns': 'campaigns',
   '/corporate': 'corporate',
-  '/contact': 'contact',
 }
 
 function App() {
@@ -100,7 +81,6 @@ function App() {
             <Route path="/brand-content" element={<BrandContentPageWrapper />} />
             <Route path="/campaigns" element={<LaunchesPageWrapper />} />
             <Route path="/corporate" element={<CorporatePageWrapper />} />
-            <Route path="/contact" element={<ContactPageWrapper />} />
           </Routes>
         </AppShell>
       </PasswordGate>

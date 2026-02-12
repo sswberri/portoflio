@@ -1,5 +1,7 @@
-import { useState } from 'react'
-import { Menu, X, User, Megaphone, Rocket, Building2, Mail } from 'lucide-react'
+import { useState, lazy, Suspense } from 'react'
+import { Menu, X, User, Megaphone, Rocket, Building2, Mail, Linkedin, FileText } from 'lucide-react'
+
+const ResumeViewer = lazy(() => import('@/components/ResumeViewer').then(m => ({ default: m.ResumeViewer })))
 
 interface NavItem {
   id: string
@@ -18,11 +20,11 @@ const navItems: NavItem[] = [
   { id: 'brand-content', label: 'Brand & Content', href: '/brand-content', icon: <Megaphone className="w-5 h-5" /> },
   { id: 'campaigns', label: 'Growth Campaigns', href: '/campaigns', icon: <Rocket className="w-5 h-5" /> },
   { id: 'corporate', label: 'Corporate Communications', href: '/corporate', icon: <Building2 className="w-5 h-5" /> },
-  { id: 'contact', label: 'Contact', href: '/contact', icon: <Mail className="w-5 h-5" /> },
 ]
 
 export function MobileNav({ activeItemId = 'about', onNavigate }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [resumeOpen, setResumeOpen] = useState(false)
 
   const handleClick = (href: string) => {
     if (onNavigate) {
@@ -77,12 +79,47 @@ export function MobileNav({ activeItemId = 'about', onNavigate }: MobileNavProps
             </ul>
           </nav>
 
+          {/* Contact Icons */}
           <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200 dark:border-slate-800">
+            <div className="flex items-center justify-center gap-6 mb-3">
+              <a
+                href="mailto:sswei@live.com"
+                className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                title="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/weisharon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                title="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <button
+                onClick={() => {
+                  setResumeOpen(true)
+                  setIsOpen(false)
+                }}
+                className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                title="Resume"
+              >
+                <FileText className="w-5 h-5" />
+              </button>
+            </div>
             <p className="text-xs text-slate-500 dark:text-slate-500 text-center">
               © 2026 Portfolio
             </p>
           </div>
         </div>
+      )}
+
+      {resumeOpen && (
+        <Suspense fallback={null}>
+          <ResumeViewer open={resumeOpen} onClose={() => setResumeOpen(false)} />
+        </Suspense>
       )}
     </>
   )
