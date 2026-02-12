@@ -76,6 +76,20 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
             'sustainability governance',
             'NGO partnerships',
           ],
+          exposureLinks: [
+            {
+              label: 'Group Healthcare internal e-newsletter',
+              url: 'https://contactgroup.dksh.com/webmail/988992/887269497/97a2acb602b69a49d63192bee4dda0bc3000127fda60d0ad3e3de7d2313c8600',
+            },
+            {
+              label: 'DKSH Reinforces Patient-Centric Commitment with “PatientPurpose Day 2025”',
+              url: 'https://www.dksh.com/tw-zh-Hant/home/media/news/%E5%A4%A7%E6%98%8C%E8%8F%AF%E5%98%89%E8%88%89%E8%BE%A6-2025-%E7%97%85%E6%82%A3%E9%97%9C%E6%87%B7%E6%97%A5-%E8%81%9A%E7%84%A6%E5%A5%B3%E6%80%A7%E5%81%A5%E5%BA%B7%E5%B9%B3%E7%AD%89',
+            },
+            {
+              label: 'Enriching Patients’ Lives Through DKSH Purpose Day',
+              url: 'https://www.dksh.com/global-en/home/insights/enriching-patients-lives-through-dksh-purpose-day',
+            },
+          ],
           imageUrl: '/images/growth_IMC_PPD.svg',
         },
       ],

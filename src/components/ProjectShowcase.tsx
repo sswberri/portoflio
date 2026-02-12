@@ -72,10 +72,9 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             )}
 
             {project.exposureLinks && project.exposureLinks.length > 0 && (
-              <p className="mt-6 text-slate-300 text-sm md:text-base">
-                Exposure:{' '}
-                {project.exposureLinks.map((link, index) => (
-                  <span key={link.url}>
+              <ul className="mt-6 space-y-2 list-disc list-outside pl-5 text-slate-300 marker:text-white">
+                {project.exposureLinks.map((link) => (
+                  <li key={link.url} className="text-sm md:text-base">
                     <a
                       href={link.url}
                       target="_blank"
@@ -84,10 +83,9 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                     >
                       {link.label}
                     </a>
-                    {index < (project.exposureLinks?.length ?? 0) - 1 ? ', ' : ''}
-                  </span>
+                  </li>
                 ))}
-              </p>
+              </ul>
             )}
 
             {project.tags && project.tags.length > 0 && (
