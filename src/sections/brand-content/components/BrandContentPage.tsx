@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { ImageCarousel } from '@/components/ImageCarousel'
 import { BackToTopButton } from '@/components/BackToTopButton'
@@ -31,6 +31,10 @@ export function BrandContentPage() {
   const [activeTab, setActiveTab] = useState<TabId>('thought-leadership')
   const [showMoreShaping, setShowMoreShaping] = useState(false)
   const [showMoreScm, setShowMoreScm] = useState(false)
+  const shapingSectionRef = useRef<HTMLDivElement>(null)
+  const shapingMoreRef = useRef<HTMLDivElement>(null)
+  const scmSectionRef = useRef<HTMLDivElement>(null)
+  const scmMoreRef = useRef<HTMLDivElement>(null)
 
   const images = activeTab !== 'video-storytelling' && activeTab !== 'content-marketing'
     ? imageMap['brand-content'][activeTab as keyof typeof imageMap['brand-content']] || []
@@ -120,7 +124,7 @@ export function BrandContentPage() {
       {activeTab === 'content-marketing' ? (
         <div className="space-y-16 lg:space-y-24">
           {/* #ShapingHealthcare */}
-          <div>
+          <div ref={shapingSectionRef}>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
               #ShapingHealthcare LinkedIn Campaign
             </h2>
@@ -133,7 +137,7 @@ export function BrandContentPage() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="mt-6">
+                    <div className="mt-6" ref={shapingMoreRef}>
                       <LinkedInPostList posts={shapingHealthcareMore} />
                     </div>
                   </div>
@@ -141,7 +145,15 @@ export function BrandContentPage() {
                 <div className="mt-6 flex justify-center">
                   <button
                     type="button"
-                    onClick={() => setShowMoreShaping(!showMoreShaping)}
+                    onClick={() => {
+                      const wasOpen = showMoreShaping
+                      setShowMoreShaping(!showMoreShaping)
+                      if (wasOpen) {
+                        setTimeout(() => shapingSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 400)
+                      } else {
+                        setTimeout(() => shapingMoreRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 400)
+                      }
+                    }}
                     className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {showMoreShaping ? (
@@ -156,7 +168,7 @@ export function BrandContentPage() {
           </div>
 
           {/* #SCMRising */}
-          <div>
+          <div ref={scmSectionRef}>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
               #SCMRising Branding LinkedIn Campaign
             </h2>
@@ -169,7 +181,7 @@ export function BrandContentPage() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="mt-6">
+                    <div className="mt-6" ref={scmMoreRef}>
                       <LinkedInPostList posts={scmMore} />
                     </div>
                   </div>
@@ -177,7 +189,15 @@ export function BrandContentPage() {
                 <div className="mt-6 flex justify-center">
                   <button
                     type="button"
-                    onClick={() => setShowMoreScm(!showMoreScm)}
+                    onClick={() => {
+                      const wasOpen = showMoreScm
+                      setShowMoreScm(!showMoreScm)
+                      if (wasOpen) {
+                        setTimeout(() => scmSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 400)
+                      } else {
+                        setTimeout(() => scmMoreRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 400)
+                      }
+                    }}
                     className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {showMoreScm ? (

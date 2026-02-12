@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { ImageCarousel } from '@/components/ImageCarousel'
 import { ImageLightbox } from '@/components/ImageLightbox'
@@ -31,6 +31,8 @@ function hasExtraContent(project: Project): boolean {
 export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set())
   const [lightboxImages, setLightboxImages] = useState<string[] | null>(null)
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const expandedContentRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
   if (projects.length === 0) {
     return (
@@ -41,6 +43,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
   }
 
   const toggleExpanded = (id: string) => {
+    const isExpanded = expandedIds.has(id)
     setExpandedIds((prev) => {
       const next = new Set(prev)
       if (next.has(id)) {
@@ -50,6 +53,18 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       }
       return next
     })
+
+    if (isExpanded) {
+      // Collapsing → scroll back to section top after animation
+      setTimeout(() => { // wait for grid-rows transition to finish
+        sectionRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 400)
+    } else {
+      // Expanding → scroll to expanded content after animation
+      setTimeout(() => { // wait for grid-rows transition to finish
+        expandedContentRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }, 400)
+    }
   }
 
   return (
@@ -59,7 +74,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
         const showToggle = hasExtraContent(project)
 
         return (
-          <div key={project.id}>
+          <div key={project.id} ref={(el) => { sectionRefs.current[project.id] = el }}>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight break-words lg:hidden">
               {project.title}
             </h2>
@@ -167,7 +182,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="mt-8 rounded-lg border border-slate-800 bg-slate-900/30 p-6 lg:p-8 space-y-6">
+                  <div ref={(el) => { expandedContentRefs.current[project.id] = el }} className="mt-8 rounded-lg border border-slate-800 bg-slate-900/30 p-6 lg:p-8 space-y-6">
                     {project.bullets && project.bullets.length > 0 && (
                       <ul className="space-y-3 list-disc list-outside pl-5 text-slate-300 marker:text-white">
                         {project.bullets.map((bullet, index) => (
