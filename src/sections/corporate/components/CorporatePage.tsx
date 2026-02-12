@@ -17,9 +17,13 @@ export function CorporatePage() {
   const images = imageMap['corporate'][activeTab] || []
 
   return (
-    <div className="py-12">
+    <div className="py-12 lg:py-20">
       {/* Section Title */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">Corporate Communications</h1>
+      <div className="mb-16 lg:mb-24">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6">
+          Corporate Communications
+        </h1>
+      </div>
 
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-800 pb-4">

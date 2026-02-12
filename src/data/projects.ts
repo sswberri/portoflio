@@ -55,6 +55,20 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
       ],
     },
     {
+      id: 'patient-purpose-day',
+      title: 'Patient Purpose Day',
+      projects: [
+        {
+          id: 'patient-purpose-day-project',
+          title: 'Patient Purpose Day',
+          description: 'Activated an internal engagement program that spotlighted patient-first impact stories, aligning teams around purpose-driven healthcare outcomes.',
+          highlights: [],
+          tags: ['employee engagement', 'internal communications', 'purpose marketing'],
+          imageUrl: '/images/growth_IMC_PPD.svg',
+        },
+      ],
+    },
+    {
       id: 'healthcare-customer-day',
       title: 'DKSH Healthcare Taiwan Customer Day - Field Engagement Event',
       projects: [
@@ -77,7 +91,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
             { label: 'YouTube video', url: 'https://youtu.be/v2iGrlg8h1E?si=cn3HUD7MduFk38KX' },
           ],
           highlights: [],
-          imageUrl: '/images/launch_PD_placeholder.svg',
+          imageUrl: '/images/growth_IMC_customerday.svg',
         },
       ],
     },

@@ -90,9 +90,13 @@ export function BrandContentPage() {
   )
 
   return (
-    <div className="py-12">
+    <div className="py-12 lg:py-20">
       {/* Section Title */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">Brand & Content</h1>
+      <div className="mb-16 lg:mb-24">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6">
+          Brand & Content
+        </h1>
+      </div>
 
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-800 pb-4">
@@ -113,7 +117,7 @@ export function BrandContentPage() {
 
       {/* Content */}
       {activeTab === 'content-marketing' ? (
-        <div className="space-y-12">
+        <div className="space-y-12 lg:space-y-16">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-8 lg:gap-[200px] items-start">
             <div className="space-y-4">
               <h2 className="text-2xl font-semibold text-white break-words">
@@ -300,7 +304,7 @@ export function BrandContentPage() {
               </li>
             </ul>
           </div>
-          <div className="order-2 lg:order-none">
+          <div className="order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
             <ImageCarousel
               images={images}
               alt={activeTab}
@@ -310,12 +314,14 @@ export function BrandContentPage() {
           </div>
         </div>
       ) : (
-        <ImageCarousel
-          images={images}
-          alt={activeTab}
-          aspectClassName="aspect-[1075/806]"
-          wrapperClassName="w-full lg:w-[1075px]"
-        />
+        <div className="lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
+          <ImageCarousel
+            images={images}
+            alt={activeTab}
+            aspectClassName="aspect-[1075/806]"
+            wrapperClassName="w-full lg:w-[1075px]"
+          />
+        </div>
       )}
 
       <BackToTopButton />

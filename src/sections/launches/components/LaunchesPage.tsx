@@ -19,9 +19,13 @@ export function LaunchesPage() {
   const sections = getProjectSectionsByCategory(activeTab)
 
   return (
-    <div className="py-12">
+    <div className="py-12 lg:py-20">
       {/* Section Title */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 tracking-tight">Growth Campaigns</h1>
+      <div className="mb-16 lg:mb-24">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6">
+          Growth Campaigns
+        </h1>
+      </div>
 
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-800 pb-4">
@@ -41,7 +45,7 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="mb-16">
+        <div className="mb-16 lg:mb-24">
           <h2 className="text-2xl md:text-3xl font-bold text-white break-words mb-6 lg:hidden">
             Google Store International Expansion
           </h2>
@@ -83,7 +87,7 @@ export function LaunchesPage() {
               ))}
             </div>
           </div>
-          <div className="flex justify-start order-2 lg:order-none">
+          <div className="flex justify-start order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
             <div className="relative w-full lg:w-[1075px] lg:h-[806px] aspect-[4/3] bg-slate-800/30 rounded-none overflow-hidden">
               <img
                 src="/images/launch_GTM_google.svg"
@@ -107,7 +111,7 @@ export function LaunchesPage() {
       )}
 
       {activeTab === 'go-to-market' && (
-        <div className="mb-16">
+        <div className="mb-16 lg:mb-24">
           <h2 className="text-2xl md:text-3xl font-bold text-white break-words mb-6 lg:hidden">
             #weArethefuture Brand Launch
           </h2>
@@ -136,7 +140,7 @@ export function LaunchesPage() {
             ))}
           </div>
         </div>
-        <div className="flex justify-start order-2 lg:order-none">
+        <div className="flex justify-start order-2 lg:order-none lg:scale-[1.2] lg:origin-top-left lg:translate-x-[40px] lg:translate-y-[20px]">
           <div className="w-full">
             <ImageCarousel
               images={[
@@ -155,7 +159,7 @@ export function LaunchesPage() {
       )}
 
       {sections.map((section) => (
-        <div key={section.id} className="mb-16">
+        <div key={section.id} className="mb-16 lg:mb-24">
           {activeTab !== 'integrated-campaigns' && section.title && (
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
               {section.title}

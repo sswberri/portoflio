@@ -97,15 +97,15 @@ export function ImageCarousel({
 
       {/* Dots Navigation */}
       {images.length > 1 && (
-        <div className="flex gap-3 mt-6">
+        <div className="flex gap-2.5 mt-5 justify-center">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
                 index === currentIndex
-                  ? 'bg-white scale-125'
-                  : 'bg-slate-600 hover:bg-slate-400 hover:scale-110'
+                  ? 'bg-white scale-110'
+                  : 'bg-slate-600 hover:bg-slate-400 hover:scale-105'
               }`}
               aria-label={`Go to image ${index + 1}`}
             />

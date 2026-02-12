@@ -81,7 +81,8 @@ export function AboutSection({ }: AboutSectionProps) {
           <img
             src="/images/logo.svg"
             alt="Companies worked with"
-            className="w-full max-w-4xl transition-transform duration-500 ease-out group-hover:scale-105"
+            className="w-full h-auto max-w-4xl transition-transform duration-500 ease-out group-hover:scale-105"
+            style={{ imageRendering: 'auto' }}
           />
         </div>
       </div>

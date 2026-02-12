@@ -7,13 +7,13 @@ interface HeroSectionProps {
 
 export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) {
   return (
-    <section className="min-h-[85vh] flex items-start">
+    <section className="min-h-[85vh] flex items-start pt-12 lg:pt-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
         <div className="flex flex-col justify-center order-2 lg:order-1 py-0 lg:py-0">
           {/* Name Title - h3 style */}
           <h1 className="mb-4">
-            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white">
               {name}
             </span>
           </h1>

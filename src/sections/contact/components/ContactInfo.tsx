@@ -22,7 +22,7 @@ export function ContactInfo({
       >
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded-lg" style={{ backgroundColor: '#f8a853' }}>
-            <Mail className="w-5 h-5 text-black" />
+            <Mail className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors break-all">
@@ -42,7 +42,7 @@ export function ContactInfo({
       >
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded-lg" style={{ backgroundColor: '#f8a853' }}>
-            <Linkedin className="w-5 h-5 text-black" />
+            <Linkedin className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
@@ -62,7 +62,7 @@ export function ContactInfo({
       >
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 rounded-lg" style={{ backgroundColor: '#f8a853' }}>
-            <FileDown className="w-5 h-5 text-black" />
+            <FileDown className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-lg font-medium text-slate-900 dark:text-white group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
