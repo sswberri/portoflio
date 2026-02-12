@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Search } from 'lucide-react'
 
 interface ImageCarouselProps {
   images: readonly string[]
@@ -65,51 +64,46 @@ export function ImageCarousel({
   }
 
   const currentImage = images[displayIndex]
-  const isSvg = currentImage?.toLowerCase().endsWith('.svg')
 
   return (
     <div className="w-full">
-      {/* Image Container */}
       <div className={wrapperClassName}>
+        {/* Image Container */}
         <div className={`relative ${aspectClassName} ${containerClassName} overflow-hidden`}>
-          <img
-            src={currentImage}
-            alt={`${alt} ${displayIndex + 1}`}
-            className={`w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
-              isTransitioning ? 'opacity-0' : 'opacity-100'
-            }`}
-          />
-          {isSvg && (
-            <a
-              href={currentImage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute bottom-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors"
-              aria-label="View full size image"
-            >
-              <Search className="w-5 h-5" />
-            </a>
-          )}
-        </div>
-      </div>
-
-      {/* Dots Navigation */}
-      {images.length > 1 && (
-        <div className="flex gap-2.5 mt-5 justify-center">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                index === currentIndex
-                  ? 'bg-white scale-110'
-                  : 'bg-slate-600 hover:bg-slate-400 hover:scale-105'
+          <a
+            href={currentImage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full cursor-pointer"
+          >
+            <img
+              src={currentImage}
+              alt={`${alt} ${displayIndex + 1}`}
+              className={`w-full h-full object-contain transition-opacity duration-500 ease-in-out ${
+                isTransitioning ? 'opacity-0' : 'opacity-100'
               }`}
-              aria-label={`Go to image ${index + 1}`}
             />
-          ))}
+          </a>
         </div>
-      )}
+
+        {/* Dots Navigation — inside wrapper for centering */}
+        {images.length > 1 && (
+          <div className="flex gap-2.5 mt-5 justify-center">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                  index === currentIndex
+                    ? 'bg-white scale-110'
+                    : 'bg-slate-600 hover:bg-slate-400 hover:scale-105'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
