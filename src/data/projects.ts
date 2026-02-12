@@ -6,8 +6,6 @@ export interface ProjectSection {
   projects: Project[]
 }
 
-const defaultSupplementary = 'Placeholder for supplementary info.'
-
 // Projects organized by category/tab
 export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
   'go-to-market': [

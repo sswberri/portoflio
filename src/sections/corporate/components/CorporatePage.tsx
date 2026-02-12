@@ -43,16 +43,7 @@ export function CorporatePage() {
       </div>
 
       {/* Image Carousel */}
-      {activeTab === 'reputation-issues' ? (
-        <div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight text-white mb-6">
-            Award Wins
-          </h2>
-          <ImageCarousel images={images} alt={activeTab} />
-        </div>
-      ) : (
-        <ImageCarousel images={images} alt={activeTab} />
-      )}
+      <ImageCarousel images={images} alt={activeTab} />
 
       <BackToTopButton />
     </div>

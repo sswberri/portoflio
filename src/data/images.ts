@@ -49,6 +49,7 @@ export const imageMap = {
   // Corporate Communications
   corporate: {
     'media-pr': [
+      '/images/corpcomm_PR02.svg',
       '/images/corp_media_openrice_exposure.svg',
     ],
     'sustainability-csr': [
