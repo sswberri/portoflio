@@ -37,7 +37,7 @@ export const projectSectionsByCategory: Record<string, ProjectSection[]> = {
   'integrated-campaigns': [
     {
       id: 'weare-omnichannel',
-      title: '',
+      title: 'weArethefuture Omnichannel Brand Activation',
       projects: [
         {
           id: 'imc-weare-omnichannel',
