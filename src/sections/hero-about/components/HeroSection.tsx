@@ -17,7 +17,7 @@ export function HeroSection({ name, title, intro, photoUrl }: HeroSectionProps) 
   const cls = loaded ? 'loaded' : ''
 
   return (
-    <section className="flex items-start pt-12 lg:pt-20 pb-12 lg:pb-16">
+    <section id="hero" className="flex items-start pt-12 lg:pt-20 pb-12 lg:pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full">
         {/* Left: Text Content */}
         <div className="flex flex-col justify-center order-2 lg:order-1 py-0 lg:py-0">

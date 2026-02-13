@@ -1,6 +1,7 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AppShell } from './shell/components/AppShell'
 import { BackToTopButton } from './components/BackToTopButton'
+import { SectionIndicator } from './components/SectionIndicator'
 import { PasswordGate } from './components/PasswordGate'
 
 // Section components
@@ -11,6 +12,12 @@ import { LaunchesPage } from './sections/launches/components/LaunchesPage'
 import { CorporatePage } from './sections/corporate/components/CorporatePage'
 // Data
 import heroAboutData from './data/hero-about.json'
+
+const aboutSections = [
+  { id: 'hero', label: 'Intro' },
+  { id: 'expertise', label: 'Expertise' },
+  { id: 'worked-with', label: 'Worked With' },
+]
 
 function AboutPageWrapper() {
   return (
@@ -25,7 +32,7 @@ function AboutPageWrapper() {
         bio={heroAboutData.bio}
         skills={heroAboutData.skills}
       />
-      <BackToTopButton />
+      <SectionIndicator sections={aboutSections} />
     </div>
   )
 }
@@ -84,6 +91,7 @@ function App() {
               <Route path="/corporate" element={<CorporatePageWrapper />} />
             </Routes>
           </div>
+          <BackToTopButton />
         </AppShell>
       </PasswordGate>
     </div>

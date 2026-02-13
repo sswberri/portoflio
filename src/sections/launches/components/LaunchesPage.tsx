@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { ImageCarousel } from '@/components/ImageCarousel'
 import { ImageLightbox } from '@/components/ImageLightbox'
-import { BackToTopButton } from '@/components/BackToTopButton'
 import { ProjectShowcase } from '@/components/ProjectShowcase'
+import { SectionIndicator, type SectionDef } from '@/components/SectionIndicator'
 import { getProjectSectionsByCategory } from '@/data/projects'
 
 const tabs = [
@@ -18,6 +18,23 @@ export function LaunchesPage() {
   const [lightboxImages, setLightboxImages] = useState<string[] | null>(null)
 
   const sections = getProjectSectionsByCategory(activeTab)
+
+  const indicatorSections = useMemo<SectionDef[]>(() => {
+    const defs: SectionDef[] = []
+
+    if (activeTab === 'go-to-market') {
+      defs.push({ id: 'google-store', label: 'Google Store' })
+      defs.push({ id: 'weare-launch', label: 'weArethefuture' })
+    }
+
+    for (const section of sections) {
+      const label =
+        section.title || section.projects[0]?.title || section.id
+      defs.push({ id: section.id, label })
+    }
+
+    return defs
+  }, [activeTab, sections])
 
   return (
     <div className="py-12 lg:py-20">
@@ -46,7 +63,7 @@ export function LaunchesPage() {
       </div>
 
       {activeTab === 'go-to-market' && (
-        <div className="mb-16 lg:mb-24">
+        <div id="google-store" className="mb-16 lg:mb-24">
           <h2 className="text-2xl md:text-3xl font-bold text-white break-words mb-6 lg:hidden">
             Google Store International Expansion
           </h2>
@@ -105,7 +122,7 @@ export function LaunchesPage() {
       )}
 
       {activeTab === 'go-to-market' && (
-        <div className="mb-16 lg:mb-24">
+        <div id="weare-launch" className="mb-16 lg:mb-24">
           <h2 className="text-2xl md:text-3xl font-bold text-white break-words mb-6 lg:hidden">
             #weArethefuture Brand Launch
           </h2>
@@ -152,7 +169,7 @@ export function LaunchesPage() {
       )}
 
       {sections.map((section) => (
-        <div key={section.id} className="mb-16 lg:mb-24">
+        <div key={section.id} id={section.id} className="mb-16 lg:mb-24">
           <ProjectShowcase projects={section.projects} />
         </div>
       ))}
@@ -165,7 +182,7 @@ export function LaunchesPage() {
         />
       )}
 
-      <BackToTopButton />
+      <SectionIndicator sections={indicatorSections} />
     </div>
   )
 }

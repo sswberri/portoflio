@@ -74,7 +74,7 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
         const showToggle = hasExtraContent(project)
 
         return (
-          <div key={project.id} ref={(el) => { sectionRefs.current[project.id] = el }}>
+          <div key={project.id} id={project.id} ref={(el) => { sectionRefs.current[project.id] = el }}>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight break-words lg:hidden">
               {project.title}
             </h2>

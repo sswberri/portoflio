@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
+import { LogoWall } from '../../../components/LogoWall'
 
 interface AboutSectionProps {
   bio: string
@@ -44,7 +45,7 @@ export function AboutSection({ }: AboutSectionProps) {
   return (
     <section className="pt-8 lg:pt-10 pb-6 lg:pb-10">
       {/* Expertise - animate as one block */}
-      <div ref={expertiseSection.ref} className={`scroll-reveal ${expertiseSection.isVisible ? 'visible' : ''}`}>
+      <div id="expertise" ref={expertiseSection.ref} className={`scroll-reveal ${expertiseSection.isVisible ? 'visible' : ''}`}>
         {/* Section Title - h3 style */}
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-8 lg:mb-10">
           Areas of Expertise
@@ -73,18 +74,8 @@ export function AboutSection({ }: AboutSectionProps) {
       </div>
 
       {/* Worked With - animate as one block */}
-      <div ref={workedWith.ref} className={`scroll-reveal ${workedWith.isVisible ? 'visible' : ''}`}>
-        <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-0">
-          Worked With
-        </h3>
-        <div className="overflow-hidden group cursor-pointer">
-          <img
-            src="/images/logo.svg"
-            alt="Companies worked with"
-            className="w-full h-auto max-w-4xl -mt-[6%] -mb-[10%] transition-transform duration-500 ease-out group-hover:scale-105"
-            style={{ imageRendering: 'auto' }}
-          />
-        </div>
+      <div id="worked-with" ref={workedWith.ref} className={`scroll-reveal ${workedWith.isVisible ? 'visible' : ''}`}>
+        <LogoWall />
       </div>
     </section>
   )

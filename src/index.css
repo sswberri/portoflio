@@ -94,6 +94,57 @@
   .hero-delay-2 { transition-delay: 200ms; }
   .hero-delay-3 { transition-delay: 300ms; }
 
+  /* ─── Logo Marquee ─── */
+  @keyframes marquee-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+
+  .marquee-track {
+    animation: marquee-scroll 40s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Fade edges for premium look */
+  .marquee-container::before,
+  .marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(2 6 23), transparent);
+  }
+  .marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(2 6 23), transparent);
+  }
+
+  /* ─── Timeline Scrollbar ─── */
+  .timeline-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+  }
+  .timeline-scroll::-webkit-scrollbar {
+    height: 3px;
+  }
+  .timeline-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .timeline-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+  }
+
   /* Page transition — quick fade only, no transform to avoid conflicting with per-page animations */
   .page-enter {
     animation: page-enter 250ms ease-out;

@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { ImageCarousel } from '@/components/ImageCarousel'
-import { BackToTopButton } from '@/components/BackToTopButton'
+import { SectionIndicator, type SectionDef } from '@/components/SectionIndicator'
 import { LinkedInPostList } from '@/components/LinkedInPostList'
 import { VideoCard } from '@/sections/videos/components/VideoCard'
 import { imageMap } from '@/data/images'
@@ -94,6 +94,26 @@ export function BrandContentPage() {
     (post) => !scmKeywordPosts.some((featured) => featured.id === post.id)
   )
 
+  const videoCategories = videosData.categories.filter((c) => c !== 'All')
+
+  const indicatorSections = useMemo<SectionDef[]>(() => {
+    if (activeTab === 'content-marketing') {
+      return [
+        { id: 'shaping-healthcare', label: '#ShapingHealthcare' },
+        { id: 'scm-rising', label: '#SCMRising' },
+      ]
+    }
+    if (activeTab === 'video-storytelling') {
+      return videoCategories
+        .filter((cat) => videosData.videos.some((v) => v.category === cat))
+        .map((cat) => ({
+          id: cat.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+          label: cat,
+        }))
+    }
+    return []
+  }, [activeTab])
+
   return (
     <div className="py-12 lg:py-20">
       {/* Section Title */}
@@ -124,7 +144,7 @@ export function BrandContentPage() {
       {activeTab === 'content-marketing' ? (
         <div className="space-y-16 lg:space-y-24">
           {/* #ShapingHealthcare */}
-          <div ref={shapingSectionRef}>
+          <div id="shaping-healthcare" ref={shapingSectionRef}>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
               #ShapingHealthcare LinkedIn Campaign
             </h2>
@@ -168,7 +188,7 @@ export function BrandContentPage() {
           </div>
 
           {/* #SCMRising */}
-          <div ref={scmSectionRef}>
+          <div id="scm-rising" ref={scmSectionRef}>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
               #SCMRising Branding LinkedIn Campaign
             </h2>
@@ -224,8 +244,10 @@ export function BrandContentPage() {
 
               if (sectionVideos.length === 0) return null
 
+              const categoryId = category.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+
               return (
-                <div key={category}>
+                <div key={category} id={categoryId}>
                   <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
                     {category}
                   </h2>
@@ -324,7 +346,7 @@ export function BrandContentPage() {
         </div>
       )}
 
-      <BackToTopButton />
+      <SectionIndicator sections={indicatorSections} />
     </div>
   )
 }

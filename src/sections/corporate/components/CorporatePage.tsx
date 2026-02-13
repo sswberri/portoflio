@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { ImageCarousel } from '@/components/ImageCarousel'
-import { BackToTopButton } from '@/components/BackToTopButton'
 import { imageMap } from '@/data/images'
 
 const tabs = [
@@ -45,7 +44,6 @@ export function CorporatePage() {
       {/* Image Carousel */}
       <ImageCarousel images={images} alt={activeTab} />
 
-      <BackToTopButton />
     </div>
   )
 }
