@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { companies, type CompanyLogo } from '../data/logowall'
 
 type Mode = 'featured' | 'timeline'
@@ -99,10 +100,40 @@ function LogoMarquee() {
 /* ─── Timeline Mode: Horizontal Journey ─── */
 
 function TimelineJourney() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
   const sorted = useMemo(
     () => [...companies].sort((a, b) => b.startYear - a.startYear),
     [],
   )
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 2)
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2)
+  }, [])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    updateScrollState()
+    el.addEventListener('scroll', updateScrollState, { passive: true })
+    window.addEventListener('resize', updateScrollState)
+    return () => {
+      el.removeEventListener('scroll', updateScrollState)
+      window.removeEventListener('resize', updateScrollState)
+    }
+  }, [updateScrollState])
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollRef.current
+    if (!el) return
+    const step = el.clientWidth * 0.6
+    el.scrollBy({ left: direction === 'left' ? -step : step, behavior: 'smooth' })
+  }
 
   return (
     <div className="mt-4">
@@ -110,7 +141,7 @@ function TimelineJourney() {
         <span>←</span> Scroll to explore <span>→</span>
       </div>
 
-      <div className="timeline-scroll overflow-x-auto pb-3 -mx-2 px-2">
+      <div ref={scrollRef} className="timeline-scroll overflow-x-auto pb-3 -mx-2 px-2">
         <div className="relative flex min-w-max py-2">
           {/* Gradient line */}
           <div
@@ -170,6 +201,36 @@ function TimelineJourney() {
           })}
         </div>
       </div>
+
+      {/* Apple-style scroll arrows — bottom right */}
+      {(canScrollLeft || canScrollRight) && (
+        <div className="hidden md:flex justify-end gap-1.5 mt-2">
+          <button
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            className={`w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-200 ${
+              canScrollLeft
+                ? 'border-white/20 text-white/60 hover:text-white hover:border-white/40'
+                : 'border-white/8 text-white/15 cursor-default'
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-3.5 h-3.5" />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            className={`w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-200 ${
+              canScrollRight
+                ? 'border-white/20 text-white/60 hover:text-white hover:border-white/40'
+                : 'border-white/8 text-white/15 cursor-default'
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      )}
     </div>
   )
 }

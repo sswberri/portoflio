@@ -129,20 +129,12 @@
     background: linear-gradient(to left, rgb(2 6 23), transparent);
   }
 
-  /* ─── Timeline Scrollbar ─── */
+  /* ─── Timeline Scrollbar (hidden for cleaner look) ─── */
   .timeline-scroll {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.15) transparent;
+    scrollbar-width: none;
   }
   .timeline-scroll::-webkit-scrollbar {
-    height: 3px;
-  }
-  .timeline-scroll::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .timeline-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.15);
-    border-radius: 2px;
+    display: none;
   }
 
   /* Page transition — quick fade only, no transform to avoid conflicting with per-page animations */
