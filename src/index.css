@@ -13,6 +13,14 @@
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
+/* Hide browser scrollbar globally */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
 /* Base layer styles */
 @layer base {
   * {
