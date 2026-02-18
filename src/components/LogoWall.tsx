@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { companies, type CompanyLogo } from '../data/logowall'
+import { companies, timelineGroups, type CompanyLogo } from '../data/logowall'
 
 type Mode = 'featured' | 'timeline'
 
@@ -100,15 +100,53 @@ function LogoMarquee() {
 
 /* ─── Timeline Mode: Horizontal Journey ─── */
 
+type TimelineEntry =
+  | { type: 'single'; company: CompanyLogo; period: string; startYear: number }
+  | { type: 'cluster'; groupId: string; companies: CompanyLogo[]; period: string; startYear: number }
+
+function buildTimelineEntries(): TimelineEntry[] {
+  const grouped = new Map<string, CompanyLogo[]>()
+  const standalone: CompanyLogo[] = []
+
+  for (const c of companies) {
+    if (c.group) {
+      const list = grouped.get(c.group) ?? []
+      list.push(c)
+      grouped.set(c.group, list)
+    } else {
+      standalone.push(c)
+    }
+  }
+
+  const entries: TimelineEntry[] = []
+
+  for (const c of standalone) {
+    entries.push({ type: 'single', company: c, period: c.period, startYear: c.startYear })
+  }
+
+  for (const [groupId, brands] of grouped) {
+    const g = timelineGroups[groupId]
+    if (g) {
+      entries.push({ type: 'cluster', groupId, companies: brands, period: g.period, startYear: g.startYear })
+    }
+  }
+
+  entries.sort((a, b) => b.startYear - a.startYear)
+  return entries
+}
+
+function getColumnWidth(logoCount: number): string {
+  if (logoCount >= 3) return 'w-[18rem]'
+  if (logoCount === 2) return 'w-[13rem]'
+  return 'w-[8rem]'
+}
+
 function TimelineJourney() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
 
-  const sorted = useMemo(
-    () => [...companies].sort((a, b) => b.startYear - a.startYear),
-    [],
-  )
+  const entries = useMemo(() => buildTimelineEntries(), [])
 
   const updateScrollState = useCallback(() => {
     const el = scrollRef.current
@@ -148,28 +186,39 @@ function TimelineJourney() {
           <div
             className="absolute left-6 right-6 h-px rounded-full pointer-events-none"
             style={{
-              top: '76px',
+              top: '84px',
               background: 'linear-gradient(to right, #f8a853, #14b8a6, #6366f1)',
               boxShadow: '0 0 8px rgba(248,168,83,0.3), 0 0 8px rgba(20,184,166,0.2), 0 0 8px rgba(99,102,241,0.3)',
             }}
           />
 
-          {sorted.map((company) => {
-            const dotColor = getTimelineColor(company.startYear)
+          {entries.map((entry) => {
+            const dotColor = getTimelineColor(entry.startYear)
+            const logos = entry.type === 'cluster' ? entry.companies : [entry.company]
+            const colWidth = getColumnWidth(logos.length)
+            const key = entry.type === 'cluster' ? entry.groupId : entry.company.id
+
             return (
               <div
-                key={company.id}
-                className="flex flex-col items-center w-[7.5rem] group"
+                key={key}
+                className={`flex flex-col items-center ${colWidth} group`}
               >
-                {/* Logo */}
-                <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-all duration-300">
-                  <img
-                    src={company.logoUrl}
-                    alt={company.name}
-                    className="max-w-full max-h-full object-contain"
-                    style={company.scale ? { transform: `scale(${company.scale})` } : undefined}
-                    loading="lazy"
-                  />
+                {/* Logos */}
+                <div className="flex items-center justify-center gap-2">
+                  {logos.map((c) => (
+                    <div
+                      key={c.id}
+                      className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-all duration-300"
+                    >
+                      <img
+                        src={c.logoUrl}
+                        alt={c.name}
+                        className="max-w-full max-h-full object-contain"
+                        style={c.scale ? { transform: `scale(${c.scale})` } : undefined}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
                 </div>
 
                 {/* Connector line */}
@@ -181,22 +230,13 @@ function TimelineJourney() {
                   style={{
                     borderColor: dotColor,
                     backgroundColor: 'rgb(2 6 23)',
-                    boxShadow: `0 0 0 2px rgb(2 6 23)`,
+                    boxShadow: '0 0 0 2px rgb(2 6 23)',
                   }}
                 />
 
-                {/* Info */}
+                {/* Year only */}
                 <div className="mt-2.5 text-center">
-                  <div className="text-[11px] text-white/50 font-medium leading-tight group-hover:text-white/80 transition-colors">
-                    {company.name}
-                  </div>
-                  <div className="text-[10px] text-white/30 mt-0.5">{company.period}</div>
-                  <div className="text-[10px] text-white/20 flex items-center justify-center gap-0.5 mt-0.5">
-                    <svg className="w-2 h-2 shrink-0" viewBox="0 0 12 12" fill="currentColor">
-                      <path d="M6 0C3.8 0 2 1.8 2 4c0 3 4 7.5 4 7.5S10 7 10 4c0-2.2-1.8-4-4-4zm0 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" />
-                    </svg>
-                    {company.location}
-                  </div>
+                  <div className="text-[10px] text-white/30">{entry.period}</div>
                 </div>
               </div>
             )
@@ -250,15 +290,6 @@ export function LogoWall() {
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
             Worked With
           </h3>
-          <div className="flex items-center gap-2.5 mt-2">
-            <span className="text-white/50 text-sm">
-              <strong className="text-white/90 text-base font-semibold">15+</strong> Brands
-            </span>
-            <span className="text-white/15">·</span>
-            <span className="text-white/50 text-sm">
-              <strong className="text-white/90 text-base font-semibold">3</strong> Countries
-            </span>
-          </div>
         </div>
 
         <div className="flex gap-1 rounded-full border border-white/15 p-0.5 self-start sm:self-auto">

@@ -7,6 +7,19 @@ export interface CompanyLogo {
   location: string
   narrativeOrder: number
   scale?: number
+  group?: string
+}
+
+export interface TimelineGroup {
+  period: string
+  startYear: number
+}
+
+export const timelineGroups: Record<string, TimelineGroup> = {
+  'nuna-joie': { period: '2022 – 2023', startYear: 2022 },
+  'htc-vive': { period: '2021 – 2022', startYear: 2021 },
+  'gts': { period: '2018 – 2019', startYear: 2018 },
+  'nogle-styleme': { period: '2016 – 2017', startYear: 2016 },
 }
 
 export const companies: CompanyLogo[] = [
@@ -36,6 +49,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2020,
     location: 'Taiwan',
     narrativeOrder: 3,
+    group: 'htc-vive',
   },
   {
     id: 'vive',
@@ -45,6 +59,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2020,
     location: 'Taiwan',
     narrativeOrder: 4,
+    group: 'htc-vive',
   },
   {
     id: 'corel',
@@ -54,6 +69,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2007,
     location: 'Taiwan',
     narrativeOrder: 5,
+    scale: 1.25,
   },
   {
     id: 'xiaomi',
@@ -64,6 +80,7 @@ export const companies: CompanyLogo[] = [
     location: 'Guangzhou, China',
     narrativeOrder: 6,
     scale: 0.65,
+    group: 'gts',
   },
   {
     id: 'nogle',
@@ -73,6 +90,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2016,
     location: 'Taiwan',
     narrativeOrder: 7,
+    group: 'nogle-styleme',
   },
   {
     id: 'styleme',
@@ -82,6 +100,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2016,
     location: 'Taiwan',
     narrativeOrder: 8,
+    group: 'nogle-styleme',
   },
   {
     id: 'nuna',
@@ -91,6 +110,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2022,
     location: 'Taiwan',
     narrativeOrder: 9,
+    group: 'nuna-joie',
   },
   {
     id: 'joie',
@@ -100,6 +120,8 @@ export const companies: CompanyLogo[] = [
     startYear: 2022,
     location: 'Taiwan',
     narrativeOrder: 10,
+    scale: 0.85,
+    group: 'nuna-joie',
   },
   {
     id: 'mybug',
@@ -109,6 +131,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2012,
     location: 'Taiwan',
     narrativeOrder: 11,
+    group: 'gts',
   },
   {
     id: 'weare',
@@ -118,6 +141,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2021,
     location: 'Taiwan',
     narrativeOrder: 12,
+    group: 'gts',
   },
   {
     id: 'cyworld',
@@ -127,6 +151,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2006,
     location: 'Taiwan',
     narrativeOrder: 13,
+    scale: 1.25,
   },
   {
     id: 'openrice',
@@ -136,6 +161,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2013,
     location: 'Taiwan',
     narrativeOrder: 14,
+    scale: 1.2,
   },
   {
     id: 'herbalife',
@@ -145,5 +171,6 @@ export const companies: CompanyLogo[] = [
     startYear: 2015,
     location: 'Taiwan',
     narrativeOrder: 15,
+    scale: 1.25,
   },
 ]

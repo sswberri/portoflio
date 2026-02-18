@@ -26,7 +26,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: 'HEC 客戶專訪 - Kyowa Kirin',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7399975334495891457',
     date: '2025/11/28',
-    thumbnail: '/images/linkedin/hec-002.jpg',
+    thumbnail: '/images/linkedin/hec-002.png',
   },
   {
     id: 'hec-003',
@@ -42,7 +42,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '2025 病患關懷日圓滿落幕',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7384739958227472384',
     date: '2025/10/17',
-    thumbnail: '/images/linkedin/hec-004.jpg',
+    thumbnail: '/images/linkedin/hec-004.png',
   },
   {
     id: 'hec-005',
@@ -50,7 +50,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '醫療保健事業單位開創罕病照護新篇章',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7376767433874931712',
     date: '2025/9/25',
-    thumbnail: '/images/linkedin/hec-005.jpg',
+    thumbnail: '/images/linkedin/hec-005.png',
   },
   {
     id: 'hec-006',
@@ -74,7 +74,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '醫療保健事業單位衝刺市場 業績再創高峰',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7370606811667673089',
     date: '2025/9/8',
-    thumbnail: '/images/linkedin/hec-008.jpg',
+    thumbnail: '/images/linkedin/hec-008.png',
   },
   {
     id: 'hec-009',
@@ -82,7 +82,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: 'BU HEC 全新辦公室開幕典禮盛大舉行',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7359403003390439424',
     date: '2025/8/8',
-    thumbnail: '/images/linkedin/hec-009.jpg',
+    thumbnail: '/images/linkedin/hec-009.png',
   },
   {
     id: 'hec-010',
@@ -90,7 +90,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '大昌華嘉數位轉型領航 啟動 eQMS 新紀元',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7351037872432476161',
     date: '2025/7/16',
-    thumbnail: '/images/linkedin/hec-010.jpg',
+    thumbnail: '/images/linkedin/hec-010.png',
   },
   {
     id: 'hec-011',
@@ -98,7 +98,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: 'BU HEC 開創阿茲海默症照護新里程',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7348863649668562945',
     date: '2025/7/10',
-    thumbnail: '/images/linkedin/hec-011.jpg',
+    thumbnail: '/images/linkedin/hec-011.png',
   },
   {
     id: 'hec-012',
@@ -196,7 +196,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '從心出發 供應鏈轉型之路',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7398888170022486016',
     date: '2025/11/24',
-    thumbnail: '/images/linkedin/scm-003.jpg',
+    thumbnail: '/images/linkedin/scm-003.png',
   },
   {
     id: 'scm-004',
@@ -204,7 +204,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: 'SCM 轉型新篇章 共創成長引擎',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7396479800120360961',
     date: '2025/11/19',
-    thumbnail: '/images/linkedin/scm-004.jpg',
+    thumbnail: '/images/linkedin/scm-004.png',
   },
   {
     id: 'scm-005',
@@ -244,7 +244,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: 'OP1 智慧物流驅動永續未來',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7383652774498185216',
     date: '2025/10/14',
-    thumbnail: '/images/linkedin/scm-009.jpg',
+    thumbnail: '/images/linkedin/scm-009.png',
   },
   {
     id: 'scm-010',
@@ -268,7 +268,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '急速應援 救命分秒必爭',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7373521039403876353',
     date: '2025/9/16',
-    thumbnail: '/images/linkedin/scm-012.jpg',
+    thumbnail: '/images/linkedin/scm-012.png',
   },
   {
     id: 'scm-013',
@@ -308,7 +308,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: '龍潭倉大型消防演練 實戰演練火警應變',
     url: 'https://www.linkedin.com/posts/dksh_wearedksh-dkshtaiwan-hxmkhpiwvjiumzbihd-activity-7318136089238552576-8q7I',
     date: '2025/4/16',
-    thumbnail: '/images/linkedin/scm-017.jpg',
+    thumbnail: '/images/linkedin/scm-017.png',
   },
 ]
 

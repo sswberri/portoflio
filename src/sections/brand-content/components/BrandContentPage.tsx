@@ -9,7 +9,6 @@ import { getAllPosts } from '@/data/linkedinPosts'
 import videosData from '@/data/videos.json'
 
 const tabs = [
-  { id: 'thought-leadership', label: 'Thought Leadership' },
   { id: 'content-marketing', label: 'Content Marketing' },
   { id: 'brand-photography', label: 'Brand Photography' },
   { id: 'video-storytelling', label: 'Video & Storytelling' },
@@ -28,7 +27,7 @@ const byDateDesc = (a: { date: string }, b: { date: string }) =>
 const normalize = (value: string) => value.replace(/\s/g, '')
 
 export function BrandContentPage() {
-  const [activeTab, setActiveTab] = useState<TabId>('thought-leadership')
+  const [activeTab, setActiveTab] = useState<TabId>('content-marketing')
   const [showMoreShaping, setShowMoreShaping] = useState(false)
   const [showMoreScm, setShowMoreScm] = useState(false)
   const shapingSectionRef = useRef<HTMLDivElement>(null)
@@ -36,9 +35,11 @@ export function BrandContentPage() {
   const scmSectionRef = useRef<HTMLDivElement>(null)
   const scmMoreRef = useRef<HTMLDivElement>(null)
 
-  const images = activeTab !== 'video-storytelling' && activeTab !== 'content-marketing'
-    ? imageMap['brand-content'][activeTab as keyof typeof imageMap['brand-content']] || []
+  const images = activeTab === 'brand-photography'
+    ? imageMap['brand-content']['brand-photography'] || []
     : []
+
+  const thoughtLeadershipImages = imageMap['brand-content']['thought-leadership'] || []
 
   const linkedInPosts = getAllPosts()
 
@@ -99,6 +100,7 @@ export function BrandContentPage() {
   const indicatorSections = useMemo<SectionDef[]>(() => {
     if (activeTab === 'content-marketing') {
       return [
+        { id: 'thought-leadership', label: 'Thought Leadership' },
         { id: 'shaping-healthcare', label: '#ShapingHealthcare' },
         { id: 'scm-rising', label: '#SCMRising' },
       ]
@@ -143,6 +145,74 @@ export function BrandContentPage() {
       {/* Content */}
       {activeTab === 'content-marketing' ? (
         <div className="space-y-16 lg:space-y-24">
+          {/* Thought Leadership */}
+          <div id="thought-leadership">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight lg:hidden">
+              DKSH Thought Leadership
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              <div className="flex flex-col order-2 lg:order-1 space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight hidden lg:block">
+                  DKSH Thought Leadership
+                </h2>
+                <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+                  Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
+                </p>
+                <p className="text-slate-300">View work:</p>
+                <ul className="space-y-3 text-slate-300 list-disc list-outside pl-5 marker:text-white">
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-white"
+                    >
+                      Global Brands, Local Impact: DKSH Deepens Engagement with Consumers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-white"
+                    >
+                      DKSH Taiwan Supply Chain Management's Transformation to a Growth Enabler
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-white"
+                    >
+                      Trailblazing Transitions of DKSH Taiwan Finance
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/enriching-everyday-moments-with-smarter-healthier-snacking"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-white"
+                    >
+                      Enriching Everyday Moments with Smarter, Healthier Snacking
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="order-1 lg:order-2">
+                <ImageCarousel
+                  images={thoughtLeadershipImages}
+                  alt="thought-leadership"
+                  aspectClassName="aspect-[4/3]"
+                  wrapperClassName="w-full"
+                />
+              </div>
+            </div>
+          </div>
+
           {/* #ShapingHealthcare */}
           <div id="shaping-healthcare" ref={shapingSectionRef}>
             <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
@@ -267,73 +337,6 @@ export function BrandContentPage() {
                 </div>
               )
             })}
-        </div>
-      ) : activeTab === 'thought-leadership' ? (
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight lg:hidden">
-            DKSH Thought Leadership
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="flex flex-col order-2 lg:order-1 space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight hidden lg:block">
-                DKSH Thought Leadership
-              </h2>
-              <p className="text-base md:text-lg text-slate-300 leading-relaxed">
-                Bilingual expert-driven content that translates insights and success stories into credible narratives, strengthening trust, visibility, and partner confidence across priority audiences.
-              </p>
-              <p className="text-slate-300">View work:</p>
-              <ul className="space-y-3 text-slate-300 list-disc list-outside pl-5 marker:text-white">
-                <li>
-                  <a
-                    href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-white"
-                  >
-                    Global Brands, Local Impact: DKSH Deepens Engagement with Consumers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-white"
-                  >
-                    DKSH Taiwan Supply Chain Management's Transformation to a Growth Enabler
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-white"
-                  >
-                    Trailblazing Transitions of DKSH Taiwan Finance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.dksh.com/tw-en/home/insights/enriching-everyday-moments-with-smarter-healthier-snacking"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-white"
-                  >
-                    Enriching Everyday Moments with Smarter, Healthier Snacking
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="order-1 lg:order-2">
-              <ImageCarousel
-                images={images}
-                alt={activeTab}
-                aspectClassName="aspect-[4/3]"
-                wrapperClassName="w-full"
-              />
-            </div>
-          </div>
         </div>
       ) : (
         <div>
