@@ -63,6 +63,7 @@ function LogoMarquee() {
                   src={company.logoUrl}
                   alt={company.name}
                   className="max-w-full max-h-full object-contain"
+                  style={company.scale ? { transform: `scale(${company.scale})` } : undefined}
                   loading="lazy"
                   draggable={false}
                 />
@@ -166,6 +167,7 @@ function TimelineJourney() {
                     src={company.logoUrl}
                     alt={company.name}
                     className="max-w-full max-h-full object-contain"
+                    style={company.scale ? { transform: `scale(${company.scale})` } : undefined}
                     loading="lazy"
                   />
                 </div>

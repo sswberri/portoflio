@@ -6,6 +6,7 @@ export interface CompanyLogo {
   startYear: number
   location: string
   narrativeOrder: number
+  scale?: number
 }
 
 export const companies: CompanyLogo[] = [
@@ -62,6 +63,7 @@ export const companies: CompanyLogo[] = [
     startYear: 2017,
     location: 'Guangzhou, China',
     narrativeOrder: 6,
+    scale: 0.65,
   },
   {
     id: 'nogle',
