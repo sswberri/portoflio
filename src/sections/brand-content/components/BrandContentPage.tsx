@@ -71,11 +71,11 @@ export function BrandContentPage() {
 
   const scmKeywords = [
     'OP1 引領醫療配送',
+    'SCM 轉型新篇章',
     '領航智慧供應鏈',
-    '瑞士商務',
-    'SCM團隊守護健康',
-    '智慧物流啟動 創造物流新標竿',
     '綠能驅動',
+    '智慧物流啟動 創造物流新標竿',
+    'SCM團隊守護健康',
   ]
 
   const scmKeywordPosts = scmKeywords
@@ -85,7 +85,6 @@ export function BrandContentPage() {
       )
     )
     .filter((post): post is (typeof linkedInPosts)[number] => Boolean(post))
-    .sort(byDateDesc)
 
   const scmAll = linkedInPosts
     .filter((post) => post.category === 'SCM')
