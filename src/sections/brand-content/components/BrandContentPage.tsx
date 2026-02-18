@@ -224,9 +224,14 @@ export function BrandContentPage() {
 
           {/* #ShapingHealthcare */}
           <div id="shaping-healthcare" ref={shapingSectionRef}>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
-              #ShapingHealthcare LinkedIn Campaign
-            </h2>
+            <div className="mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight lg:max-w-[50%]">
+                #ShapingHealthcare LinkedIn Series
+              </h2>
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+                An annual BU Healthcare storytelling series showcasing achievements across business lines, reinforcing partner trust, patient impact, and team visibility while strengthening brand positioning in the market.
+              </p>
+            </div>
             <LinkedInPostList posts={shapingHealthcareFeatured} />
             {shapingHealthcareMore.length > 0 && (
               <>
@@ -268,9 +273,14 @@ export function BrandContentPage() {
 
           {/* #SCMRising */}
           <div id="scm-rising" ref={scmSectionRef}>
-            <h2 className="text-xl md:text-2xl font-semibold text-white mb-6">
-              #SCMRising Branding LinkedIn Campaign
-            </h2>
+            <div className="mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight lg:max-w-[50%]">
+                #SCMRising Employer Brand Series
+              </h2>
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+                A LinkedIn campaign strengthening Taiwan SCM employer positioning through expert voices, operational excellence, culture narratives, and success stories to attract top talent and elevate market credibility.
+              </p>
+            </div>
             <LinkedInPostList posts={scmKeywordPosts} />
             {scmMore.length > 0 && (
               <>
