@@ -23,7 +23,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'hec-002',
     category: 'HEC',
-    title: 'HEC 客戶專訪 - Kyowa Kirin',
+    title: 'HEC 客戶專訪 - Kyowa Kirin 協和麒麟',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7399975334495891457',
     date: '2025/11/28',
     thumbnail: '/images/linkedin/hec-002.png',

@@ -48,8 +48,8 @@ export function BrandContentPage() {
     '攜手醫界',
     '台灣疤痕',
     '罕見眼疾治療迎突破',
-    '賀！台灣大昌華嘉客服',
-    '台灣永續行動銅獎',
+    '阿茲海默',
+    'Kyowa Kirin',
   ]
 
   const shapingHealthcareFeatured = shapingHealthcareKeywords
@@ -165,29 +165,9 @@ export function BrandContentPage() {
                       href="https://www.dksh.com/tw-en/home/insights/global-brands-local-impact-dksh-deepens-engagement-with-consumers"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-white"
+                      className="block truncate underline underline-offset-4 hover:text-white"
                     >
                       Global Brands, Local Impact: DKSH Deepens Engagement with Consumers
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-white"
-                    >
-                      DKSH Taiwan Supply Chain Management's Transformation to a Growth Enabler
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-white"
-                    >
-                      Trailblazing Transitions of DKSH Taiwan Finance
                     </a>
                   </li>
                   <li>
@@ -195,9 +175,39 @@ export function BrandContentPage() {
                       href="https://www.dksh.com/tw-en/home/insights/enriching-everyday-moments-with-smarter-healthier-snacking"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-white"
+                      className="block truncate underline underline-offset-4 hover:text-white"
                     >
                       Enriching Everyday Moments with Smarter, Healthier Snacking
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/dksh-taiwan-supply-chain-management-s-transformation-to-a-growth-enabler"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block truncate underline underline-offset-4 hover:text-white"
+                    >
+                      DKSH Taiwan Supply Chain Management's Transformation to a Growth Enabler
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/largest-automated-healthcare-distribution-center-opens-in-taiwan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block truncate underline underline-offset-4 hover:text-white"
+                    >
+                      Largest Automated Healthcare Distribution Center Opens in Taiwan
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.dksh.com/tw-en/home/insights/trailblazing-transitions-of-dksh-taiwan-finance"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block truncate underline underline-offset-4 hover:text-white"
+                    >
+                      Trailblazing Transitions of DKSH Taiwan Finance
                     </a>
                   </li>
                 </ul>
