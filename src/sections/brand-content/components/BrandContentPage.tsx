@@ -4,6 +4,7 @@ import { ImageCarousel } from '@/components/ImageCarousel'
 import { SectionIndicator, type SectionDef } from '@/components/SectionIndicator'
 import { LinkedInPostList } from '@/components/LinkedInPostList'
 import { VideoCard } from '@/sections/videos/components/VideoCard'
+import { ScrollReveal } from '@/components/ScrollReveal'
 import { imageMap } from '@/data/images'
 import { getAllPosts } from '@/data/linkedinPosts'
 import videosData from '@/data/videos.json'
@@ -145,6 +146,7 @@ export function BrandContentPage() {
       {activeTab === 'content-marketing' ? (
         <div className="space-y-16 lg:space-y-24">
           {/* Thought Leadership */}
+          <ScrollReveal>
           <div id="thought-leadership">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight lg:hidden">
               DKSH Thought Leadership
@@ -221,9 +223,11 @@ export function BrandContentPage() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
 
           {/* #ShapingHealthcare */}
           <div id="shaping-healthcare" ref={shapingSectionRef}>
+            <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight lg:max-w-[50%]">
                 #ShapingHealthcare LinkedIn Series
@@ -232,6 +236,7 @@ export function BrandContentPage() {
                 An annual BU Healthcare storytelling series showcasing achievements across business lines, reinforcing partner trust, patient impact, and team visibility while strengthening brand positioning in the market.
               </p>
             </div>
+            </ScrollReveal>
             <LinkedInPostList posts={shapingHealthcareFeatured} />
             {shapingHealthcareMore.length > 0 && (
               <>
@@ -273,6 +278,7 @@ export function BrandContentPage() {
 
           {/* #SCMRising */}
           <div id="scm-rising" ref={scmSectionRef}>
+            <ScrollReveal>
             <div className="mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight lg:max-w-[50%]">
                 #SCMRising Employer Brand Series
@@ -281,6 +287,7 @@ export function BrandContentPage() {
                 A LinkedIn campaign strengthening Taiwan SCM employer positioning through expert voices, operational excellence, culture narratives, and success stories to attract top talent and elevate market credibility.
               </p>
             </div>
+            </ScrollReveal>
             <LinkedInPostList posts={scmKeywordPosts} />
             {scmMore.length > 0 && (
               <>

@@ -3,6 +3,8 @@ import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
 import { ImageCarousel } from '@/components/ImageCarousel'
 import { LinkedInPostList } from '@/components/LinkedInPostList'
 import { SectionIndicator, type SectionDef } from '@/components/SectionIndicator'
+import { ScrollReveal } from '@/components/ScrollReveal'
+import { SpotlightCard } from '@/components/SpotlightCard'
 import { imageMap } from '@/data/images'
 import { getCSRPosts } from '@/data/linkedinPosts'
 
@@ -120,48 +122,51 @@ export function CorporatePage() {
       ) : activeTab === 'sustainability-csr' ? (
         <div className="space-y-12 lg:space-y-16" ref={csrSectionRef}>
           {/* Hero: 2-column layout — text left, photo right */}
-          <div id="csr-overview" className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="flex flex-col order-2 lg:order-1 space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
-                Empowering Positive Local Impact
-              </h2>
-              <p className="text-base md:text-lg text-slate-300 leading-relaxed">
-                Strategized and led DKSH Taiwan&rsquo;s Positive Local Impact initiatives, aligning with the Group&rsquo;s sustainability priorities and advancing programs connected to SDGs 2, 3, 4, and 10. Mobilized corporate volunteers and cross-business capabilities in logistics and healthcare to deliver 18 social inclusion initiatives (2022–2024), collaborating with 16+ nonprofit and community organizations to address hunger relief, public health, education access, and social inclusion across Taiwan.
-              </p>
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {csrTags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-sm rounded-full bg-slate-800 text-slate-300 border border-slate-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          <ScrollReveal>
+            <div id="csr-overview" className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              <div className="flex flex-col order-2 lg:order-1 space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
+                  Empowering Positive Local Impact
+                </h2>
+                <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+                  Strategized and led DKSH Taiwan&rsquo;s Positive Local Impact initiatives, aligning with the Group&rsquo;s sustainability priorities and advancing programs connected to SDGs 2, 3, 4, and 10. Mobilized corporate volunteers and cross-business capabilities in logistics and healthcare to deliver 18 social inclusion initiatives (2022–2024), collaborating with 16+ nonprofit and community organizations to address hunger relief, public health, education access, and social inclusion across Taiwan.
+                </p>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {csrTags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-sm rounded-full bg-slate-800 text-slate-300 border border-slate-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <ImageCarousel
+                  images={images}
+                  alt="sustainability-csr"
+                  aspectClassName="aspect-[4/3]"
+                  wrapperClassName="w-full"
+                />
               </div>
             </div>
-            <div className="order-1 lg:order-2">
-              <ImageCarousel
-                images={images}
-                alt="sustainability-csr"
-                aspectClassName="aspect-[4/3]"
-                wrapperClassName="w-full"
-              />
-            </div>
-          </div>
+          </ScrollReveal>
 
           {/* Impact Highlights — number cards grid */}
           <div id="csr-impact">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Impact Highlights</h3>
+            <ScrollReveal>
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Impact Highlights</h3>
+            </ScrollReveal>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-              {impactHighlights.map((item) => (
-                <div
-                  key={item.number}
-                  className="rounded-xl bg-slate-800/50 border border-slate-700/50 p-5"
-                >
-                  <p className="text-2xl md:text-3xl font-bold text-white mb-2">{item.number}</p>
-                  <p className="text-sm text-slate-400 leading-snug">{item.text}</p>
-                </div>
+              {impactHighlights.map((item, index) => (
+                <ScrollReveal key={item.number} delay={index * 0.08}>
+                  <SpotlightCard className="rounded-xl bg-slate-800/50 border border-slate-700/50 p-5 h-full">
+                    <p className="text-2xl md:text-3xl font-bold text-white mb-2">{item.number}</p>
+                    <p className="text-sm text-slate-400 leading-snug">{item.text}</p>
+                  </SpotlightCard>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -210,6 +215,7 @@ export function CorporatePage() {
       ) : activeTab === 'reputation-issues' ? (
         <div className="space-y-12">
           {/* Awards Header - 2 column layout */}
+          <ScrollReveal>
           <div id="awards-overview" className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="flex flex-col order-2 lg:order-1 space-y-4">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
@@ -243,39 +249,44 @@ export function CorporatePage() {
               />
             </div>
           </div>
+          </ScrollReveal>
 
           {/* Awards List */}
+          <ScrollReveal>
           <div id="awards-list">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
               Awards Won, 2023–2025
             </h3>
             <div className="space-y-8">
-              {awardsList.map((group) => (
-                <div key={group.category}>
-                  <h4 className="text-lg font-semibold text-white mb-3">{group.category}</h4>
-                  <ul className="space-y-2 text-slate-300">
-                    {group.items.map((award) => (
-                      <li key={`${award.year}-${award.name}`} className="flex items-start gap-2">
-                        <span className="text-slate-500 mt-0.5">•</span>
-                        <a
-                          href={award.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group inline-flex items-start gap-1.5 hover:text-white transition-colors"
-                        >
-                          <span>
-                            <span className="font-bold text-white">{award.year}</span>{' '}
-                            {award.name}
-                          </span>
-                          <ExternalLink className="w-3.5 h-3.5 mt-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              {awardsList.map((group, groupIndex) => (
+                <ScrollReveal key={group.category} delay={groupIndex * 0.1}>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-3">{group.category}</h4>
+                    <ul className="space-y-2 text-slate-300">
+                      {group.items.map((award) => (
+                        <li key={`${award.year}-${award.name}`} className="flex items-start gap-2">
+                          <span className="text-slate-500 mt-0.5">•</span>
+                          <a
+                            href={award.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group inline-flex items-start gap-1.5 hover:text-white transition-colors"
+                          >
+                            <span>
+                              <span className="font-bold text-white">{award.year}</span>{' '}
+                              {award.name}
+                            </span>
+                            <ExternalLink className="w-3.5 h-3.5 mt-1 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
+          </ScrollReveal>
         </div>
       ) : (
         <ImageCarousel images={images} alt={activeTab} />

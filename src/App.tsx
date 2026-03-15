@@ -1,6 +1,7 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AppShell } from './shell/components/AppShell'
 import { BackToTopButton } from './components/BackToTopButton'
+import { CursorSpotlight } from './components/CursorSpotlight'
 import { SectionIndicator } from './components/SectionIndicator'
 import { PasswordGate } from './components/PasswordGate'
 
@@ -92,6 +93,7 @@ function App() {
             </Routes>
           </div>
           <BackToTopButton />
+          <CursorSpotlight />
         </AppShell>
       </PasswordGate>
     </div>
