@@ -3,7 +3,7 @@
 
 export interface LinkedInPost {
   id: string
-  category: 'HEC' | 'SCM'
+  category: 'HEC' | 'SCM' | 'CSR'
   title: string
   url: string
   date: string
@@ -310,6 +310,80 @@ export const linkedinPosts: LinkedInPost[] = [
     date: '2025/4/16',
     thumbnail: '/images/linkedin/scm-017.png',
   },
+
+  // CSR - Corporate Social Responsibility (Positive Local Impact)
+  {
+    id: 'csr-001',
+    category: 'CSR',
+    title: 'BU HEC 與罕病同行 傳遞希望',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7338716790723641345',
+    date: '2025/6/12',
+    thumbnail: '/images/linkedin/csr-001.jpg',
+  },
+  {
+    id: 'csr-002',
+    category: 'CSR',
+    title: '5/20 健康活力日 圓滿落幕',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7331106558229004289',
+    date: '2025/5/20',
+    thumbnail: '/images/linkedin/csr-002.jpg',
+  },
+  {
+    id: 'csr-003',
+    category: 'CSR',
+    title: '消費品事業單位守護 1,800 個家庭',
+    url: 'https://www.linkedin.com/posts/dksh_lifeatdksh-dkshtaiwan-dkshconsumergoods-activity-7310903475922505729-W7jr',
+    date: '2025/3/27',
+    thumbnail: '/images/linkedin/csr-003.jpg',
+  },
+  {
+    id: 'csr-004',
+    category: 'CSR',
+    title: '3/12 永續綠色公益日活動分享',
+    url: 'https://www.linkedin.com/feed/update/activity:7309846644068442112',
+    date: '2025/3/12',
+    thumbnail: '/images/linkedin/csr-004.jpg',
+  },
+  {
+    id: 'csr-005',
+    category: 'CSR',
+    title: '北桃聯合捐血，攜手傳愛熱血同行',
+    url: 'https://www.linkedin.com/posts/dksh_lifeatdksh-dkshtaiwan-sustainability-activity-7298506830526210048-LiEI',
+    date: '2025/2/20',
+    thumbnail: '/images/linkedin/csr-005.jpg',
+  },
+  {
+    id: 'csr-006',
+    category: 'CSR',
+    title: 'DKSH x 1919 食物銀行共襄善舉',
+    url: 'https://www.linkedin.com/posts/dksh_dkshtaiwan-hxmkhpiwvjiumzbihd-enrichingpeopleslives-activity-7163683550142062592-NjP9',
+    date: '2024/2/14',
+    thumbnail: '/images/linkedin/csr-006.jpg',
+  },
+  {
+    id: 'csr-007',
+    category: 'CSR',
+    title: '小行動，大改變，綠色生活每一天！',
+    url: 'https://www.linkedin.com/posts/dksh_dkshtaiwan-sustainability-enrichingpeopleslives-activity-7190983768118087682-CoYV',
+    date: '2024/4/30',
+    thumbnail: '/images/linkedin/csr-007.jpg',
+  },
+  {
+    id: 'csr-008',
+    category: 'CSR',
+    title: '低碳生活教育講座結合環保手作',
+    url: 'https://www.linkedin.com/posts/dksh_dkshtaiwan-hxmkhpiwvjiumzbihd-hutmzbkmbimbjnnkdjlefkrnlcyitnjexmjejwgizhhumjnh-activity-7183028337424928768-xBEP',
+    date: '2024/4/8',
+    thumbnail: '/images/linkedin/csr-008.jpg',
+  },
+  {
+    id: 'csr-009',
+    category: 'CSR',
+    title: '鞋盒送暖‧聖誕傳愛公益活動',
+    url: 'https://www.linkedin.com/posts/dksh_dkshtaiwan-enrichingpeopleslives-csr-activity-7141351314470453248-VUqj/',
+    date: '2023/12/20',
+    thumbnail: '/images/linkedin/csr-009.jpg',
+  },
 ]
 
 // Helper functions
@@ -330,4 +404,5 @@ const filterExcludedPosts = (post: LinkedInPost) =>
 
 export const getHECPosts = () => linkedinPosts.filter((post) => post.category === 'HEC').filter(filterExcludedPosts)
 export const getSCMPosts = () => linkedinPosts.filter((post) => post.category === 'SCM').filter(filterExcludedPosts)
+export const getCSRPosts = () => linkedinPosts.filter((post) => post.category === 'CSR')
 export const getAllPosts = () => linkedinPosts.filter(filterExcludedPosts)
