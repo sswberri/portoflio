@@ -315,7 +315,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-001',
     category: 'WAD',
-    title: 'DKSH 台灣營運知識分享暨新進同仁歡迎直播活動',
+    title: 'DKSH 蟬聯亞洲台灣區最佳企業雇主獎',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7360505295371931649',
     date: '2025/12/27',
     thumbnail: '/images/linkedin/wad-001.jpg',
@@ -323,7 +323,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-002',
     category: 'WAD',
-    title: '全球職能發展一覽人才 優秀人才啟航國際職涯新篇章',
+    title: '打造關懷共融友善職場 獲北市優良哺集乳室特優認證',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7376450370442698752',
     date: '2025/9/24',
     thumbnail: '/images/linkedin/wad-002.jpg',
@@ -331,7 +331,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-003',
     category: 'WAD',
-    title: 'FMCG 大家有約 效能獎與品質作業獎動態競賽成果',
+    title: 'FMCG 文化大使 以承擔與判斷力推動商務成長',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7431525752702976000/',
     date: '2026/3/20',
     thumbnail: '/images/linkedin/wad-003.png',
@@ -339,7 +339,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-004',
     category: 'WAD',
-    title: '你從來沒想過的職涯 跨領域來在表現嶄新視野',
+    title: '攜十年供應鏈經驗 跨港來台迎接新挑戰',
     url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7406543604149575680',
     date: '2025/12/16',
     thumbnail: '/images/linkedin/wad-004.png',
@@ -347,7 +347,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-005',
     category: 'WAD',
-    title: '跨領域成長 全球供應鏈的職涯發展未來',
+    title: '跨域成長 打造更安全的供應鏈未來',
     url: 'https://www.linkedin.com/feed/update/urn:li:share:7376042712774381568/',
     date: '2025/9/23',
     thumbnail: '/images/linkedin/scm-011.jpg',
@@ -355,7 +355,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-006',
     category: 'WAD',
-    title: '遊戲競賽不只是大家有約活動 每件事情方向的策略',
+    title: '團隊整合不只是文化磨合 更是彼此支持的旅程',
     url: 'https://www.linkedin.com/feed/update/urn:li:share:7378579422414659584',
     date: '2025/9/30',
     thumbnail: '/images/linkedin/wad-006.jpg',
@@ -363,7 +363,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-007',
     category: 'WAD',
-    title: '用體驗感動實踐 效能獎總結職涯發展成長',
+    title: '永續行動落實 以培訓賦能供應鏈成長',
     url: 'https://www.linkedin.com/feed/update/urn:li:share:7401440028004061185',
     date: '2025/12/2',
     thumbnail: '/images/linkedin/scm-002.jpg',
@@ -371,7 +371,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-008',
     category: 'WAD',
-    title: '數位轉型推動實踐 全球減少職涯發展新觀點',
+    title: '數位轉型推動 打造智慧供應鏈新局',
     url: 'https://www.linkedin.com/feed/update/urn:li:share:7394177194366861312/',
     date: '2025/11/12',
     thumbnail: '/images/linkedin/scm-005.jpg',
@@ -379,7 +379,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: 'wad-009',
     category: 'WAD',
-    title: '成就影響力職涯程序 首月滿意成就90%自動化',
+    title: '成果導向優化流程 首月達成90%自動化',
     url: 'https://www.linkedin.com/feed/update/urn:li:share:7349226029200084992',
     date: '2025/8/18',
     thumbnail: '/images/linkedin/wad-009.jpg',
