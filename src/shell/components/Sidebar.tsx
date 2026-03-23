@@ -108,7 +108,7 @@ export function Sidebar({ activeItemId = 'about', onNavigate, collapsed = false,
           </div>
           {!collapsed && (
             <p className="text-xs text-slate-500">
-              © 2026 Portfolio
+              © 2026 Sharon Wei. All rights reserved.
             </p>
           )}
         </div>

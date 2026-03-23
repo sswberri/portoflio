@@ -41,6 +41,7 @@ const expertiseAreas = [
 export function AboutSection({ }: AboutSectionProps) {
   const expertiseSection = useScrollReveal(0.1)
   const workedWith = useScrollReveal()
+  const education = useScrollReveal()
 
   return (
     <section className="pt-8 lg:pt-10 pb-6 lg:pb-10">
@@ -76,6 +77,56 @@ export function AboutSection({ }: AboutSectionProps) {
       {/* Worked With - animate as one block */}
       <div id="worked-with" ref={workedWith.ref} className={`scroll-reveal ${workedWith.isVisible ? 'visible' : ''}`}>
         <LogoWall />
+      </div>
+
+      {/* Education - animate as one block */}
+      <div id="education" ref={education.ref} className={`scroll-reveal ${education.isVisible ? 'visible' : ''} mt-12 lg:mt-16`}>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white mb-8 lg:mb-10">
+          Education
+        </h2>
+
+        <div className="space-y-8 lg:space-y-10">
+          {/* SJSU */}
+          <div className="flex items-center gap-8 lg:gap-12">
+            <div className="w-48 lg:w-64 flex-shrink-0">
+              <img
+                src="/images/sjsu-logo.png"
+                alt="San José State University"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+                Master of Business Administration
+              </h3>
+              <p className="text-white/80 text-base lg:text-lg">
+                GPA: 3.96/4.0
+              </p>
+              <p className="text-white/80 text-base lg:text-lg">
+                Member of The Honor Society of Phi Kappa Phi
+              </p>
+            </div>
+          </div>
+
+          {/* UC Davis */}
+          <div className="flex items-center gap-8 lg:gap-12">
+            <div className="w-48 lg:w-64 flex-shrink-0">
+              <img
+                src="/images/ucdavis-logo.png"
+                alt="UC Davis, University of California"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-white mb-1">
+                Bachelor of Science in Design
+              </h3>
+              <p className="text-white/80 text-base lg:text-lg">
+                Emphasis: Visual Communication and Presentation
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

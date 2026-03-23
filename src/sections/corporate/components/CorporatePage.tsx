@@ -118,7 +118,49 @@ export function CorporatePage() {
 
       {/* Content */}
       {activeTab === 'media-pr' ? (
-        <ImageCarousel images={images} alt={activeTab} />
+        <div className="space-y-12 lg:space-y-16">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              <div className="flex flex-col order-2 lg:order-1 space-y-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
+                  Brand Photography
+                </h2>
+                <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+                  An on-demand brand photography initiative capturing DKSH&rsquo;s industry expertise across Consumer Goods, Healthcare, Performance Materials, Technology, Supply Chain Management, and Central Services through people, environments, and real-world operations, translating insights and knowledge into B2B visual storytelling used across 36 markets to strengthen brand identity.
+                </p>
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold text-white mb-3">Execution &amp; Scale</h3>
+                  <ul className="space-y-2 text-slate-300 text-sm leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <span className="text-slate-500 mt-0.5">•</span>
+                      <span>Directed <span className="text-white font-medium">2 enterprise-wide brand photography programs</span> across all business units and central services</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-slate-500 mt-0.5">•</span>
+                      <span>Mobilized <span className="text-white font-medium">150+ employees across on-camera and production roles</span></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-slate-500 mt-0.5">•</span>
+                      <span>Executed shoots across <span className="text-white font-medium">30+ locations spanning commercial, healthcare, and industrial environments</span></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-slate-500 mt-0.5">•</span>
+                      <span>Orchestrated production across <span className="text-white font-medium">4 offices, 3 distribution centers, 2 demo kitchens, 2 science labs, 1 supermarket chain, and 2 healthcare facilities</span></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <ImageCarousel
+                  images={images}
+                  alt="brand-photography"
+                  aspectClassName="aspect-[4/3]"
+                  wrapperClassName="w-full"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
       ) : activeTab === 'sustainability-csr' ? (
         <div className="space-y-12 lg:space-y-16" ref={csrSectionRef}>
           {/* Hero: 2-column layout — text left, photo right */}

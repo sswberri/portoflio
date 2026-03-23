@@ -3,7 +3,7 @@
 
 export interface LinkedInPost {
   id: string
-  category: 'HEC' | 'SCM' | 'CSR'
+  category: 'HEC' | 'SCM' | 'CSR' | 'WAD'
   title: string
   url: string
   date: string
@@ -311,6 +311,80 @@ export const linkedinPosts: LinkedInPost[] = [
     thumbnail: '/images/linkedin/scm-017.png',
   },
 
+  // WAD - #WeAreDKSH People & Culture Initiative
+  {
+    id: 'wad-001',
+    category: 'WAD',
+    title: 'DKSH 台灣營運知識分享暨新進同仁歡迎直播活動',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7360505295371931649',
+    date: '2025/12/27',
+    thumbnail: '/images/linkedin/wad-001.jpg',
+  },
+  {
+    id: 'wad-002',
+    category: 'WAD',
+    title: '全球職能發展一覽人才 優秀人才啟航國際職涯新篇章',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7376450370442698752',
+    date: '2025/9/24',
+    thumbnail: '/images/linkedin/wad-002.jpg',
+  },
+  {
+    id: 'wad-003',
+    category: 'WAD',
+    title: 'FMCG 大家有約 效能獎與品質作業獎動態競賽成果',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7431525752702976000/',
+    date: '2026/3/20',
+    thumbnail: '/images/linkedin/wad-003.png',
+  },
+  {
+    id: 'wad-004',
+    category: 'WAD',
+    title: '你從來沒想過的職涯 跨領域來在表現嶄新視野',
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7406543604149575680',
+    date: '2025/12/16',
+    thumbnail: '/images/linkedin/wad-004.png',
+  },
+  {
+    id: 'wad-005',
+    category: 'WAD',
+    title: '跨領域成長 全球供應鏈的職涯發展未來',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7376042712774381568/',
+    date: '2025/9/23',
+    thumbnail: '/images/linkedin/scm-011.jpg',
+  },
+  {
+    id: 'wad-006',
+    category: 'WAD',
+    title: '遊戲競賽不只是大家有約活動 每件事情方向的策略',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7378579422414659584',
+    date: '2025/9/30',
+    thumbnail: '/images/linkedin/wad-006.jpg',
+  },
+  {
+    id: 'wad-007',
+    category: 'WAD',
+    title: '用體驗感動實踐 效能獎總結職涯發展成長',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7401440028004061185',
+    date: '2025/12/2',
+    thumbnail: '/images/linkedin/scm-002.jpg',
+  },
+  {
+    id: 'wad-008',
+    category: 'WAD',
+    title: '數位轉型推動實踐 全球減少職涯發展新觀點',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7394177194366861312/',
+    date: '2025/11/12',
+    thumbnail: '/images/linkedin/scm-005.jpg',
+  },
+  {
+    id: 'wad-009',
+    category: 'WAD',
+    title: '成就影響力職涯程序 首月滿意成就90%自動化',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7349226029200084992',
+    date: '2025/8/18',
+    thumbnail: '/images/linkedin/wad-009.jpg',
+  },
+
   // CSR - Corporate Social Responsibility (Positive Local Impact)
   {
     id: 'csr-001',
@@ -405,4 +479,5 @@ const filterExcludedPosts = (post: LinkedInPost) =>
 export const getHECPosts = () => linkedinPosts.filter((post) => post.category === 'HEC').filter(filterExcludedPosts)
 export const getSCMPosts = () => linkedinPosts.filter((post) => post.category === 'SCM').filter(filterExcludedPosts)
 export const getCSRPosts = () => linkedinPosts.filter((post) => post.category === 'CSR')
+export const getWADPosts = () => linkedinPosts.filter((post) => post.category === 'WAD')
 export const getAllPosts = () => linkedinPosts.filter(filterExcludedPosts)

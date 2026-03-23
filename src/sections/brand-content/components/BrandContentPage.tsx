@@ -6,7 +6,7 @@ import { LinkedInPostList } from '@/components/LinkedInPostList'
 import { VideoCard } from '@/sections/videos/components/VideoCard'
 import { ScrollReveal } from '@/components/ScrollReveal'
 import { imageMap } from '@/data/images'
-import { getAllPosts } from '@/data/linkedinPosts'
+import { getAllPosts, getWADPosts } from '@/data/linkedinPosts'
 import videosData from '@/data/videos.json'
 
 const tabs = [
@@ -31,10 +31,13 @@ export function BrandContentPage() {
   const [activeTab, setActiveTab] = useState<TabId>('content-marketing')
   const [showMoreShaping, setShowMoreShaping] = useState(false)
   const [showMoreScm, setShowMoreScm] = useState(false)
+  const [showMoreWad, setShowMoreWad] = useState(false)
   const shapingSectionRef = useRef<HTMLDivElement>(null)
   const shapingMoreRef = useRef<HTMLDivElement>(null)
   const scmSectionRef = useRef<HTMLDivElement>(null)
   const scmMoreRef = useRef<HTMLDivElement>(null)
+  const wadSectionRef = useRef<HTMLDivElement>(null)
+  const wadMoreRef = useRef<HTMLDivElement>(null)
 
   const images = activeTab === 'brand-photography'
     ? imageMap['brand-content']['brand-photography'] || []
@@ -95,6 +98,10 @@ export function BrandContentPage() {
     (post) => !scmKeywordPosts.some((featured) => featured.id === post.id)
   )
 
+  const wadPosts = getWADPosts()
+  const wadFeatured = wadPosts.slice(0, 6)
+  const wadMore = wadPosts.slice(6)
+
   const videoCategories = videosData.categories.filter((c) => c !== 'All')
 
   const indicatorSections = useMemo<SectionDef[]>(() => {
@@ -103,6 +110,7 @@ export function BrandContentPage() {
         { id: 'thought-leadership', label: 'Thought Leadership' },
         { id: 'shaping-healthcare', label: '#ShapingHealthcare' },
         { id: 'scm-rising', label: '#SCMRising' },
+        { id: 'wearedksh', label: '#WeAreDKSH' },
       ]
     }
     if (activeTab === 'video-storytelling') {
@@ -317,6 +325,57 @@ export function BrandContentPage() {
                     className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
                   >
                     {showMoreScm ? (
+                      <>View less <ChevronUp className="w-4 h-4" /></>
+                    ) : (
+                      <>View more <ChevronDown className="w-4 h-4" /></>
+                    )}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* #WeAreDKSH */}
+          <div id="wearedksh" ref={wadSectionRef}>
+            <ScrollReveal>
+            <div className="mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight lg:max-w-[50%]">
+                #WeAreDKSH People &amp; Culture Initiative
+              </h2>
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+                A strategic initiative aligned with HR priorities, where MarCom–HR collaboration shapes people and culture narratives across internal and external communications, using testimonials, expert voices, and recognition to strengthen employer branding, employee experience, and belonging.
+              </p>
+            </div>
+            </ScrollReveal>
+            <LinkedInPostList posts={wadFeatured} />
+            {wadMore.length > 0 && (
+              <>
+                <div
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    showMoreWad ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="mt-6" ref={wadMoreRef}>
+                      <LinkedInPostList posts={wadMore} />
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const wasOpen = showMoreWad
+                      setShowMoreWad(!showMoreWad)
+                      if (wasOpen) {
+                        setTimeout(() => wadSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 400)
+                      } else {
+                        setTimeout(() => wadMoreRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 400)
+                      }
+                    }}
+                    className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
+                  >
+                    {showMoreWad ? (
                       <>View less <ChevronUp className="w-4 h-4" /></>
                     ) : (
                       <>View more <ChevronDown className="w-4 h-4" /></>
