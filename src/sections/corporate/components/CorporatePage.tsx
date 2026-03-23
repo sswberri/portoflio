@@ -25,6 +25,10 @@ const impactHighlights = [
   { number: '450+', text: 'blood donations collected to support Taiwan\u2019s healthcare system' },
 ]
 
+const mediaTags = [
+  'external reputation', 'media relations', 'corporate communications', 'media strategy',
+]
+
 const csrTags = [
   'ESG strategy', 'SDG alignment', 'positive local impact',
   'stakeholder engagement', 'NGO partnerships', 'corporate volunteering',
@@ -123,37 +127,36 @@ export function CorporatePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <div className="flex flex-col order-2 lg:order-1 space-y-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
-                  Brand Photography
+                  Media Strategy &amp; Reputation Building
                 </h2>
                 <p className="text-base md:text-lg text-slate-300 leading-relaxed">
-                  An on-demand brand photography initiative capturing DKSH&rsquo;s industry expertise across Consumer Goods, Healthcare, Performance Materials, Technology, Supply Chain Management, and Central Services through people, environments, and real-world operations, translating insights and knowledge into B2B visual storytelling used across 36 markets to strengthen brand identity.
+                  Develop tier-1 media relationships and drive strategic exposure through awards, partnerships, and featured interviews to amplify leadership visibility, strengthen brand trust, and position the company as a credible, sustainable market leader in Taiwan.
                 </p>
                 <div className="mt-4">
-                  <h3 className="text-lg font-semibold text-white mb-3">Execution &amp; Scale</h3>
+                  <h3 className="text-lg font-semibold text-white mb-3">Impact</h3>
                   <ul className="space-y-2 text-slate-300 text-sm leading-relaxed">
                     <li className="flex items-start gap-2">
                       <span className="text-slate-500 mt-0.5">•</span>
-                      <span>Directed <span className="text-white font-medium">2 enterprise-wide brand photography programs</span> across all business units and central services</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-500 mt-0.5">•</span>
-                      <span>Mobilized <span className="text-white font-medium">150+ employees across on-camera and production roles</span></span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-500 mt-0.5">•</span>
-                      <span>Executed shoots across <span className="text-white font-medium">30+ locations spanning commercial, healthcare, and industrial environments</span></span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-slate-500 mt-0.5">•</span>
-                      <span>Orchestrated production across <span className="text-white font-medium">4 offices, 3 distribution centers, 2 demo kitchens, 2 science labs, 1 supermarket chain, and 2 healthcare facilities</span></span>
+                      <span>Independently led and executed <span className="text-white font-medium">21 media releases over 2 years</span>, generating <span className="text-white font-medium">93 top-tier media features</span> and achieving <span className="text-white font-medium">121% media AVE</span>, with agency support on select interviews and launch events</span>
                     </li>
                   </ul>
+                </div>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {mediaTags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-sm rounded-full bg-teal-200 text-slate-900"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
               <div className="order-1 lg:order-2">
                 <ImageCarousel
                   images={images}
-                  alt="brand-photography"
+                  alt="media-pr"
                   aspectClassName="aspect-[4/3]"
                   wrapperClassName="w-full"
                 />
@@ -178,7 +181,7 @@ export function CorporatePage() {
                   {csrTags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-sm rounded-full bg-slate-800 text-slate-300 border border-slate-700"
+                      className="px-3 py-1 text-sm rounded-full bg-teal-200 text-slate-900"
                     >
                       {tag}
                     </span>
@@ -275,7 +278,7 @@ export function CorporatePage() {
                 {awardsTags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 text-sm rounded-full bg-slate-800 text-slate-300 border border-slate-700"
+                    className="px-3 py-1 text-sm rounded-full bg-teal-200 text-slate-900"
                   >
                     {tag}
                   </span>
